@@ -1,0 +1,369 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f7f6f3;
+  --text: #0d0d0d;
+  --text-muted: #6b6b6b;
+  --cta: #3171f6;
+  --cta-hover: #255dd9;
+  --card-blue: #e8f0fe;
+  --card-coral: #fdecec;
+  --card-gold: #fbf3db;
+  --card-gray: #f1f1ef;
+  --highlight: #f7d070;
+  --radius: 10px;
+  --wa-green: #d9fdd3;
+  --wa-gray: #ffffff;
+  --wa-bg: #e5ddd5;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-ink: var(--text);
+  --color-muted: var(--text-muted);
+  --color-cta: var(--cta);
+  --color-cta-hover: var(--cta-hover);
+  --color-card-blue: var(--card-blue);
+  --color-card-coral: var(--card-coral);
+  --color-card-gold: var(--card-gold);
+  --color-card-gray: var(--card-gray);
+  --color-highlight: var(--highlight);
+  --color-wa-green: var(--wa-green);
+  --color-wa-gray: var(--wa-gray);
+  --color-wa-bg: var(--wa-bg);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --radius-card: var(--radius);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Prevent pinch-zoom on mobile (viewport also locks scale) */
+  touch-action: pan-x pan-y;
+  -ms-touch-action: pan-x pan-y;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal.reveal--armed,
+  .reveal.reveal--armed:not(.is-visible) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    filter: none !important;
+  }
+
+  .subscribe-success,
+  .subscribe-form-exit {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .trust-marquee-track {
+    animation: none !important;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scroll reveal — visible by default; JS adds .reveal--armed to animate in */
+.reveal {
+  opacity: 1;
+  transform: none;
+  will-change: opacity, transform;
+}
+
+.reveal.reveal--armed {
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.reveal--armed:not(.is-visible) {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  filter: blur(0);
+}
+
+.reveal.reveal--armed.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal.reveal--zoom.reveal--armed:not(.is-visible) {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0) scale(1.035);
+}
+
+.reveal.reveal--zoom.reveal--armed.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/*
+ * Nav Join Kedu — mobile AND desktop.
+ * Hidden while #hero-cta is on screen; appears after you scroll past it.
+ * Class `past-hero-cta` is toggled on <html> by the boot script.
+ */
+.nav-join {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate3d(0, -8px, 0) scale(0.94);
+  transition:
+    opacity 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.32s;
+}
+
+html.past-hero-cta .nav-join {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-join {
+    transition: opacity 0.15s ease, visibility 0.15s;
+    transform: none;
+  }
+
+  html.past-hero-cta .nav-join {
+    transform: none;
+  }
+}
+
+/* Mobile nav — native <details> menu (works without React) */
+.nav-mobile-menu > summary {
+  list-style: none;
+}
+
+/* Force-hide panel when closed (fixes fixed-position bleed in some browsers) */
+.nav-mobile-menu:not([open]) > [role="dialog"] {
+  display: none !important;
+}
+
+.nav-mobile-menu[open] > .nav-mobile-menu__summary {
+  position: fixed;
+  top: 8px;
+  right: 12px;
+  z-index: 10003;
+  background: white;
+}
+
+.nav-mobile-menu[open] .nav-mobile-menu__burger {
+  display: none;
+}
+
+.nav-mobile-menu[open] .nav-mobile-menu__x {
+  display: block;
+}
+
+/* Footer email success */
+@keyframes subscribe-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes subscribe-check {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.subscribe-success {
+  animation: subscribe-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.subscribe-success__icon {
+  animation: subscribe-check 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+
+/* Instant Block — solid on mobile; CSS art only from md+ (text overlays left) */
+.instant-block-bg {
+  background-color: #dce6ff;
+  background-image: none;
+}
+
+@media (min-width: 768px) {
+  .instant-block-bg {
+    background-image: url("/instant-block/footer-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 40% 50%;
+  }
+}
+
+@media (min-width: 1536px) {
+  .instant-block-bg {
+    background-position: 200px center;
+  }
+}
+
+.instant-block__copy {
+  opacity: 1;
+  transform: none;
+}
+
+.instant-block--armed .instant-block__copy:not(.is-in) {
+  opacity: 0;
+  transform: scale(0.8) translate3d(-100px, 20px, 0);
+  will-change: transform, opacity;
+}
+
+.instant-block--armed .instant-block__copy {
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.instant-block--armed .instant-block__copy.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .instant-block--armed .instant-block__copy,
+  .instant-block--armed .instant-block__copy:not(.is-in) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Book-marker highlight - Kedu CTA blue */
+.marker-highlight {
+  background-image: linear-gradient(
+    104deg,
+    rgba(49, 113, 246, 0) 0%,
+    rgba(49, 113, 246, 0.88) 8%,
+    rgba(49, 113, 246, 0.92) 92%,
+    rgba(49, 113, 246, 0) 100%
+  );
+  background-size: 100% 78%;
+  background-repeat: no-repeat;
+  background-position: 0 72%;
+  color: inherit;
+}
+
+/* Hero dynamic words - CSS-only so mobile doesn't depend on JS timers */
+.rotating-highlight__word {
+  opacity: 0;
+  animation-name: kedu-rotating-word;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  will-change: opacity;
+}
+
+/* One slot = 20% of the cycle (tuned for 5 words). Delay offsets each word. */
+@keyframes kedu-rotating-word {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  18% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.trust-marquee-track {
+  animation: trust-marquee 90s linear infinite;
+}
+
+@keyframes trust-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Notion-style logo wall under hero CTA */
+.science-logo-marquee {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+.science-logo-marquee-track {
+  animation: science-logo-marquee 40s linear infinite;
+}
+
+@keyframes science-logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trust-marquee-track {
+    animation: none;
+  }
+
+  .trust-marquee {
+    overflow-x: auto;
+  }
+
+  .science-logo-marquee-track {
+    animation: none;
+  }
+
+  .science-logo-marquee {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}

@@ -1,0 +1,37 @@
+# Kedu
+
+> Kedu is a strict savings AI agent that runs on WhatsApp. Built by Udara Technologies. Funds are held with Rubies Microfinance Bank in Nigeria.
+
+## Product
+
+- Name: Kedu
+- Category: WhatsApp savings / personal finance AI agent
+- Platform: WhatsApp (no separate app download)
+- Company: Udara Technologies
+- Banking partner: Rubies Microfinance Bank
+- Market: Nigeria
+- Privacy: Uses WhatsApp end-to-end encryption; NDPC-certified data protection practices
+
+## What Kedu does
+
+- Helps users see where money goes
+- Hard-locks outbound transfers from 7PM until morning
+- Supports goal-based saving and accountability
+- Instant account block/unblock if a phone is lost or stolen
+
+## Who it is for
+
+People who struggle with overspending, impulse transfers, ADHD-related money habits, emotional spending, or salary burn, and who already live in WhatsApp.
+
+## Key URLs
+
+- Home: /
+- Block account: /account/block
+- Unblock account: /account/unblock
+- FAQ: /#faq
+- Security: /#security
+
+## Contact
+
+- WhatsApp support phone (placeholder): +234 900 000 0000
+- Hours: Mon-Fri, 9AM-6PM WAT
