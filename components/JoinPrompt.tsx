@@ -5,10 +5,12 @@ import { createPortal } from "react-dom";
 import { copy } from "@/lib/copy";
 
 /** Bump to force the prompt to show again for returning visitors. */
-const STORAGE_KEY = "kedu-join-prompt-v8";
+const STORAGE_KEY = "kedu-join-prompt-v9";
 const COOLDOWN_HOURS = 24;
-const SHOW_AFTER_MS = 6000;
+/** After the sheet appears, wait before X / "Not now" unlock. */
 const UNLOCK_AFTER_MS = 8000;
+/** Hero section root — prompt waits until this has scrolled off-screen. */
+const HERO_SECTION_ID = "top";
 
 function isCoolingDown() {
   try {
@@ -34,6 +36,9 @@ function persistDismiss() {
 /**
  * Bottom join prompt. Portaled to document.body so iOS Safari
  * position:fixed is not trapped by transformed ancestors.
+ *
+ * Shows only after the hero has scrolled off — while the phone mock
+ * is on screen, the product demo is the pitch.
  */
 export function JoinPrompt() {
   const [mounted, setMounted] = useState(false);
@@ -44,11 +49,36 @@ export function JoinPrompt() {
     setMounted(true);
     if (isCoolingDown()) return;
 
-    const showTimer = window.setTimeout(() => {
-      setVisible(true);
-    }, SHOW_AFTER_MS);
+    const hero = document.getElementById(HERO_SECTION_ID);
+    if (!hero) return;
 
-    return () => window.clearTimeout(showTimer);
+    let shown = false;
+    const show = () => {
+      if (shown) return;
+      shown = true;
+      setVisible(true);
+    };
+
+    // Already past hero (deep link / restored scroll)
+    if (hero.getBoundingClientRect().bottom <= 0) {
+      show();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry) return;
+        // Scrolled past: section left the viewport upward
+        if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+          show();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0 },
+    );
+
+    observer.observe(hero);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {

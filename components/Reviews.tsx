@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
+import { SnapCarousel } from "@/components/ui/SnapCarousel";
 
 const cards = [
   {
@@ -52,15 +53,25 @@ export function Reviews() {
         </h2>
       </Reveal>
 
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
+      {/* Mobile: horizontal snap carousel + dots. Desktop: 3-up grid. */}
+      <SnapCarousel
+        count={cards.length}
+        label="Customer testimonials"
+        trackClassName="-mx-4 mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:-mx-5 sm:gap-4 sm:px-5 [&::-webkit-scrollbar]:hidden md:mx-0 md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0"
+      >
         {cards.map((card, index) => (
-          <Reveal key={card.name} delay={index * 80} variant="zoom">
-            <figure className="relative min-h-[560px] overflow-hidden rounded-[18px] sm:min-h-[620px] lg:min-h-[680px]">
+          <Reveal
+            key={card.name}
+            delay={index * 80}
+            variant="zoom"
+            className="w-[min(82vw,320px)] shrink-0 snap-center sm:w-[min(70vw,340px)] md:w-auto md:snap-align-none"
+          >
+            <figure className="relative h-[560px] overflow-hidden rounded-[18px] sm:h-[620px] lg:h-[680px]">
               <Image
                 src={card.image}
                 alt=""
                 fill
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 768px) 82vw, 33vw"
                 className="object-cover object-top"
               />
               <div
@@ -95,7 +106,7 @@ export function Reviews() {
             </figure>
           </Reveal>
         ))}
-      </div>
+      </SnapCarousel>
     </Section>
   );
 }

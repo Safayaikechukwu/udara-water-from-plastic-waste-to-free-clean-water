@@ -1,5 +1,6 @@
 import { copy } from "@/lib/copy";
 import { Reveal } from "@/components/ui/Reveal";
+import { SnapCarousel } from "@/components/ui/SnapCarousel";
 
 function SecurityIcon({ tone }: { tone: "coral" | "blue" | "gold" }) {
   if (tone === "coral") {
@@ -66,8 +67,12 @@ export function Security() {
           </div>
         </Reveal>
 
-        {/* Mobile: horizontal snap scroll. Desktop: 3-up grid. */}
-        <div className="-mx-4 mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:-mx-5 sm:mt-12 sm:gap-4 sm:px-5 [&::-webkit-scrollbar]:hidden md:mx-0 md:mt-14 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
+        {/* Mobile: horizontal snap scroll + dots. Desktop: 3-up grid. */}
+        <SnapCarousel
+          count={copy.security.cards.length}
+          label="Security features"
+          trackClassName="-mx-4 mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:-mx-5 sm:mt-12 sm:gap-4 sm:px-5 [&::-webkit-scrollbar]:hidden md:mx-0 md:mt-14 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0"
+        >
           {copy.security.cards.map((card, index) => (
             <Reveal
               key={card.title}
@@ -87,7 +92,7 @@ export function Security() {
               </article>
             </Reveal>
           ))}
-        </div>
+        </SnapCarousel>
       </div>
     </section>
   );
