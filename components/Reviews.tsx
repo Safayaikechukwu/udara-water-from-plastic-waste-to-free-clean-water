@@ -28,13 +28,13 @@ const cards = [
   },
   {
     tag: "Properties",
-    tagBg: "#e8f0fe",
-    tagDot: "#3171f6",
+    tagBg: "#f6eaea",
+    tagDot: "#4a0508",
     quote:
       "I'm 34, and I could not believe it when I went through my transaction history and saw that I've spent millions of naira but could not even account for shishi. Now Kedu helps me with stuff like that, and I was able to get my first property this year.",
     name: "Tunde Balogun",
     role: "Engineer, Abuja",
-    overlay: "bg-[#255dd9]/75",
+    overlay: "bg-[#4a0508]/75",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80",
   },

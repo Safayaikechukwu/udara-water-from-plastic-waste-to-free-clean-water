@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import Script from "next/script";
 import { JsonLd } from "@/components/JsonLd";
@@ -18,7 +20,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#3171f6",
+  themeColor: "#4a0508",
   width: "device-width",
   initialScale: 1,
   minimumScale: 1,
@@ -280,6 +282,8 @@ export default function RootLayout({
         </Script>
         <JsonLd />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

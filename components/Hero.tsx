@@ -40,11 +40,10 @@ export function Hero() {
         <ScienceProof />
       </div>
 
-      <Reveal delay={120} variant="zoom">
-        <div className="relative mx-auto mt-12 w-full max-w-[1252px] sm:mt-14 lg:mt-16">
-          <HeroProduct />
-        </div>
-      </Reveal>
+      {/* Outside Reveal — transforms/opacity were blocking the mobile chat animation */}
+      <div className="relative mx-auto mt-8 w-full max-w-[1252px] sm:mt-14 lg:mt-16">
+        <HeroProduct />
+      </div>
     </section>
   );
 }

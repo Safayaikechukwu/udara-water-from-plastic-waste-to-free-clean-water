@@ -19,7 +19,7 @@ export function TruthIllustration() {
       <rect x="36" y="36" width="48" height="8" rx="2" fill="#a8c4fb" />
       <rect x="36" y="52" width="70" height="6" rx="2" fill="#d4d4d4" />
       <rect x="36" y="66" width="56" height="6" rx="2" fill="#d4d4d4" />
-      <circle cx="118" cy="84" r="16" fill="#3171f6" />
+      <circle cx="118" cy="84" r="16" fill="#4a0508" />
       <path
         d="M111 84h14M118 77v14"
         stroke="white"
@@ -125,7 +125,7 @@ export function CheckInIllustration() {
       <rect x="40" y="72" width="12" height="20" rx="2" fill="#a8c4fb" />
       <rect x="58" y="58" width="12" height="34" rx="2" fill="#f7d070" />
       <rect x="76" y="46" width="12" height="46" rx="2" fill="#67d4a2" />
-      <rect x="94" y="38" width="12" height="54" rx="2" fill="#3171f6" />
+      <rect x="94" y="38" width="12" height="54" rx="2" fill="#4a0508" />
       <path
         d="M36 36h70"
         stroke="#0d0d0d"

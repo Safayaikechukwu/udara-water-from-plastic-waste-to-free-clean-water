@@ -8,7 +8,7 @@ function SecurityIcon({ tone }: { tone: "coral" | "blue" | "gold" }) {
         <circle cx="28" cy="54" r="18" fill="#fdecec" />
         <circle cx="92" cy="30" r="14" fill="#eadffb" />
         <rect x="48" y="22" width="36" height="48" rx="10" fill="#0d0d0d" />
-        <circle cx="66" cy="42" r="6" fill="#3171f6" />
+        <circle cx="66" cy="42" r="6" fill="#4a0508" />
         <path d="M58 56h16v8a8 8 0 0 1-16 0v-8Z" fill="#f7d070" />
       </svg>
     );
@@ -17,7 +17,7 @@ function SecurityIcon({ tone }: { tone: "coral" | "blue" | "gold" }) {
   if (tone === "blue") {
     return (
       <svg viewBox="0 0 120 88" className="h-full w-full" aria-hidden="true">
-        <circle cx="26" cy="28" r="16" fill="#e8f0fe" />
+        <circle cx="26" cy="28" r="16" fill="#f6eaea" />
         <circle cx="96" cy="58" r="18" fill="#fbf3db" />
         <path
           d="M38 24h44a12 12 0 0 1 12 12v20a12 12 0 0 1-12 12H54l-14 10v-10H38a12 12 0 0 1-12-12V36a12 12 0 0 1 12-12Z"
@@ -35,7 +35,7 @@ function SecurityIcon({ tone }: { tone: "coral" | "blue" | "gold" }) {
       <circle cx="62" cy="44" r="22" stroke="#0d0d0d" strokeWidth="4" fill="none" />
       <path
         d="M62 30v14l10 6"
-        stroke="#3171f6"
+        stroke="#4a0508"
         strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"

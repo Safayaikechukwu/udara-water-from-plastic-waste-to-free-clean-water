@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import { copy } from "@/lib/copy";
 
 /** Bump to force the prompt to show again for returning visitors. */
-const STORAGE_KEY = "kedu-join-prompt-v6";
+const STORAGE_KEY = "kedu-join-prompt-v8";
 const COOLDOWN_HOURS = 24;
 const SHOW_AFTER_MS = 6000;
 const UNLOCK_AFTER_MS = 8000;
@@ -89,12 +89,16 @@ export function JoinPrompt() {
       aria-modal="true"
       aria-labelledby="join-prompt-title"
       aria-describedby="join-prompt-body"
-      className="kedu-join-prompt fixed inset-x-0 bottom-0 z-[9999] bg-[#0b0b0c] text-center text-white sm:inset-x-auto sm:bottom-8 sm:left-1/2 sm:w-[min(440px,calc(100vw-2rem))] sm:-translate-x-1/2 sm:rounded-[20px] sm:border sm:border-white/10 sm:shadow-[0_24px_80px_rgba(0,0,0,0.45)]"
+      className="kedu-join-prompt fixed inset-x-0 bottom-0 z-[9999] text-center text-white sm:inset-x-auto sm:bottom-8 sm:left-1/2 sm:w-[min(440px,calc(100vw-2rem))] sm:-translate-x-1/2 sm:rounded-[20px] sm:border sm:border-white/10 sm:shadow-[0_24px_80px_rgba(74,5,8,0.45)]"
       style={{
+        // Pixel-matched to logo mark background (public/oxblood-swatch.png)
+        backgroundColor: "#4a0508",
+        backgroundImage: "url('/oxblood-swatch.png')",
+        backgroundSize: "cover",
         paddingLeft: "1.25rem",
         paddingRight: "1.25rem",
-        paddingTop: "2rem",
-        paddingBottom: "max(1.25rem, env(safe-area-inset-bottom, 0px))",
+        paddingTop: "2.75rem",
+        paddingBottom: "max(1.9rem, env(safe-area-inset-bottom, 0px))",
       }}
     >
       <button
@@ -103,7 +107,7 @@ export function JoinPrompt() {
         disabled={!canDismiss}
         aria-label={canDismiss ? "Dismiss" : "Dismiss available in a few seconds"}
         className={[
-          "absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-cta/40 bg-cta/10 text-cta transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0b0c] sm:right-5 sm:top-5",
+          "absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/35 bg-white/10 text-white transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4a0508] sm:right-5 sm:top-5",
           canDismiss ? "opacity-100" : "cursor-not-allowed opacity-35",
         ].join(" ")}
       >
@@ -135,7 +139,7 @@ export function JoinPrompt() {
           <button
             type="button"
             onClick={join}
-            className="inline-flex h-12 min-h-12 flex-1 items-center justify-center rounded-full bg-white px-5 text-[15px] font-semibold text-[#0b0b0c] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0b0c] sm:flex-none sm:min-w-[150px]"
+            className="inline-flex h-12 min-h-12 flex-1 items-center justify-center rounded-full bg-white px-5 text-[15px] font-semibold text-[#4a0508] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4a0508] sm:flex-none sm:min-w-[150px]"
           >
             {copy.joinPrompt.primary}
           </button>
@@ -144,7 +148,7 @@ export function JoinPrompt() {
             onClick={dismiss}
             disabled={!canDismiss}
             className={[
-              "inline-flex h-12 min-h-12 flex-1 items-center justify-center rounded-full border border-white/35 bg-transparent px-5 text-[15px] font-semibold text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0b0c] sm:flex-none sm:min-w-[150px]",
+              "inline-flex h-12 min-h-12 flex-1 items-center justify-center rounded-full border border-white/35 bg-transparent px-5 text-[15px] font-semibold text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4a0508] sm:flex-none sm:min-w-[150px]",
               canDismiss ? "" : "cursor-not-allowed opacity-35",
             ].join(" ")}
           >

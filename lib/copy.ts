@@ -10,7 +10,7 @@ export const copy = {
       { text: "SAPA", bg: "#e8f8f0", dot: "#0f7b6c" },
       { text: "overeating", bg: "#fbf3db", dot: "#cb912f" },
       { text: "money leaks", bg: "#eadffb", dot: "#6940a5" },
-      { text: "cravings", bg: "#e8f0fe", dot: "#3171f6" },
+      { text: "cravings", bg: "#f6eaea", dot: "#4a0508" },
     ],
     subtext:
       "Kedu is an AI agent that makes sense of your finances, locks funds, and grows your money through smart savings, strict financial habits, and financial education.",

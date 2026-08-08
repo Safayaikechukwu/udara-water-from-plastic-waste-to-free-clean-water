@@ -2,7 +2,7 @@ import { copy } from "@/lib/copy";
 import { Reveal } from "@/components/ui/Reveal";
 
 const iconColors: Record<string, string> = {
-  chat: "bg-[#3171f6]",
+  chat: "bg-[#4a0508]",
   goal: "bg-[#f2a93c]",
   fund: "bg-[#e03e3e]",
   lock: "bg-[#0f7b6c]",

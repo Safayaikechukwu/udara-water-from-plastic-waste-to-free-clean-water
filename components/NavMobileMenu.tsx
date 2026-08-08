@@ -74,7 +74,7 @@ function FeaturedArt({ tone }: { tone: "blue" | "coral" | "gold" }) {
   return (
     <svg viewBox="0 0 120 96" className="h-full w-full" aria-hidden="true">
       <rect x="22" y="20" width="58" height="52" rx="12" fill="#fff" />
-      <circle cx="42" cy="40" r="8" fill="#3171f6" />
+      <circle cx="42" cy="40" r="8" fill="#4a0508" />
       <circle cx="62" cy="40" r="8" fill="#8eb4ff" />
       <path
         d="M32 58c6-8 20-8 28 0"
@@ -82,7 +82,7 @@ function FeaturedArt({ tone }: { tone: "blue" | "coral" | "gold" }) {
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <circle cx="88" cy="28" r="16" fill="#3171f6" />
+      <circle cx="88" cy="28" r="16" fill="#4a0508" />
       <path
         d="M88 22v12M82 28h12"
         stroke="#fff"
@@ -94,7 +94,7 @@ function FeaturedArt({ tone }: { tone: "blue" | "coral" | "gold" }) {
 }
 
 const featuredToneClass = {
-  blue: "bg-[#e8f0fe]",
+  blue: "bg-[#f6eaea]",
   coral: "bg-[#fdecec]",
   gold: "bg-[#fbf3db]",
 } as const;

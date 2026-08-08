@@ -19,6 +19,7 @@ Kedu helps people in Nigeria understand spending, hard-lock outbound transfers f
 | Language | TypeScript |
 | UI | React 19 + Tailwind CSS v4 |
 | Deploy target | Node / Vercel-compatible |
+| Analytics | Vercel Web Analytics + Speed Insights |
 
 ## Getting started
 

@@ -8,7 +8,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const variants: Record<Variant, string> = {
   primary: "bg-cta text-white hover:bg-cta-hover",
-  secondary: "bg-[#e8f0fe] text-cta hover:bg-[#d4e2fc]",
+  secondary: "bg-[#f6eaea] text-cta hover:bg-[#ecd4d6]",
   ghost: "bg-transparent text-cta hover:underline",
 };
 
