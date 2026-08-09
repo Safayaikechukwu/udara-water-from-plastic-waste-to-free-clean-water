@@ -15,7 +15,7 @@ export function WhyItWorks() {
     <section
       id="why-it-works"
       aria-labelledby="why-heading"
-      className="w-full bg-[#0b0b0c] px-4 pb-14 pt-8 sm:px-5 sm:pb-24 sm:pt-12 lg:px-6 lg:pb-28 lg:pt-14"
+      className="w-full bg-[#0b0b0c] px-4 py-14 sm:px-5 sm:py-24 lg:px-6 lg:py-28"
     >
       <div className="mx-auto grid w-full max-w-[1252px] items-center gap-8 sm:gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-16 xl:gap-20">
         <Reveal variant="zoom">

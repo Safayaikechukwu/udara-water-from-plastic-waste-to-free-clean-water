@@ -15,7 +15,7 @@ import {
 /** Hero phone canvas (must match PhoneShell hero variant × scale) */
 const PHONE_SCALE = 0.82;
 const PHONE_DESIGN_H = 852;
-const PHONE_VISIBLE = 0.8; // top portion; bottom fades via .hero-phone-dissolve
+const PHONE_VISIBLE = 0.78; // top portion — hard-crop the rest
 
 const cropH = Math.round(PHONE_DESIGN_H * PHONE_SCALE * PHONE_VISIBLE);
 
@@ -147,13 +147,11 @@ export function HeroProduct() {
         : {})}
     >
       {isDesktop ? (
-        <div className="hero-phone-dissolve">
-          <HeroWhatsAppLive anim={anim} />
-        </div>
+        <HeroWhatsAppLive anim={anim} />
       ) : (
         <div className="flex justify-center px-2">
           <div
-            className="hero-phone-dissolve mx-auto w-full max-w-[340px] overflow-hidden"
+            className="mx-auto w-full max-w-[340px] overflow-hidden"
             style={{ height: cropH }}
           >
             <HeroPhoneLive anim={anim} scale={PHONE_SCALE} />

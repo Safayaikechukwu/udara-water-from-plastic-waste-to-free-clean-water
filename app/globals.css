@@ -317,26 +317,6 @@ html.past-hero-cta .nav-join {
   }
 }
 
-/* Soft dissolve of the hero mock into the black well */
-.hero-phone-dissolve {
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    #000 0%,
-    #000 45%,
-    rgba(0, 0, 0, 0.65) 72%,
-    rgba(0, 0, 0, 0.2) 90%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    #000 0%,
-    #000 45%,
-    rgba(0, 0, 0, 0.65) 72%,
-    rgba(0, 0, 0, 0.2) 90%,
-    transparent 100%
-  );
-}
-
 /* Notion-style logo wall under hero CTA */
 .science-logo-marquee {
   mask-image: linear-gradient(

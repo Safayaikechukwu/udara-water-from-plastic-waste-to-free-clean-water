@@ -10,9 +10,9 @@ export function Hero() {
     <section
       id="top"
       aria-labelledby="hero-heading"
-      className="w-full bg-bg pt-14 lg:pt-20"
+      className="w-full bg-bg px-4 pb-16 pt-14 sm:px-5 sm:pb-20 lg:px-6 lg:pb-24 lg:pt-20"
     >
-      <div className="mx-auto w-full max-w-[1252px] px-4 text-center sm:px-5 lg:px-6">
+      <div className="mx-auto w-full max-w-[1252px] text-center">
         <Reveal>
           <h1
             id="hero-heading"
@@ -40,11 +40,9 @@ export function Hero() {
         <ScienceProof />
       </div>
 
-      {/* Same black as WhyItWorks — no white gap under the mock */}
-      <div className="mt-10 bg-[#0b0b0c] pt-8 sm:mt-14 sm:pt-10 lg:mt-16 lg:pt-12">
-        <div className="mx-auto w-full max-w-[1252px] px-4 sm:px-5 lg:px-6">
-          <HeroProduct />
-        </div>
+      {/* Outside Reveal — transforms/opacity were blocking the mobile chat animation */}
+      <div className="relative mx-auto mt-8 w-full max-w-[1252px] sm:mt-14 lg:mt-16">
+        <HeroProduct />
       </div>
     </section>
   );
