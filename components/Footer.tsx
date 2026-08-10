@@ -127,26 +127,18 @@ export function Footer() {
             {copy.footer.brandLine}
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-2">
-            {copy.footer.social.map((item) => {
-              const isPlaceholder = item.href === "#";
-              return (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  aria-label={item.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-white/80 transition-colors hover:border-white/30 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0b0c]"
-                  onClick={
-                    isPlaceholder
-                      ? (event) => {
-                          event.preventDefault();
-                        }
-                      : undefined
-                  }
-                >
-                  <SocialIcon type={item.icon} />
-                </a>
-              );
-            })}
+            {copy.footer.social.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                aria-label={item.label}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-white/80 transition-colors hover:border-white/30 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0b0c]"
+              >
+                <SocialIcon type={item.icon} />
+              </a>
+            ))}
           </div>
         </div>
 
