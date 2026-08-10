@@ -31,7 +31,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | ${siteConfig.tagline}`,
+    default: "Udara | Strict savings on WhatsApp",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    title: "Udara | Strict savings on WhatsApp",
     description: siteConfig.description,
     images: [
       {
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    title: "Udara | Strict savings on WhatsApp",
     description: siteConfig.description,
     images: ["/og.png"],
     creator: siteConfig.twitterHandle,
@@ -90,7 +90,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
       { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
       { url: "/udara-mark.png", type: "image/png", sizes: "512x512" },
     ],

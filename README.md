@@ -1,6 +1,6 @@
 # Udara
 
-Marketing site for **Udara** — a WhatsApp-based strict savings agent by [Udara Technologies](https://udara.app).
+Marketing site for **Udara** — a WhatsApp-based strict savings agent by [Udara Technologies](https://www.useudara.com).
 
 Udara helps people in Nigeria understand spending, hard-lock outbound transfers from 7PM until morning, and build savings discipline without installing another app.
 
@@ -41,7 +41,7 @@ Copy `.env.example` to `.env.local` and adjust as needed:
 
 | Variable | Description |
 | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Canonical site URL (no trailing slash). Defaults to `https://udara.app`. |
+| `NEXT_PUBLIC_SITE_URL` | Canonical site URL (no trailing slash). Defaults to `https://www.useudara.com`. |
 
 Do not commit `.env` or `.env.local`.
 
