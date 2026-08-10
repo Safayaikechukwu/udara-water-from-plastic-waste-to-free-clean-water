@@ -286,6 +286,18 @@ export default function RootLayout({
         <Script id="udara-boot" strategy="beforeInteractive">
           {bootScript}
         </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-RGD2GPEVRR"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RGD2GPEVRR');
+          `}
+        </Script>
         <JsonLd />
         {children}
         <Analytics />
