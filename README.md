@@ -26,8 +26,8 @@ Udara helps people in Nigeria understand spending, hard-lock outbound transfers 
 **Requirements:** Node.js 20+ and npm.
 
 ```bash
-git clone https://github.com/Safayaikechukwu/udara.git
-cd udara
+git clone https://github.com/Safayaikechukwu/udara-strict-savings-on-whatsapp.git
+cd udara-strict-savings-on-whatsapp
 npm install
 cp .env.example .env.local
 npm run dev
