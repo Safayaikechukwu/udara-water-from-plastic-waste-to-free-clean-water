@@ -1,6 +1,7 @@
 import { copy } from "@/lib/copy";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { whatsappJoinUrl } from "@/lib/site";
 
 export function ClosingCta() {
   return (
@@ -23,7 +24,10 @@ export function ClosingCta() {
             {copy.closing.subtext}
           </p>
           <div className="mt-9 flex justify-center sm:mt-10">
-            <Button className="h-12 min-h-12 min-w-[180px] px-6 text-[16px]">
+            <Button
+              href={whatsappJoinUrl}
+              className="h-12 min-h-12 min-w-[180px] px-6 text-[16px]"
+            >
               {copy.closing.cta}
             </Button>
           </div>

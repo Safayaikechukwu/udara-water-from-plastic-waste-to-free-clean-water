@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { copy } from "@/lib/copy";
+import { whatsappJoinUrl } from "@/lib/site";
 
 /** Bump to force the prompt to show again for returning visitors. */
 const STORAGE_KEY = "udara-join-prompt-v1";
@@ -166,13 +167,15 @@ export function JoinPrompt() {
         </p>
 
         <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:justify-center">
-          <button
-            type="button"
+          <a
+            href={whatsappJoinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={join}
             className="inline-flex h-12 min-h-12 flex-1 items-center justify-center rounded-full bg-white px-5 text-[15px] font-semibold text-[#4a0508] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4a0508] sm:flex-none sm:min-w-[150px]"
           >
             {copy.joinPrompt.primary}
-          </button>
+          </a>
           <button
             type="button"
             onClick={dismiss}

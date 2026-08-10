@@ -33,6 +33,8 @@ export function Nav() {
           <div className="relative z-10 ml-auto flex shrink-0 items-center justify-end pr-14 md:pr-0">
             <a
               href={copy.nav.joinHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="nav-join inline-flex h-10 min-h-10 items-center justify-center rounded-[6px] bg-cta px-3.5 text-[13px] font-medium text-white hover:bg-cta-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 sm:h-11 sm:min-h-11 sm:px-5 sm:text-[15px]"
             >
               {copy.hero.cta}

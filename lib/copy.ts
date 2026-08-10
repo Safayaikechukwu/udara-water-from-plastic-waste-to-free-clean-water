@@ -1,3 +1,5 @@
+import { whatsappJoinUrl } from "@/lib/site";
+
 export const copy = {
   brand: "Udara",
   tagline: "Your strict savings partner, on WhatsApp.",
@@ -48,8 +50,8 @@ export const copy = {
         tone: "gold" as const,
       },
     ],
-    /** Primary CTA — closing section has the join action on-page */
-    joinHref: "#closing",
+    /** Primary CTA — opens WhatsApp with a pre-filled join message */
+    joinHref: whatsappJoinUrl,
     menuOpen: "Open menu",
     menuClose: "Close menu",
   },
@@ -146,7 +148,7 @@ export const copy = {
     blurb:
       "Clear answers about Udara, the WhatsApp savings agent from Udara Technologies, how the hard lock works, and how your money stays protected with Rubies Microfinance Bank.",
     contactLabel: "Still have questions?",
-    phone: "+234 900 000 0000",
+    phone: "+234 707 706 9738",
     phoneNote: "WhatsApp support · Mon-Fri, 9AM-6PM WAT",
     items: [
       {

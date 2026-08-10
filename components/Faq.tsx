@@ -1,6 +1,9 @@
 import { copy } from "@/lib/copy";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
+import { siteConfig } from "@/lib/site";
+
+const faqWhatsAppUrl = `https://wa.me/${siteConfig.whatsappNumber}`;
 
 export function Faq() {
   return (
@@ -23,7 +26,9 @@ export function Faq() {
                 {copy.faq.contactLabel}
               </p>
               <a
-                href={`tel:${copy.faq.phone.replace(/[^\d+]/g, "")}`}
+                href={faqWhatsAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-2 inline-block rounded-sm text-[1.35rem] font-semibold tracking-[-0.02em] text-cta underline decoration-cta decoration-2 underline-offset-[6px] transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2"
               >
                 {copy.faq.phone}

@@ -176,6 +176,8 @@ export function NavMobileMenu() {
             <div className="mt-auto pt-10">
               <a
                 href={copy.nav.joinHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex h-12 min-h-12 w-full items-center justify-center rounded-[12px] bg-cta text-[16px] font-medium text-white transition-colors hover:bg-cta-hover active:opacity-90"
               >
                 {copy.hero.cta}

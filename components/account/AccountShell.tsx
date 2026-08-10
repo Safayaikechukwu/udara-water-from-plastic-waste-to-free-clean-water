@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { copy } from "@/lib/copy";
+import { whatsappJoinUrl } from "@/lib/site";
 
 type AccountShellProps = {
   children: React.ReactNode;
@@ -22,7 +23,10 @@ export function AccountShell({ children }: AccountShellProps) {
             >
               Back
             </Link>
-            <Button className="h-10 min-h-10 px-4 text-[14px] sm:h-11 sm:min-h-11 sm:px-5">
+            <Button
+              href={whatsappJoinUrl}
+              className="h-10 min-h-10 px-4 text-[14px] sm:h-11 sm:min-h-11 sm:px-5"
+            >
               {copy.hero.cta}
             </Button>
           </div>

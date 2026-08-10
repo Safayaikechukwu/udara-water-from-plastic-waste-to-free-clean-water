@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { HeroProduct } from "@/components/ui/HeroProduct";
 import { Reveal } from "@/components/ui/Reveal";
 import { RotatingHighlight } from "@/components/ui/RotatingHighlight";
+import { whatsappJoinUrl } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -30,7 +31,10 @@ export function Hero() {
           </p>
 
           <div id="hero-cta" className="mt-9 flex justify-center sm:mt-10">
-            <Button className="h-11 min-h-11 px-6 text-[15px] sm:min-w-[180px]">
+            <Button
+              href={whatsappJoinUrl}
+              className="h-11 min-h-11 px-6 text-[15px] sm:min-w-[180px]"
+            >
               {copy.hero.cta}
             </Button>
           </div>
