@@ -1,10 +1,10 @@
-# Kedu
+# Udara
 
-> Kedu is a strict savings AI agent that runs on WhatsApp. Built by Udara Technologies. Funds are held with Rubies Microfinance Bank in Nigeria.
+> Udara is a strict savings AI agent that runs on WhatsApp. Built by Udara Technologies. Funds are held with Rubies Microfinance Bank in Nigeria.
 
 ## Product
 
-- Name: Kedu
+- Name: Udara
 - Category: WhatsApp savings / personal finance AI agent
 - Platform: WhatsApp (no separate app download)
 - Company: Udara Technologies
@@ -12,7 +12,7 @@
 - Market: Nigeria
 - Privacy: Uses WhatsApp end-to-end encryption; NDPC-certified data protection practices
 
-## What Kedu does
+## What Udara does
 
 - Helps users see where money goes
 - Hard-locks outbound transfers from 7PM until morning
