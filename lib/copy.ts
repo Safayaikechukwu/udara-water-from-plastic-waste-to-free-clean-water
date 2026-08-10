@@ -39,7 +39,7 @@ export const copy = {
       {
         label: "Learn",
         blurb: "Short money videos on TikTok.",
-        href: "https://www.tiktok.com/@udara",
+        href: "https://www.tiktok.com/@keduhq",
         tone: "coral" as const,
         external: true,
       },
@@ -259,8 +259,9 @@ export const copy = {
     },
     social: [
       { label: "Instagram", href: "#", icon: "instagram" },
-      { label: "X", href: "#", icon: "x" },
-      { label: "LinkedIn", href: "#", icon: "linkedin" },
+      { label: "X", href: "https://x.com/useudara", icon: "x" },
+      { label: "TikTok", href: "https://www.tiktok.com/@keduhq", icon: "tiktok" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/udara-tech/", icon: "linkedin" },
       { label: "YouTube", href: "#", icon: "youtube" },
       { label: "Facebook", href: "#", icon: "facebook" },
     ],

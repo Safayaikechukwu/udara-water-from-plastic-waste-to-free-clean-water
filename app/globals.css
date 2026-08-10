@@ -208,27 +208,7 @@ html.past-hero-cta .nav-join {
   animation: subscribe-check 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
 }
 
-/* Instant Block — solid on mobile; CSS art only from md+ (text overlays left) */
-.instant-block-bg {
-  background-color: #dce6ff;
-  background-image: none;
-}
-
-@media (min-width: 768px) {
-  .instant-block-bg {
-    background-image: url("/instant-block/footer-bg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 40% 50%;
-  }
-}
-
-@media (min-width: 1536px) {
-  .instant-block-bg {
-    background-position: 200px center;
-  }
-}
-
+/* Instant Block — copy reveal */
 .instant-block__copy {
   opacity: 1;
   transform: none;

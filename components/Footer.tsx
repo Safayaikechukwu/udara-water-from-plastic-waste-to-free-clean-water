@@ -52,6 +52,12 @@ function SocialIcon({ type }: { type: string }) {
           <path d="M13.6 10.5 19.4 4h-1.6l-5 5.7L8.7 4H4.2l6.1 8.7L4.5 20h1.6l5.3-6 4.5 6H20.5l-6.9-9.5Zm-1.9 2.1-.6-.9L6.3 5.2h2.2l3.7 5.3.6.9 5.1 7.2h-2.2l-4-5.8Z" />
         </svg>
       );
+    case "tiktok":
+      return (
+        <svg viewBox="0 0 24 24" className={common} fill="currentColor" aria-hidden="true">
+          <path d="M19.6 7.4a6.3 6.3 0 0 1-3.7-1.2v7.2a5.7 5.7 0 1 1-4.9-5.6v2.5a3.2 3.2 0 1 0 2.3 3.1V2.5h2.5c.2 1.5 1.2 2.9 2.6 3.6A6.2 6.2 0 0 0 19.6 7v.4Z" />
+        </svg>
+      );
     case "linkedin":
       return (
         <svg viewBox="0 0 24 24" className={common} fill="currentColor" aria-hidden="true">
@@ -113,7 +119,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="w-full bg-[#0b0b0c] px-4 py-14 text-white sm:px-5 lg:px-6">
+    <footer className="relative z-10 isolate w-full bg-[#0b0b0c] px-4 py-14 text-white sm:px-5 lg:px-6">
       <div className="mx-auto grid w-full max-w-[1252px] gap-12 lg:grid-cols-[1fr_1.4fr_1fr]">
         <div>
           <Logo inverted />
