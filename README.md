@@ -1,8 +1,8 @@
-# Kedu
+# Udara
 
-Marketing site for **Kedu** — a WhatsApp-based strict savings agent by [Udara Technologies](https://kedu.app).
+Marketing site for **Udara** — a WhatsApp-based strict savings agent by [Udara Technologies](https://udara.app).
 
-Kedu helps people in Nigeria understand spending, hard-lock outbound transfers from 7PM until morning, and build savings discipline without installing another app.
+Udara helps people in Nigeria understand spending, hard-lock outbound transfers from 7PM until morning, and build savings discipline without installing another app.
 
 ## What’s in this repo
 
@@ -26,8 +26,8 @@ Kedu helps people in Nigeria understand spending, hard-lock outbound transfers f
 **Requirements:** Node.js 20+ and npm.
 
 ```bash
-git clone https://github.com/Safayaikechukwu/kedu.git
-cd kedu
+git clone https://github.com/Safayaikechukwu/udara.git
+cd udara
 npm install
 cp .env.example .env.local
 npm run dev
@@ -41,7 +41,7 @@ Copy `.env.example` to `.env.local` and adjust as needed:
 
 | Variable | Description |
 | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Canonical site URL (no trailing slash). Defaults to `https://kedu.app`. |
+| `NEXT_PUBLIC_SITE_URL` | Canonical site URL (no trailing slash). Defaults to `https://udara.app`. |
 
 Do not commit `.env` or `.env.local`.
 
@@ -72,8 +72,8 @@ Marketing copy lives in `lib/copy.ts`. Site metadata and canonical URL live in `
 | Path | Purpose |
 | --- | --- |
 | `/` | Marketing landing page |
-| `/account/block` | Freeze a Kedu account |
-| `/account/unblock` | Unfreeze a Kedu account |
+| `/account/block` | Freeze a Udara account |
+| `/account/unblock` | Unfreeze a Udara account |
 | `/api/subscribe` | Newsletter signup |
 
 ## License

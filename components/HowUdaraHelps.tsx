@@ -54,20 +54,20 @@ function FeatureMockup({
   return fallback;
 }
 
-export function HowKeduHelps() {
+export function HowUdaraHelps() {
   return (
-    <Section id="how-kedu-helps" aria-labelledby="helps-heading">
+    <Section id="how-udara-helps" aria-labelledby="helps-heading">
       <Reveal>
         <h2
           id="helps-heading"
           className="max-w-[720px] text-[2rem] font-bold tracking-[-0.035em] text-ink sm:text-4xl md:text-[2.75rem]"
         >
-          {copy.howKeduHelps.headline}
+          {copy.howUdaraHelps.headline}
         </h2>
       </Reveal>
 
       <div className="mt-8 grid gap-3 sm:mt-10 sm:gap-4 md:grid-cols-2">
-        {copy.howKeduHelps.cards.map((card, index) => (
+        {copy.howUdaraHelps.cards.map((card, index) => (
           <Reveal key={card.title} delay={index * 70}>
             <article className="group relative flex h-full min-h-[480px] flex-col overflow-hidden rounded-[16px] bg-[#f1f1ef] px-5 pb-0 pt-6 sm:min-h-[520px] sm:rounded-[20px] sm:px-8 sm:pt-9 lg:min-h-[580px] lg:px-9 lg:pt-10">
               <div className="min-h-[6.75rem] sm:min-h-[7.75rem]">

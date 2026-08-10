@@ -3,16 +3,16 @@
 import { useSyncExternalStore } from "react";
 import {
   FAMILY_THREAD,
-  KEDU_THREAD,
+  UDARA_THREAD,
 } from "@/components/ui/heroWhatsAppData";
 
-export type HeroPhase = "list" | "family" | "kedu";
+export type HeroPhase = "list" | "family" | "udara";
 
 export type HeroAnimState = {
   phase: HeroPhase;
   activeId: string;
   familyCount: number;
-  keduCount: number;
+  udaraCount: number;
   typing: boolean;
   done: boolean;
 };
@@ -21,28 +21,28 @@ const INITIAL: HeroAnimState = {
   phase: "list",
   activeId: "family",
   familyCount: 0,
-  keduCount: 0,
+  udaraCount: 0,
   typing: false,
   done: false,
 };
 
 const DONE: HeroAnimState = {
-  phase: "kedu",
-  activeId: "kedu",
+  phase: "udara",
+  activeId: "udara",
   familyCount: FAMILY_THREAD.length,
-  keduCount: KEDU_THREAD.length,
+  udaraCount: UDARA_THREAD.length,
   typing: false,
   done: true,
 };
 
-/** List beat — short so family/Kedu arrive while the user is looking */
+/** List beat — short so family/Udara arrive while the user is looking */
 const LIST_MS = 600;
 const FAMILY_STEP_MS = 300;
 const FAMILY_HOLD_MS = 550;
-const KEDU_USER_MS = 320;
-const KEDU_TYPE_MS = 200;
-const KEDU_REPLY_MS = 500;
-const KEDU_GAP_MS = 260;
+const UDARA_USER_MS = 320;
+const UDARA_TYPE_MS = 200;
+const UDARA_REPLY_MS = 500;
+const UDARA_GAP_MS = 260;
 
 type Keyframe = { at: number; state: HeroAnimState };
 
@@ -55,7 +55,7 @@ function buildKeyframes(): Keyframe[] {
         phase: "family",
         activeId: "family",
         familyCount: 1,
-        keduCount: 0,
+        udaraCount: 0,
         typing: false,
         done: false,
       },
@@ -71,7 +71,7 @@ function buildKeyframes(): Keyframe[] {
         phase: "family",
         activeId: "family",
         familyCount: i,
-        keduCount: 0,
+        udaraCount: 0,
         typing: false,
         done: false,
       },
@@ -82,53 +82,53 @@ function buildKeyframes(): Keyframe[] {
   frames.push({
     at: t,
     state: {
-      phase: "kedu",
-      activeId: "kedu",
+      phase: "udara",
+      activeId: "udara",
       familyCount: FAMILY_THREAD.length,
-      keduCount: 0,
+      udaraCount: 0,
       typing: false,
       done: false,
     },
   });
 
-  for (let i = 0; i < KEDU_THREAD.length; i += 1) {
-    const msg = KEDU_THREAD[i];
+  for (let i = 0; i < UDARA_THREAD.length; i += 1) {
+    const msg = UDARA_THREAD[i];
     const n = i + 1;
-    if (msg.from === "kedu") {
-      t += KEDU_TYPE_MS;
+    if (msg.from === "udara") {
+      t += UDARA_TYPE_MS;
       frames.push({
         at: t,
         state: {
-          phase: "kedu",
-          activeId: "kedu",
+          phase: "udara",
+          activeId: "udara",
           familyCount: FAMILY_THREAD.length,
-          keduCount: n - 1,
+          udaraCount: n - 1,
           typing: true,
           done: false,
         },
       });
-      t += KEDU_REPLY_MS;
+      t += UDARA_REPLY_MS;
       frames.push({
         at: t,
         state: {
-          phase: "kedu",
-          activeId: "kedu",
+          phase: "udara",
+          activeId: "udara",
           familyCount: FAMILY_THREAD.length,
-          keduCount: n,
+          udaraCount: n,
           typing: false,
           done: false,
         },
       });
-      t += KEDU_GAP_MS;
+      t += UDARA_GAP_MS;
     } else {
-      t += KEDU_USER_MS;
+      t += UDARA_USER_MS;
       frames.push({
         at: t,
         state: {
-          phase: "kedu",
-          activeId: "kedu",
+          phase: "udara",
+          activeId: "udara",
           familyCount: FAMILY_THREAD.length,
-          keduCount: n,
+          udaraCount: n,
           typing: false,
           done: false,
         },
@@ -172,7 +172,7 @@ function setState(next: HeroAnimState) {
     prev.phase === next.phase &&
     prev.activeId === next.activeId &&
     prev.familyCount === next.familyCount &&
-    prev.keduCount === next.keduCount &&
+    prev.udaraCount === next.udaraCount &&
     prev.typing === next.typing &&
     prev.done === next.done
   ) {
@@ -243,7 +243,7 @@ export function startHeroAnim() {
   startLoop();
 }
 
-/** Force finished Kedu (visibility failsafe). */
+/** Force finished Udara (visibility failsafe). */
 export function forceHeroAnimDone() {
   stopLoop();
   startTs = typeof performance !== "undefined" ? performance.now() - TOTAL_MS : 0;

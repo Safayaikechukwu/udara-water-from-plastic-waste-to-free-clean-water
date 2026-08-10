@@ -91,7 +91,7 @@ export function TrustBar() {
 
   return (
     <section
-      aria-label="Why people trust Kedu"
+      aria-label="Why people trust Udara"
       className="w-full border-y border-black/[0.06] bg-bg py-4"
     >
       <div className="trust-marquee relative overflow-hidden">

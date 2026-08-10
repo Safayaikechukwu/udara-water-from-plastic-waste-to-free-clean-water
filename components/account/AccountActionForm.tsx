@@ -24,7 +24,7 @@ const copyByMode: Record<
     success: "Your account freeze request was received. We'll confirm shortly.",
     confirmTitle: "Are you sure?",
     confirmBody:
-      "This will freeze your Kedu account and pause payment activity until you unblock it. Only continue if you mean to lock the account now.",
+      "This will freeze your Udara account and pause payment activity until you unblock it. Only continue if you mean to lock the account now.",
     confirmCta: "Yes, block account",
   },
   unblock: {
@@ -34,7 +34,7 @@ const copyByMode: Record<
     success: "Your unblock request was received. We'll confirm shortly.",
     confirmTitle: "Are you sure?",
     confirmBody:
-      "This will restore access to your Kedu account. Only continue if you recognize this request.",
+      "This will restore access to your Udara account. Only continue if you recognize this request.",
     confirmCta: "Yes, unblock account",
   },
 };
@@ -87,7 +87,7 @@ export function AccountActionForm({ mode }: AccountActionFormProps) {
     <div>
       <p className="text-[13px] font-medium text-muted">
         <Link href="/" className="hover:text-ink">
-          Kedu
+          Udara
         </Link>
         <span className="mx-1.5 text-black/25">/</span>
         <span className="text-ink">Account</span>

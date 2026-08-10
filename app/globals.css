@@ -114,7 +114,7 @@ body {
 }
 
 /*
- * Nav Join Kedu — mobile AND desktop.
+ * Nav Join Udara — mobile AND desktop.
  * Hidden while #hero-cta is on screen; appears after you scroll past it.
  * Class `past-hero-cta` is toggled on <html> by the boot script.
  */
@@ -260,7 +260,7 @@ html.past-hero-cta .nav-join {
   }
 }
 
-/* Book-marker highlight - Kedu CTA oxblood */
+/* Book-marker highlight - Udara CTA oxblood */
 .marker-highlight {
   background-image: linear-gradient(
     104deg,
@@ -278,7 +278,7 @@ html.past-hero-cta .nav-join {
 /* Hero dynamic words - CSS-only so mobile doesn't depend on JS timers */
 .rotating-highlight__word {
   opacity: 0;
-  animation-name: kedu-rotating-word;
+  animation-name: udara-rotating-word;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
@@ -286,7 +286,7 @@ html.past-hero-cta .nav-join {
 }
 
 /* One slot = 20% of the cycle (tuned for 5 words). Delay offsets each word. */
-@keyframes kedu-rotating-word {
+@keyframes udara-rotating-word {
   0% {
     opacity: 0;
   }

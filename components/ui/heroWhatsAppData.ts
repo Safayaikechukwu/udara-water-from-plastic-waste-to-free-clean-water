@@ -14,7 +14,7 @@ export type ChatRow = {
 
 export type Bubble = {
   id: string;
-  from: "user" | "kedu" | "other";
+  from: "user" | "udara" | "other";
   name?: string;
   text: string;
   time: string;
@@ -30,11 +30,11 @@ export const FAMILY_COLLAGE = [
 
 export const CHATS: ChatRow[] = [
   {
-    id: "kedu",
-    name: "Kedu",
+    id: "udara",
+    name: "Udara",
     preview: "It's 7:42PM. Transfers reopen at 6AM.",
     time: "7:42 PM",
-    avatar: "/kedu-mark.png",
+    avatar: "/udara-mark.png",
     brand: true,
     pinned: true,
     unread: 2,
@@ -176,7 +176,7 @@ export const FAMILY_THREAD: Bubble[] = [
   },
 ];
 
-export const KEDU_THREAD: Bubble[] = [
+export const UDARA_THREAD: Bubble[] = [
   {
     id: "k1",
     from: "user",
@@ -191,7 +191,7 @@ export const KEDU_THREAD: Bubble[] = [
   },
   {
     id: "k3",
-    from: "kedu",
+    from: "udara",
     text: "It's 7:42PM. Transfers reopen at 6AM.",
     bold: "Transfer blocked.",
     time: "7:42 PM",
@@ -204,7 +204,7 @@ export const KEDU_THREAD: Bubble[] = [
   },
   {
     id: "k5",
-    from: "kedu",
+    from: "udara",
     text: "No. Land fund stays locked till morning.\nNo override.",
     time: "7:42 PM",
   },
@@ -216,7 +216,7 @@ export const KEDU_THREAD: Bubble[] = [
   },
   {
     id: "k7",
-    from: "kedu",
+    from: "udara",
     text: "Food ₦18.4k · Transfers ₦6.2k · Noise ₦4.1k",
     time: "7:43 PM",
   },
@@ -228,11 +228,11 @@ export const KEDU_THREAD: Bubble[] = [
   },
   {
     id: "k9",
-    from: "kedu",
+    from: "udara",
     text: "Done. Strict mode is on. Sleep — the money will still be there.",
     time: "7:44 PM",
   },
 ];
 
 export const familyChat = CHATS.find((c) => c.id === "family")!;
-export const keduChat = CHATS.find((c) => c.id === "kedu")!;
+export const udaraChat = CHATS.find((c) => c.id === "udara")!;

@@ -9,7 +9,7 @@ const cards = [
     tagBg: "#fdecec",
     tagDot: "#e03e3e",
     quote:
-      "As somebody with ADHD and dyslexia, Kedu helps because I never remember to actually go into a savings app to lock funds or ever use a budgeting app. Kedu is the real deal.",
+      "As somebody with ADHD and dyslexia, Udara helps because I never remember to actually go into a savings app to lock funds or ever use a budgeting app. Udara is the real deal.",
     name: "Safaya Ikechukwu",
     role: "21 · Product manager, Lagos",
     overlay: "bg-[#c23b3b]/75",
@@ -20,7 +20,7 @@ const cards = [
     tagBg: "#fbf3db",
     tagDot: "#cb912f",
     quote:
-      "I was eating my feelings away and gained 30 kg because of how depressed I was. Kedu helped me not only lose weight but also save the money I've been spending on food.",
+      "I was eating my feelings away and gained 30 kg because of how depressed I was. Udara helped me not only lose weight but also save the money I've been spending on food.",
     name: "Chioma Eze",
     role: "Founder, Port Harcourt",
     overlay: "bg-[#c46a1b]/75",
@@ -32,7 +32,7 @@ const cards = [
     tagBg: "#f6eaea",
     tagDot: "#4a0508",
     quote:
-      "I'm 34, and I could not believe it when I went through my transaction history and saw that I've spent millions of naira but could not even account for shishi. Now Kedu helps me with stuff like that, and I was able to get my first property this year.",
+      "I'm 34, and I could not believe it when I went through my transaction history and saw that I've spent millions of naira but could not even account for shishi. Now Udara helps me with stuff like that, and I was able to get my first property this year.",
     name: "Tunde Balogun",
     role: "Engineer, Abuja",
     overlay: "bg-[#4a0508]/75",

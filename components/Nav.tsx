@@ -3,7 +3,7 @@ import { Logo } from "@/components/ui/Logo";
 
 /**
  * Header bar only. Mobile menu lives in NavMobileMenu.
- * Join Kedu in the nav is hidden until you scroll past #hero-cta
+ * Join Udara in the nav is hidden until you scroll past #hero-cta
  * (same rule on mobile and desktop — see .nav-join / .past-hero-cta).
  */
 export function Nav() {

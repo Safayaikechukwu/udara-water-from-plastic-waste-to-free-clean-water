@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   creator: siteConfig.legalName,
   publisher: siteConfig.legalName,
   keywords: [
-    "Kedu",
+    "Udara",
     "WhatsApp savings",
     "strict savings",
     "AI savings agent",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Kedu — Strict savings on WhatsApp",
+        alt: "Udara — Strict savings on WhatsApp",
       },
     ],
   },
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/kedu-mark.png", type: "image/png" }],
+    icon: [{ url: "/udara-mark.png", type: "image/png" }],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   category: "finance",
@@ -181,10 +181,10 @@ const bootScript = `
   // Never set data-* on React-managed nodes before hydration — that
   // causes attribute mismatches. Track binding on window instead.
   function bindMenu() {
-    if (window.__keduMenuBound) return;
+    if (window.__udaraMenuBound) return;
     var details = document.querySelector("details.nav-mobile-menu");
     if (!details) return;
-    window.__keduMenuBound = true;
+    window.__udaraMenuBound = true;
 
     details.addEventListener("toggle", function () {
       if (details.open) {
@@ -225,10 +225,10 @@ const bootScript = `
   }
 
   function bindDesktopNav() {
-    if (window.__keduHeaderBound) return;
+    if (window.__udaraHeaderBound) return;
     var header = document.querySelector("header");
     if (!header) return;
-    window.__keduHeaderBound = true;
+    window.__udaraHeaderBound = true;
 
     header.addEventListener("click", function (event) {
       var link =
@@ -277,7 +277,7 @@ export default function RootLayout({
       className={`${inter.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-bg font-sans text-ink">
-        <Script id="kedu-boot" strategy="beforeInteractive">
+        <Script id="udara-boot" strategy="beforeInteractive">
           {bootScript}
         </Script>
         <JsonLd />

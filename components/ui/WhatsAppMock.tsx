@@ -20,7 +20,7 @@ function PhoneFrame({
             K
           </div>
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold leading-tight">Kedu</p>
+            <p className="truncate text-sm font-semibold leading-tight">Udara</p>
             <p className="text-[10px] text-white/80">online</p>
           </div>
         </div>

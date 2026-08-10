@@ -8,7 +8,7 @@ export function JsonLd() {
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/kedu-mark.png`,
+    logo: `${siteConfig.url}/udara-mark.png`,
     description: siteConfig.description,
     areaServed: {
       "@type": "Country",
@@ -33,7 +33,7 @@ export function JsonLd() {
       "@type": "Offer",
       price: "0",
       priceCurrency: "NGN",
-      description: "Join Kedu on WhatsApp",
+      description: "Join Udara on WhatsApp",
     },
     provider: {
       "@type": "Organization",

@@ -54,7 +54,7 @@ export function HeroProduct() {
   const startedRef = useRef(false);
   const seqRef = useRef<string[]>([]);
 
-  const viewPhase = anim.done || anim.phase === "kedu" ? "kedu" : anim.phase;
+  const viewPhase = anim.done || anim.phase === "udara" ? "udara" : anim.phase;
 
   // Compact transition log for cold-load QA (data-hero-seq)
   const seqKey = anim.done
@@ -63,7 +63,7 @@ export function HeroProduct() {
       ? "list"
       : anim.phase === "family"
         ? `family${anim.familyCount}`
-        : `kedu${anim.keduCount}${anim.typing ? "t" : ""}`;
+        : `udara${anim.udaraCount}${anim.typing ? "t" : ""}`;
   if (seqRef.current[seqRef.current.length - 1] !== seqKey) {
     seqRef.current = [...seqRef.current, seqKey];
   }
@@ -123,7 +123,7 @@ export function HeroProduct() {
     };
   }, []);
 
-  // Visible but truly frozen on empty list → finished Kedu (never empty/black)
+  // Visible but truly frozen on empty list → finished Udara (never empty/black)
   useEffect(() => {
     if (!startedRef.current) return;
     if (anim.done) return;
@@ -140,7 +140,7 @@ export function HeroProduct() {
     <div
       ref={rootRef}
       data-hero-phase={viewPhase}
-      data-hero-kedu={anim.keduCount}
+      data-hero-udara={anim.udaraCount}
       data-hero-fam={anim.familyCount}
       {...(process.env.NODE_ENV === "development"
         ? { "data-hero-seq": seqRef.current.join(">") }

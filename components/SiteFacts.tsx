@@ -4,15 +4,15 @@ import { siteConfig } from "@/lib/site";
 export function SiteFacts() {
   return (
     <aside
-      id="about-kedu"
+      id="about-udara"
       className="w-full border-t border-white/10 pt-8"
-      aria-label="About Kedu"
+      aria-label="About Udara"
     >
       <h2 className="text-[12px] font-semibold tracking-[-0.01em] text-white/80">
         About {siteConfig.name}
       </h2>
       <p className="mt-2 max-w-[70ch] text-[11px] leading-relaxed text-white/45">
-        {siteConfig.description} Kedu is built for people who need systems, not
+        {siteConfig.description} Udara is built for people who need systems, not
         more willpower: hard locks, WhatsApp-native habits, and banking-grade
         security.
       </p>

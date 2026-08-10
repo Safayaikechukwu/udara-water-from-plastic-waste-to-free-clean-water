@@ -401,7 +401,7 @@ export function WaHeader({ subtitle = "online" }: { subtitle?: string }) {
 
       <div className="relative mr-[10px] h-[36px] w-[36px] shrink-0 overflow-hidden rounded-full bg-[#4a0508]">
         <Image
-          src="/kedu-mark.png"
+          src="/udara-mark.png"
           alt=""
           width={36}
           height={36}
@@ -411,7 +411,7 @@ export function WaHeader({ subtitle = "online" }: { subtitle?: string }) {
 
       <div className="min-w-0 flex-1 pr-2">
         <p className="truncate text-[17px] font-semibold leading-[20px] tracking-[-0.2px] text-[#e9edef]">
-          Kedu
+          Udara
         </p>
         <p className="truncate text-[13px] leading-[16px] text-[#8696a0]">
           {subtitle}
@@ -457,24 +457,24 @@ export function Bubble({
   time,
   children,
 }: {
-  from: "kedu" | "user";
+  from: "udara" | "user";
   time: string;
   children: React.ReactNode;
 }) {
-  const isKedu = from === "kedu";
+  const isUdara = from === "udara";
 
   return (
     <div
-      className={`relative flex px-[6px] ${isKedu ? "justify-start" : "justify-end"}`}
+      className={`relative flex px-[6px] ${isUdara ? "justify-start" : "justify-end"}`}
     >
       <svg
         className={`absolute bottom-0 h-[12px] w-[11px] ${
-          isKedu ? "left-[1px] text-[#202c33]" : "right-[1px] text-[#005c4b]"
+          isUdara ? "left-[1px] text-[#202c33]" : "right-[1px] text-[#005c4b]"
         }`}
         viewBox="0 0 10 11"
         aria-hidden
       >
-        {isKedu ? (
+        {isUdara ? (
           <path d="M10 0C6 3 2.5 6.5 0 11L10 8V0Z" fill="currentColor" />
         ) : (
           <path d="M0 0C4 3 7.5 6.5 10 11L0 8V0Z" fill="currentColor" />
@@ -484,7 +484,7 @@ export function Bubble({
       <div
         className={[
           "relative max-w-[82%] px-[10px] pb-[6px] pt-[6px] text-[16px] leading-[21px] tracking-[-0.2px] text-[#e9edef] shadow-[0_1px_0.5px_rgba(0,0,0,0.15)]",
-          isKedu
+          isUdara
             ? "rounded-[7.5px] rounded-bl-[0] bg-[#202c33]"
             : "rounded-[7.5px] rounded-br-[0] bg-[#005c4b]",
         ].join(" ")}
@@ -492,7 +492,7 @@ export function Bubble({
         <div className="whitespace-pre-wrap">{children}</div>
         <div className="-mb-px mt-[2px] flex items-center justify-end gap-[3px]">
           <span className="text-[11px] leading-none text-[#8696a0]">{time}</span>
-          {!isKedu ? <DoubleTick read /> : null}
+          {!isUdara ? <DoubleTick read /> : null}
         </div>
       </div>
     </div>
@@ -517,7 +517,7 @@ export function TruthScene() {
         <Bubble from="user" time="9:38 PM">
           Where did my money go this week?
         </Bubble>
-        <Bubble from="kedu" time="9:38 PM">
+        <Bubble from="udara" time="9:38 PM">
           <span className="font-semibold">This week&apos;s truth</span>
           {"\n\n"}
           Food — ₦48,200 (52%)
@@ -531,13 +531,13 @@ export function TruthScene() {
         <Bubble from="user" time="9:39 PM">
           That food number is crazy
         </Bubble>
-        <Bubble from="kedu" time="9:39 PM">
+        <Bubble from="udara" time="9:39 PM">
           Most of it hit after 7PM. Want me to lock snacks with the night rule?
         </Bubble>
         <Bubble from="user" time="9:40 PM">
           Yes. Do it.
         </Bubble>
-        <Bubble from="kedu" time="9:40 PM">
+        <Bubble from="udara" time="9:40 PM">
           Done. I&apos;ll send tomorrow&apos;s breakdown at 9AM.
         </Bubble>
       </ChatBody>
@@ -556,7 +556,7 @@ export function LockScene() {
         <Bubble from="user" time="7:42 PM">
           Transfer ₦15,000 to FoodPlace?
         </Bubble>
-        <Bubble from="kedu" time="7:42 PM">
+        <Bubble from="udara" time="7:42 PM">
           It&apos;s 7:42PM.
           {"\n\n"}
           Transfers reopen at 6AM.
@@ -568,7 +568,7 @@ export function LockScene() {
         <Bubble from="user" time="7:43 PM">
           Please, just this once?
         </Bubble>
-        <Bubble from="kedu" time="7:43 PM">
+        <Bubble from="udara" time="7:43 PM">
           Still no.
           {"\n"}
           Your land fund stays locked until morning.
@@ -576,7 +576,7 @@ export function LockScene() {
         <Bubble from="user" time="7:44 PM">
           Fine. Show me what I have left for food tomorrow.
         </Bubble>
-        <Bubble from="kedu" time="7:44 PM">
+        <Bubble from="udara" time="7:44 PM">
           ₦6,200 left in today&apos;s food budget.
           {"\n"}
           Resets at 6AM with the lock.
@@ -584,7 +584,7 @@ export function LockScene() {
         <Bubble from="user" time="7:45 PM">
           Okay. Goodnight then.
         </Bubble>
-        <Bubble from="kedu" time="7:45 PM">
+        <Bubble from="udara" time="7:45 PM">
           Sleep. The money will still be there.
         </Bubble>
       </ChatBody>
@@ -600,7 +600,7 @@ export function TrackScene() {
       <WaHeader subtitle="online" />
       <ChatBody>
         <DatePill>Today</DatePill>
-        <Bubble from="kedu" time="4:12 PM">
+        <Bubble from="udara" time="4:12 PM">
           <span className="font-semibold">Live spend update</span>
           {"\n"}
           <span className="text-[#8696a0]">Today so far</span>
@@ -622,13 +622,13 @@ export function TrackScene() {
         <Bubble from="user" time="4:13 PM">
           Keep watching it.
         </Bubble>
-        <Bubble from="kedu" time="4:13 PM">
+        <Bubble from="udara" time="4:13 PM">
           Already am. I&apos;ll ping you before 7PM if food climbs again.
         </Bubble>
         <Bubble from="user" time="5:02 PM">
           Just took another Bolt
         </Bubble>
-        <Bubble from="kedu" time="5:02 PM">
+        <Bubble from="udara" time="5:02 PM">
           Logged. Transit is ₦4,800 today.
           {"\n"}
           Still within range.
@@ -636,7 +636,7 @@ export function TrackScene() {
         <Bubble from="user" time="5:03 PM">
           Cool. Tell me if I get close.
         </Bubble>
-        <Bubble from="kedu" time="5:03 PM">
+        <Bubble from="udara" time="5:03 PM">
           I will. That&apos;s the job.
         </Bubble>
       </ChatBody>
@@ -655,7 +655,7 @@ export function SaveScene() {
         <Bubble from="user" time="2:08 PM">
           Just paid Bolt ₦2,400
         </Bubble>
-        <Bubble from="kedu" time="2:08 PM">
+        <Bubble from="udara" time="2:08 PM">
           <span className="font-semibold">Saved ₦200 for you.</span>
           {"\n\n"}
           Tucked into Land Fund while you spent.
@@ -667,13 +667,13 @@ export function SaveScene() {
         <Bubble from="user" time="2:09 PM">
           Keep doing that.
         </Bubble>
-        <Bubble from="kedu" time="2:09 PM">
+        <Bubble from="udara" time="2:09 PM">
           Every spend can grow the goal. That&apos;s the point.
         </Bubble>
         <Bubble from="user" time="3:41 PM">
           Paid Shoprite ₦12,000
         </Bubble>
-        <Bubble from="kedu" time="3:41 PM">
+        <Bubble from="udara" time="3:41 PM">
           Saved another ₦600.
           {"\n"}
           Land Fund — ₦187,000
@@ -681,7 +681,7 @@ export function SaveScene() {
         <Bubble from="user" time="3:42 PM">
           We&apos;re actually moving
         </Bubble>
-        <Bubble from="kedu" time="3:42 PM">
+        <Bubble from="udara" time="3:42 PM">
           Quietly. That&apos;s how it sticks.
         </Bubble>
       </ChatBody>
@@ -742,7 +742,7 @@ export function ChatsListScene({ scale = 0.78 }: { scale?: number }) {
   const rows = CHATS.filter((c) => c.id !== "tunde" && c.id !== "funke").map(
     (chat) => ({
       ...chat,
-      active: chat.id === "kedu",
+      active: chat.id === "udara",
     }),
   );
 
@@ -915,7 +915,7 @@ export function HeroScene({ scale = 0.88 }: { scale?: number }) {
         <Bubble from="user" time="7:41 PM">
           transfer 15k?
         </Bubble>
-        <Bubble from="kedu" time="7:42 PM">
+        <Bubble from="udara" time="7:42 PM">
           It&apos;s 7:42PM. Transfers reopen at 6AM.
           {"\n\n"}
           <span className="font-semibold">Transfer blocked.</span>
@@ -923,7 +923,7 @@ export function HeroScene({ scale = 0.88 }: { scale?: number }) {
         <Bubble from="user" time="7:42 PM">
           ah come on. please
         </Bubble>
-        <Bubble from="kedu" time="7:42 PM">
+        <Bubble from="udara" time="7:42 PM">
           No. Land fund stays locked till morning.
           {"\n"}
           No override.
@@ -931,13 +931,13 @@ export function HeroScene({ scale = 0.88 }: { scale?: number }) {
         <Bubble from="user" time="7:43 PM">
           fine. what did I even spend this week
         </Bubble>
-        <Bubble from="kedu" time="7:43 PM">
+        <Bubble from="udara" time="7:43 PM">
           Food ₦18.4k · Transfers ₦6.2k · Noise ₦4.1k
         </Bubble>
         <Bubble from="user" time="7:43 PM">
           lock snacks after 7 too
         </Bubble>
-        <Bubble from="kedu" time="7:44 PM">
+        <Bubble from="udara" time="7:44 PM">
           Done. Strict mode is on. Sleep — the money will still be there.
         </Bubble>
       </ChatBody>

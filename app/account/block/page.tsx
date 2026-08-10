@@ -3,8 +3,8 @@ import { AccountActionForm } from "@/components/account/AccountActionForm";
 import { AccountShell } from "@/components/account/AccountShell";
 
 export const metadata: Metadata = {
-  title: "Block Account | Kedu",
-  description: "Freeze your Kedu account instantly if your phone is lost or stolen.",
+  title: "Block Account | Udara",
+  description: "Freeze your Udara account instantly if your phone is lost or stolen.",
 };
 
 export default function BlockAccountPage() {
