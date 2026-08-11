@@ -66,7 +66,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Udara — Strict savings on WhatsApp",
+        alt: "Udara | Strict savings on WhatsApp",
       },
     ],
   },
@@ -144,7 +144,13 @@ const bootScript = `
 
   function updateCta() {
     var hero = document.getElementById("hero-cta");
-    if (!hero) return;
+    if (!hero) {
+      // Subpages (privacy, etc.): no hero gate — keep Join visible like Notion mobile.
+      if (location.pathname !== "/") {
+        document.documentElement.classList.add("past-hero-cta");
+      }
+      return;
+    }
     document.documentElement.classList.toggle(
       "past-hero-cta",
       hero.getBoundingClientRect().bottom < 80
@@ -181,10 +187,16 @@ const bootScript = `
     if (/^https?:\\/\\//i.test(href) && href.indexOf(location.origin) !== 0) {
       return false;
     }
-    return scrollToId(id);
+    if (scrollToId(id)) return true;
+    // Subpages (e.g. /privacy): section lives on home — navigate there.
+    if (location.pathname !== "/") {
+      window.location.assign("/#" + id);
+      return true;
+    }
+    return false;
   }
 
-  // Never set data-* on React-managed nodes before hydration — that
+  // Never set data-* on React-managed nodes before hydration: that
   // causes attribute mismatches. Track binding on window instead.
   function bindMenu() {
     if (window.__udaraMenuBound) return;

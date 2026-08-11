@@ -247,7 +247,7 @@ export const copy = {
     ],
     legal: [
       { label: "Terms", href: "#" },
-      { label: "Privacy", href: "#" },
+      { label: "Privacy", href: "/privacy" },
     ],
     newsletter: {
       title: "Get early access updates",

@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Udara — Strict savings on WhatsApp",
+    name: "Udara | Strict savings on WhatsApp",
     short_name: "Udara",
     description: siteConfig.description,
     start_url: "/",
