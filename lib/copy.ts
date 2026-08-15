@@ -9,7 +9,6 @@ export const copy = {
     line2: "with a strict partner.",
     rotatingWords: [
       { text: "overspending", bg: "#fdecec", dot: "#e03e3e" },
-      { text: "SAPA", bg: "#e8f8f0", dot: "#0f7b6c" },
       { text: "overeating", bg: "#fbf3db", dot: "#cb912f" },
       { text: "money leaks", bg: "#eadffb", dot: "#6940a5" },
       { text: "cravings", bg: "#f6eaea", dot: "#4a0508" },
