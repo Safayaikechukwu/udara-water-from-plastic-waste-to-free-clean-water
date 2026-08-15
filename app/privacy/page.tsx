@@ -1,4 +1,9 @@
 import type { Metadata } from "next";
+import {
+  FeatureSection,
+  MidStage,
+  PolicyCard,
+} from "@/components/legal/LegalBlocks";
 import { LegalShell } from "@/components/legal/LegalShell";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/lib/site";
@@ -14,68 +19,6 @@ export const metadata: Metadata = {
   },
 };
 
-function MidStage({
-  tone = "warm",
-  children,
-}: {
-  tone?: "warm" | "soft" | "oxblood";
-  children: React.ReactNode;
-}) {
-  const tones = {
-    warm: "bg-[#f1ebe3]",
-    soft: "bg-[#f0efec]",
-    oxblood: "bg-[#4a0508] text-white",
-  } as const;
-
-  return (
-    <div className="mx-auto w-full max-w-[1000px] px-4 sm:px-6">
-      <div
-        className={`overflow-hidden rounded-[14px] sm:rounded-[20px] ${tones[tone]}`}
-      >
-        {children}
-      </div>
-    </div>
-  );
-}
-
-function FeatureSection({
-  id,
-  title,
-  subtitle,
-  children,
-}: {
-  id: string;
-  title: string;
-  subtitle: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section id={id} className="scroll-mt-24 py-12 sm:py-20 lg:py-24">
-      <div className="mx-auto w-full max-w-[1000px] px-4 sm:px-6">
-        <div className="max-w-[640px]">
-          <h2 className="text-[clamp(1.75rem,6vw,3.375rem)] font-bold leading-[1.1] tracking-[-0.035em] text-[#37352f] text-balance">
-            {title}
-          </h2>
-          <p className="mt-3 max-w-[520px] text-[16px] leading-[1.5] text-[#6b6b66] sm:mt-4 sm:text-[18px]">
-            {subtitle}
-          </p>
-        </div>
-      </div>
-      <div className="mt-6 sm:mt-10">{children}</div>
-    </section>
-  );
-}
-
-function PolicyCard({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="mx-3 rounded-[12px] border border-black/[0.06] bg-white p-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)] sm:mx-6 sm:rounded-[16px] sm:p-8">
-      <div className="space-y-4 text-[15px] leading-[1.7] text-[#3f3f3c] sm:text-[16px]">
-        {children}
-      </div>
-    </div>
-  );
-}
-
 export default function PrivacyPage() {
   const host = siteConfig.url.replace(/^https?:\/\//, "");
 
@@ -84,10 +27,10 @@ export default function PrivacyPage() {
       {/* Hero: Notion mobile = centered type + full-width primary CTA */}
       <section className="px-4 pb-8 pt-10 text-center sm:px-6 sm:pb-14 sm:pt-20">
         <div className="mx-auto w-full max-w-[1252px]">
-          <h1 className="mx-auto max-w-[20ch] text-balance text-[clamp(2.15rem,8.5vw,5.5rem)] font-semibold leading-[1.08] tracking-[-0.045em] text-[#37352f] sm:max-w-[900px]">
+          <h1 className="mx-auto max-w-[20ch] text-balance text-[clamp(2.15rem,8.5vw,5.5rem)] font-semibold leading-[1.08] tracking-[-0.045em] text-ink sm:max-w-[900px]">
             So, how do we handle your data?
           </h1>
-          <p className="mx-auto mt-4 max-w-[34rem] text-pretty text-[16px] leading-[1.5] text-[#6b6b66] sm:mt-6 sm:text-[20px]">
+          <p className="mx-auto mt-4 max-w-[34rem] text-pretty text-[16px] leading-[1.5] text-muted sm:mt-6 sm:text-[20px]">
             Clear roles, clear bases for processing, and rights you can exercise
             anytime.
           </p>
@@ -99,7 +42,7 @@ export default function PrivacyPage() {
               Contact support
             </Button>
           </div>
-          <p className="mt-4 text-[13px] text-[#9b9a97] sm:mt-5">
+          <p className="mt-4 text-[13px] text-muted sm:mt-5">
             Last updated: August 11, 2026
           </p>
         </div>
@@ -177,7 +120,7 @@ export default function PrivacyPage() {
           <div className="py-6 sm:py-8">
             <PolicyCard>
               <p>
-                <strong className="font-semibold text-[#37352f]">
+                <strong className="font-semibold text-ink">
                   As a data controller:
                 </strong>{" "}
                 Udara is the controller for personal data we collect to operate
@@ -185,7 +128,7 @@ export default function PrivacyPage() {
                 waitlist emails, support messages, and website analytics.
               </p>
               <p>
-                <strong className="font-semibold text-[#37352f]">
+                <strong className="font-semibold text-ink">
                   Banking partner:
                 </strong>{" "}
                 Customer funds related to Udara savings are held with Rubies
@@ -195,7 +138,7 @@ export default function PrivacyPage() {
                 and meet legal obligations.
               </p>
               <p>
-                <strong className="font-semibold text-[#37352f]">
+                <strong className="font-semibold text-ink">
                   As a data processor:
                 </strong>{" "}
                 In limited cases where we process personal data solely on
@@ -215,32 +158,32 @@ export default function PrivacyPage() {
         <MidStage tone="soft">
           <div className="space-y-4 py-6 sm:space-y-5 sm:py-8">
             <PolicyCard>
-              <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-[#9b9a97]">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-muted">
                 3.1 Data you provide
               </p>
               <p>
-                <strong className="font-semibold text-[#37352f]">
+                <strong className="font-semibold text-ink">
                   Identity data:
                 </strong>{" "}
                 full name and, where required for KYC or account recovery,
                 government-issued ID details.
               </p>
               <p>
-                <strong className="font-semibold text-[#37352f]">
+                <strong className="font-semibold text-ink">
                   Contact data:
                 </strong>{" "}
                 email address, WhatsApp-linked phone numbers, and other contact
                 details you share.
               </p>
               <p>
-                <strong className="font-semibold text-[#37352f]">
+                <strong className="font-semibold text-ink">
                   Savings preferences:
                 </strong>{" "}
                 goals, lock windows (for example the 7PM transfer lock), and
                 instructions you send on WhatsApp.
               </p>
               <p>
-                <strong className="font-semibold text-[#37352f]">
+                <strong className="font-semibold text-ink">
                   Financial data:
                 </strong>{" "}
                 where needed to open or operate a savings relationship,
@@ -249,18 +192,18 @@ export default function PrivacyPage() {
               </p>
             </PolicyCard>
             <PolicyCard>
-              <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-[#9b9a97]">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-muted">
                 3.2 Meta / WhatsApp
               </p>
               <p>
-                <strong className="font-semibold text-[#37352f]">
+                <strong className="font-semibold text-ink">
                   Message metadata:
                 </strong>{" "}
                 timestamps, delivery/read status, and sender/receiver
                 identifiers.
               </p>
               <p>
-                <strong className="font-semibold text-[#37352f]">
+                <strong className="font-semibold text-ink">
                   Conversation content:
                 </strong>{" "}
                 temporary processing of text so Udara can understand intent,
@@ -269,7 +212,7 @@ export default function PrivacyPage() {
               </p>
             </PolicyCard>
             <PolicyCard>
-              <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-[#9b9a97]">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-muted">
                 3.3 Technical data
               </p>
               <p>
@@ -292,27 +235,27 @@ export default function PrivacyPage() {
             <PolicyCard>
               <ul className="list-disc space-y-3 pl-5">
                 <li>
-                  <strong className="font-semibold text-[#37352f]">
+                  <strong className="font-semibold text-ink">
                     Contractual necessity:
                   </strong>{" "}
                   to provide Udara savings and WhatsApp agent services.
                 </li>
                 <li>
-                  <strong className="font-semibold text-[#37352f]">
+                  <strong className="font-semibold text-ink">
                     Legal obligation:
                   </strong>{" "}
                   AML/CFT, NDPA, and obligations tied to regulated banking
                   partners.
                 </li>
                 <li>
-                  <strong className="font-semibold text-[#37352f]">
+                  <strong className="font-semibold text-ink">
                     Legitimate interests:
                   </strong>{" "}
                   fraud detection, platform security, and privacy-preserving
                   product improvement.
                 </li>
                 <li>
-                  <strong className="font-semibold text-[#37352f]">Consent:</strong>{" "}
+                  <strong className="font-semibold text-ink">Consent:</strong>{" "}
                   where required (for example certain marketing). You may
                   withdraw anytime.
                 </li>
@@ -337,14 +280,14 @@ export default function PrivacyPage() {
               </p>
               <ul className="list-disc space-y-3 pl-5">
                 <li>
-                  <strong className="font-semibold text-[#37352f]">
+                  <strong className="font-semibold text-ink">
                     No data sale:
                   </strong>{" "}
                   we do not sell personal data or message content to third-party
                   AI labs.
                 </li>
                 <li>
-                  <strong className="font-semibold text-[#37352f]">
+                  <strong className="font-semibold text-ink">
                     Privacy-first AI:
                   </strong>{" "}
                   systems are configured to identify and redact sensitive
@@ -367,27 +310,27 @@ export default function PrivacyPage() {
             <PolicyCard>
               <ul className="list-disc space-y-3 pl-5">
                 <li>
-                  <strong className="font-semibold text-[#37352f]">
+                  <strong className="font-semibold text-ink">
                     Financial institutions:
                   </strong>{" "}
                   Rubies Microfinance Bank (and other regulated partners as
                   required).
                 </li>
                 <li>
-                  <strong className="font-semibold text-[#37352f]">
+                  <strong className="font-semibold text-ink">
                     Platform providers:
                   </strong>{" "}
                   Meta Platforms, Inc. for WhatsApp Business API / messaging.
                 </li>
                 <li>
-                  <strong className="font-semibold text-[#37352f]">
+                  <strong className="font-semibold text-ink">
                     Infrastructure & analytics:
                   </strong>{" "}
                   encrypted cloud hosting and analytics (for example Vercel,
                   Google Analytics).
                 </li>
                 <li>
-                  <strong className="font-semibold text-[#37352f]">
+                  <strong className="font-semibold text-ink">
                     Law enforcement:
                   </strong>{" "}
                   only with a valid legal order or mandatory AML/regulatory
@@ -418,21 +361,21 @@ export default function PrivacyPage() {
             <PolicyCard>
               <ul className="list-disc space-y-3 pl-5">
                 <li>
-                  <strong className="font-semibold text-[#37352f]">Access</strong>{" "}
+                  <strong className="font-semibold text-ink">Access</strong>{" "}
                   : request a copy of your personal data.
                 </li>
                 <li>
-                  <strong className="font-semibold text-[#37352f]">
+                  <strong className="font-semibold text-ink">
                     Rectification
                   </strong>{" "}
                   : correct inaccurate data.
                 </li>
                 <li>
-                  <strong className="font-semibold text-[#37352f]">Erasure</strong>{" "}
+                  <strong className="font-semibold text-ink">Erasure</strong>{" "}
                   : request deletion, subject to regulatory retention.
                 </li>
                 <li>
-                  <strong className="font-semibold text-[#37352f]">
+                  <strong className="font-semibold text-ink">
                     Portability
                   </strong>{" "}
                   : export in a structured, machine-readable format.
@@ -484,7 +427,7 @@ export default function PrivacyPage() {
       </FeatureSection>
 
       <section className="border-t border-black/[0.06] px-4 py-12 text-center sm:px-6 sm:py-16">
-        <p className="mx-auto max-w-[480px] text-[14px] leading-relaxed text-[#6b6b66]">
+        <p className="mx-auto max-w-[480px] text-[14px] leading-relaxed text-muted">
           If you are unsatisfied with our response, you may lodge a complaint
           with the Nigeria Data Protection Commission (NDPC).
         </p>

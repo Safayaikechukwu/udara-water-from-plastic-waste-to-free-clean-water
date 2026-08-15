@@ -246,7 +246,7 @@ export const copy = {
       { label: "Contact", href: "/#faq" },
     ],
     legal: [
-      { label: "Terms", href: "#" },
+      { label: "Terms", href: "/terms" },
       { label: "Privacy", href: "/privacy" },
     ],
     newsletter: {
