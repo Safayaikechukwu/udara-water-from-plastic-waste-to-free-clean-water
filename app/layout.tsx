@@ -144,13 +144,7 @@ const bootScript = `
 
   function updateCta() {
     var hero = document.getElementById("hero-cta");
-    if (!hero) {
-      // Subpages (privacy, etc.): no hero gate — keep Join visible like Notion mobile.
-      if (location.pathname !== "/") {
-        document.documentElement.classList.add("past-hero-cta");
-      }
-      return;
-    }
+    if (!hero) return;
     document.documentElement.classList.toggle(
       "past-hero-cta",
       hero.getBoundingClientRect().bottom < 80
@@ -293,6 +287,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${sourceSerif.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col bg-bg font-sans text-ink">
         <Script id="udara-boot" strategy="beforeInteractive">

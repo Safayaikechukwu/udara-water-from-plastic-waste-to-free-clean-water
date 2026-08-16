@@ -12,6 +12,7 @@ type RotatingHighlightProps = {
 
 /**
  * CSS-only rotator - works on mobile without React hydration / timers.
+ * Keyframes scale to word count so there is no blank gap between words.
  */
 export function RotatingHighlight({
   words,
@@ -19,6 +20,11 @@ export function RotatingHighlight({
 }: RotatingHighlightProps) {
   const count = Math.max(words.length, 1);
   const cycleSeconds = count * holdSeconds;
+  const animName = `udara-rotating-word-${count}`;
+
+  const slot = 100 / count;
+  const fade = Math.min(1.5, slot * 0.08);
+  const holdEnd = Math.max(fade + 0.1, slot - fade);
 
   const longest = words.reduce(
     (max, word) => (word.text.length > max.length ? word.text : max),
@@ -30,6 +36,16 @@ export function RotatingHighlight({
       className="rotating-highlight relative mx-[0.08em] inline-grid translate-y-[-0.02em] align-middle leading-none"
       aria-label={words.map((word) => word.text).join(", ")}
     >
+      <style>{`
+        @keyframes ${animName} {
+          0% { opacity: 0; }
+          ${fade}% { opacity: 1; }
+          ${holdEnd}% { opacity: 1; }
+          ${slot}% { opacity: 0; }
+          100% { opacity: 0; }
+        }
+      `}</style>
+
       <span
         className="invisible col-start-1 row-start-1 inline-flex items-center gap-[0.28em] whitespace-nowrap rounded-full px-[0.34em] py-[0.1em]"
         aria-hidden="true"
@@ -44,6 +60,7 @@ export function RotatingHighlight({
           className="rotating-highlight__word col-start-1 row-start-1 inline-flex items-center justify-center gap-[0.28em] whitespace-nowrap rounded-full px-[0.34em] py-[0.1em]"
           style={{
             backgroundColor: word.bg,
+            animationName: animName,
             animationDuration: `${cycleSeconds}s`,
             animationDelay: `${index * holdSeconds}s`,
           }}

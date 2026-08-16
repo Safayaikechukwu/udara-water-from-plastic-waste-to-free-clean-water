@@ -10,8 +10,8 @@ export const copy = {
     rotatingWords: [
       { text: "overspending", bg: "#fdecec", dot: "#e03e3e" },
       { text: "overeating", bg: "#fbf3db", dot: "#cb912f" },
-      { text: "money leaks", bg: "#eadffb", dot: "#6940a5" },
-      { text: "cravings", bg: "#f6eaea", dot: "#4a0508" },
+      { text: "overshopping", bg: "#eadffb", dot: "#6940a5" },
+      { text: "impulse buys", bg: "#f6eaea", dot: "#4a0508" },
     ],
     subtext:
       "Udara is an AI agent that makes sense of your finances, locks funds, and grows your money through smart savings, strict financial habits, and financial education.",

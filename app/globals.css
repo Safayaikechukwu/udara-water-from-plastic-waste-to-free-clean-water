@@ -129,7 +129,8 @@ body {
     visibility 0.32s;
 }
 
-html.past-hero-cta .nav-join {
+html.past-hero-cta .nav-join,
+.legal-shell .nav-join {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -142,7 +143,8 @@ html.past-hero-cta .nav-join {
     transform: none;
   }
 
-  html.past-hero-cta .nav-join {
+  html.past-hero-cta .nav-join,
+  .legal-shell .nav-join {
     transform: none;
   }
 }
@@ -258,30 +260,10 @@ html.past-hero-cta .nav-join {
 /* Hero dynamic words - CSS-only so mobile doesn't depend on JS timers */
 .rotating-highlight__word {
   opacity: 0;
-  animation-name: udara-rotating-word;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
   will-change: opacity;
-}
-
-/* One slot = 20% of the cycle (tuned for 5 words). Delay offsets each word. */
-@keyframes udara-rotating-word {
-  0% {
-    opacity: 0;
-  }
-  2% {
-    opacity: 1;
-  }
-  18% {
-    opacity: 1;
-  }
-  20% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
 }
 
 .trust-marquee-track {
