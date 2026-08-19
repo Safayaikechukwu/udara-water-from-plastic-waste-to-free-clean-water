@@ -34,7 +34,7 @@ export const CHATS: ChatRow[] = [
     name: "Udara",
     preview: "It's 7:42PM. Transfers reopen at 6AM.",
     time: "7:42 PM",
-    avatar: "/udara-mark.png",
+    avatar: "/brand/udara-logo.png",
     brand: true,
     pinned: true,
     unread: 2,

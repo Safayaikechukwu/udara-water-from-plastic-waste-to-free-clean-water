@@ -17,33 +17,39 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "en",
     icons: [
       {
-        src: "/icon-192.png?v=4",
+        src: "/icon-192.png?v=5",
         sizes: "192x192",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: "/icon-512.png?v=4",
+        src: "/icon-512.png?v=5",
         sizes: "512x512",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: "/icon-maskable-192.png?v=4",
+        src: "/icon-maskable-192.png?v=5",
         sizes: "192x192",
         type: "image/png",
         purpose: "maskable",
       },
       {
-        src: "/icon-maskable-512.png?v=4",
+        src: "/icon-maskable-512.png?v=5",
         sizes: "512x512",
         type: "image/png",
         purpose: "maskable",
       },
       {
-        src: "/apple-icon.png?v=4",
+        src: "/apple-icon.png?v=5",
         sizes: "180x180",
         type: "image/png",
+      },
+      {
+        src: "/brand/udara-logo.png?v=5",
+        sizes: "1024x1024",
+        type: "image/png",
+        purpose: "any",
       },
     ],
   };

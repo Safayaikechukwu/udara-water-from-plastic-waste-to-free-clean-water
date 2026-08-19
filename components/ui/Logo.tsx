@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+/** Canonical brand mark — bump when the asset changes to bust caches. */
+export const UDARA_LOGO_SRC = "/brand/udara-logo.png";
+
 type LogoProps = {
   className?: string;
   /** Light wordmark for dark backgrounds */
@@ -27,14 +30,15 @@ export function Logo({
       ].join(" ")}
       aria-label="Udara home"
     >
-      <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-[30%] sm:h-10 sm:w-10">
+      <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-[22%] sm:h-10 sm:w-10">
         <Image
-          src="/udara-mark.png"
+          src={UDARA_LOGO_SRC}
           alt=""
-          width={40}
-          height={40}
+          width={80}
+          height={80}
           priority
-          className="h-full w-full scale-[1.08] object-cover"
+          unoptimized
+          className="h-full w-full object-cover"
         />
       </span>
       {markOnly ? null : (

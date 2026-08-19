@@ -401,11 +401,12 @@ export function WaHeader({ subtitle = "online" }: { subtitle?: string }) {
 
       <div className="relative mr-[10px] h-[36px] w-[36px] shrink-0 overflow-hidden rounded-full bg-[#4a0508]">
         <Image
-          src="/udara-mark.png"
+          src="/brand/udara-logo.png"
           alt=""
           width={36}
           height={36}
-          className="h-full w-full scale-[1.08] object-cover"
+          unoptimized
+          className="h-full w-full object-cover"
         />
       </div>
 

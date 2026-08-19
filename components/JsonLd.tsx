@@ -8,7 +8,7 @@ export function JsonLd() {
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/udara-mark.png`,
+    logo: `${siteConfig.url}/brand/udara-logo.png`,
     description: siteConfig.description,
     areaServed: {
       "@type": "Country",
