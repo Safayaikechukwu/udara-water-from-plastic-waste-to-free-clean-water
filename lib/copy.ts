@@ -45,7 +45,7 @@ export const copy = {
       {
         label: "The science behind Udara",
         blurb: "Research that shaped how Udara locks and saves.",
-        href: "#science",
+        href: "/science",
         tone: "gold" as const,
       },
     ],
@@ -94,6 +94,64 @@ export const copy = {
       "Udara is the opposite. It lives on WhatsApp, locks funds, and holds you accountable so you can reach your goals.",
     closer:
       "Saving isn't something you remember to do. It's something the system helps you do.",
+  },
+
+  /** Research-backed pillars — real authors, real papers */
+  scienceBehind: {
+    eyebrow: "The science behind Udara",
+    headline: "ADHD brains don’t fail at money. They fail at remembering to protect it.",
+    support:
+      "Udara is built around what research already shows: impulse, delay aversion, and weak follow-through beat willpower — so the system has to sit where your habits already live.",
+    pillars: [
+      {
+        label: "01",
+        title: "Impulse isn’t a character flaw",
+        body: "Adults with ADHD are more likely to buy on impulse, struggle to save, and make weaker “future-facing” money decisions — even when they care about money. That’s what standardized financial decision-making studies keep finding.",
+        udara:
+          "Udara surfaces spends in plain language on WhatsApp, so “I thought I had money” stops hiding in your balance.",
+        linkLabel: "Bangma et al., Neuropsychology",
+        href: "https://doi.org/10.1037/neu0000571",
+        secondaryLinkLabel: "PLOS ONE community sample",
+        secondaryHref:
+          "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0239343",
+      },
+      {
+        label: "02",
+        title: "Future-you needs a lock",
+        body: "Present bias makes “just this once” feel cheaper than tomorrow’s goal. Behavioral economists show people will voluntarily precommit — and that those constraints help when willpower fails.",
+        udara:
+          "The 7PM hard lock is that precommitment: you decide while calm; the system holds you when impulse is loudest.",
+        linkLabel: "Ariely & Wertenbroch on self-imposed deadlines",
+        href: "https://doi.org/10.1111/1467-9280.00441",
+        secondaryLinkLabel: "Laibson on hyperbolic discounting",
+        secondaryHref: "https://doi.org/10.1162/003355397555253",
+      },
+      {
+        label: "03",
+        title: "Presence beats lonely willpower",
+        body: "Body doubling — doing hard tasks with another presence nearby — is widely used in ADHD communities. Early accessibility research is starting to study it for real: safe, promising for some ADHD adults, still early as hard science.",
+        udara:
+          "Udara acts like a money body double on WhatsApp: always there for the night window, without a new app to remember.",
+        linkLabel: "ACM ASSETS body-doubling EEG study",
+        href: "https://dl.acm.org/doi/10.1145/3663547.3759743",
+        secondaryLinkLabel: "Neurodivergent body-doubling survey (PDF)",
+        secondaryHref: "https://leyabreanna.com/papers/body_double_taccess.pdf",
+      },
+      {
+        label: "04",
+        title: "Savings collapse without systems",
+        body: "Long ADHD outcome work linked to Barkley and colleagues tracks weaker saving, more financial dependence, and the “ADHD tax” of late fees and forgotten bills — executive function gaps, not laziness.",
+        udara:
+          "WhatsApp is the external scaffold: locks, clarity, and accountability happen where your habits already live.",
+        linkLabel: "Altszuler et al. on financial dependence",
+        href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4887412/",
+        secondaryLinkLabel: "ADHD money tips (Tuckman / CHADD context)",
+        secondaryHref:
+          "https://www.healthcentral.com/condition/adhd/money-managing-tips-when-you-live-with-adhd",
+      },
+    ],
+    disclaimer:
+      "Udara is not medical treatment. Research informs product design — we map mechanisms (impulse control, precommitment, external scaffolding, accountability), not cures.",
   },
 
   howUdaraHelps: {
@@ -237,11 +295,13 @@ export const copy = {
       { label: "How It Works", href: "/#how-it-works" },
       { label: "Reviews", href: "/#reviews" },
       { label: "Security", href: "/#security" },
+      { label: "Science", href: "/science" },
       { label: "FAQ", href: "/#faq" },
-      { label: "About", href: "/#about-udara" },
+      { label: "About", href: "/about" },
     ],
     company: [
-      { label: "About", href: "/#about-udara" },
+      { label: "About", href: "/about" },
+      { label: "Science", href: "/science" },
       { label: "Contact", href: "/#faq" },
     ],
     legal: [

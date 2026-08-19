@@ -91,7 +91,7 @@ export function ScienceProof() {
   const loop = [...labs, ...labs];
 
   return (
-    <div id="science" className="w-full scroll-mt-24 pt-14 sm:pt-16" aria-label={line}>
+    <div className="w-full pt-14 sm:pt-16" aria-label={line}>
       <p className="text-center text-[14px] font-normal leading-5 text-black/55">
         {line}
       </p>

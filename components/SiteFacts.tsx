@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 
 /** Crawlable facts — compact black band for the home footer area. */
@@ -14,7 +15,21 @@ export function SiteFacts() {
       <p className="mt-2 max-w-[70ch] text-[11px] leading-relaxed text-white/45">
         {siteConfig.description} Udara is built for people who need systems, not
         more willpower: hard locks, WhatsApp-native habits, and banking-grade
-        security.
+        security.{" "}
+        <Link
+          href="/about"
+          className="text-white/70 underline underline-offset-2 hover:text-white"
+        >
+          Full about page
+        </Link>
+        {" · "}
+        <Link
+          href="/science"
+          className="text-white/70 underline underline-offset-2 hover:text-white"
+        >
+          Science
+        </Link>
+        .
       </p>
       <dl className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3 text-[11px] lg:grid-cols-4">
         <div>
@@ -27,7 +42,7 @@ export function SiteFacts() {
         </div>
         <div>
           <dt className="font-semibold text-white/70">Banking partner</dt>
-          <dd className="mt-0.5 text-white/40">Rubies Microfinance Bank</dd>
+          <dd className="mt-0.5 text-white/40">{siteConfig.bankingPartner}</dd>
         </div>
         <div>
           <dt className="font-semibold text-white/70">Market</dt>

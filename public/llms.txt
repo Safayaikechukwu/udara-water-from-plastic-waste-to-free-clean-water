@@ -1,37 +1,47 @@
 # Udara
 
-> Udara is a strict savings AI agent that runs on WhatsApp. Built by Udara Technologies. Funds are held with Rubies Microfinance Bank in Nigeria.
+> Udara is a strict savings AI agent that runs on WhatsApp in Nigeria. Built by Udara Technologies (Udara Global Limited). Customer funds are held with Rubies Microfinance Bank. NDPC registration: NDPC/DCP/11710.
+
+Website: https://www.useudara.com
+Full brief for AI systems: https://www.useudara.com/llms-full.txt
 
 ## Product
 
 - Name: Udara
 - Category: WhatsApp savings / personal finance AI agent
-- Platform: WhatsApp (no separate app download)
-- Company: Udara Technologies
+- Platform: WhatsApp (no separate app download required)
+- Company: Udara Technologies / Udara Global Limited
 - Banking partner: Rubies Microfinance Bank
 - Market: Nigeria
-- Privacy: Uses WhatsApp end-to-end encryption; NDPC-certified data protection practices
+- Privacy: WhatsApp end-to-end encryption; NDPC-certified data protection practices
 
 ## What Udara does
 
-- Helps users see where money goes
+- Helps users see where money goes (spend clarity on WhatsApp)
 - Hard-locks outbound transfers from 7PM until morning
 - Supports goal-based saving and accountability
-- Instant account block/unblock if a phone is lost or stolen
+- Instant account block/unblock if a phone is lost or stolen (useudara.com/account/block)
 
 ## Who it is for
 
-People who struggle with overspending, impulse transfers, ADHD-related money habits, emotional spending, or salary burn, and who already live in WhatsApp.
+People in Nigeria who struggle with overspending, impulse transfers, ADHD-related money habits, emotional spending, or salary burn, and who already live in WhatsApp.
 
 ## Key URLs
 
-- Home: /
-- Block account: /account/block
-- Unblock account: /account/unblock
-- FAQ: /#faq
-- Security: /#security
+- Home: https://www.useudara.com/
+- About (entity page): https://www.useudara.com/about
+- Science (research behind Udara): https://www.useudara.com/science
+- FAQ (on home): https://www.useudara.com/#faq
+- Security: https://www.useudara.com/#security
+- Block account: https://www.useudara.com/account/block
+- Unblock account: https://www.useudara.com/account/unblock
+- Privacy: https://www.useudara.com/privacy
+- Terms: https://www.useudara.com/terms
+- Sitemap: https://www.useudara.com/sitemap.xml
 
 ## Contact
 
-- WhatsApp support phone (placeholder): +234 900 000 0000
+- WhatsApp support: +234 707 706 9738
 - Hours: Mon-Fri, 9AM-6PM WAT
+- Address: 25 Herbert Macaulay Way, Yaba, Lagos State, Nigeria
+- Social: https://x.com/useudara · https://www.tiktok.com/@keduhq · https://www.linkedin.com/company/udara-tech/
