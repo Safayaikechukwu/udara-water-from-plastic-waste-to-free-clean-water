@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import Script from "next/script";
 import { JsonLd } from "@/components/JsonLd";
+import { PwaRegister } from "@/components/PwaRegister";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -20,12 +21,17 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#4a0508",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#4a0508" },
+    { media: "(prefers-color-scheme: dark)", color: "#4a0508" },
+  ],
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
   minimumScale: 1,
   maximumScale: 1,
   userScalable: false,
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
@@ -36,6 +42,14 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  appleWebApp: {
+    capable: true,
+    title: "Udara",
+    statusBarStyle: "black-translucent",
+  },
+  formatDetection: {
+    telephone: false,
+  },
   authors: [{ name: siteConfig.legalName }],
   creator: siteConfig.legalName,
   publisher: siteConfig.legalName,
@@ -90,13 +104,18 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico?v=3", sizes: "48x48" },
-      { url: "/favicon-32.png?v=3", type: "image/png", sizes: "32x32" },
-      { url: "/icon-192.png?v=3", type: "image/png", sizes: "192x192" },
-      { url: "/udara-mark.png?v=3", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=4", sizes: "48x48" },
+      { url: "/favicon-32.png?v=4", type: "image/png", sizes: "32x32" },
+      { url: "/icon-192.png?v=4", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png?v=4", type: "image/png", sizes: "512x512" },
     ],
-    apple: [{ url: "/apple-icon.png?v=3", sizes: "180x180", type: "image/png" }],
-    shortcut: "/favicon.ico?v=3",
+    apple: [
+      { url: "/apple-icon.png?v=4", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico?v=4",
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
   },
   category: "finance",
 };
@@ -306,6 +325,7 @@ export default function RootLayout({
           `}
         </Script>
         <JsonLd />
+        <PwaRegister />
         {children}
         <Analytics />
         <SpeedInsights />
