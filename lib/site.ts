@@ -11,10 +11,11 @@ export const siteConfig = {
     "https://www.useudara.com",
   locale: "en_NG",
   twitterHandle: "@useudara",
-  /** E.164 without + — Nigerian line 070-77-069-738 */
+  /** E.164 without + — support line */
   whatsappNumber: "2347077069738",
-  whatsappJoinMessage:
-    "Hi! I’d like to join Udara’s weekly early-access list. Please add me and notify me when I can get started.",
+  /** E.164 without + — Join Udara CTA opens this line */
+  whatsappJoinNumber: "2349066842645",
+  whatsappJoinMessage: "HI UDARA",
   supportPhoneDisplay: "+234 707 706 9738",
   supportHours: "Mon-Fri, 9AM-6PM WAT",
   bankingPartner: "Rubies Microfinance Bank",
@@ -32,7 +33,7 @@ export const siteConfig = {
   ],
 } as const;
 
-/** Opens WhatsApp with a pre-filled join / waitlist message. */
-export const whatsappJoinUrl = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappJoinMessage)}`;
+/** Opens WhatsApp with a pre-filled join message (Join Udara buttons). */
+export const whatsappJoinUrl = `https://wa.me/${siteConfig.whatsappJoinNumber}?text=${encodeURIComponent(siteConfig.whatsappJoinMessage)}`;
 
 export const supportWhatsAppUrl = `https://wa.me/${siteConfig.whatsappNumber}`;
