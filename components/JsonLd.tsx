@@ -10,7 +10,7 @@ export function JsonLd() {
     legalName: siteConfig.legalEntity,
     alternateName: [siteConfig.legalName, "Udara WhatsApp savings"],
     url: siteConfig.url,
-    logo: `${siteConfig.url}/brand/udara-logo.png`,
+    logo: `${siteConfig.url}/udara-mark.png`,
     image: `${siteConfig.url}/og.png`,
     description: siteConfig.description,
     foundingLocation: {
@@ -58,7 +58,7 @@ export function JsonLd() {
     brand: {
       "@type": "Brand",
       name: siteConfig.name,
-      logo: `${siteConfig.url}/brand/udara-logo.png`,
+      logo: `${siteConfig.url}/udara-mark.png`,
     },
     parentOrganization: {
       "@type": "Organization",

@@ -203,8 +203,7 @@ function Avatar({
           alt=""
           width={size}
           height={size}
-          unoptimized
-          className="h-full w-full object-cover"
+          className="h-full w-full scale-[1.08] object-cover"
         />
       </span>
     );

@@ -104,16 +104,15 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico?v=5", sizes: "48x48" },
-      { url: "/favicon-32.png?v=5", type: "image/png", sizes: "32x32" },
-      { url: "/icon-192.png?v=5", type: "image/png", sizes: "192x192" },
-      { url: "/icon-512.png?v=5", type: "image/png", sizes: "512x512" },
-      { url: "/brand/udara-logo.png?v=5", type: "image/png", sizes: "1024x1024" },
+      { url: "/favicon.ico?v=6", sizes: "48x48" },
+      { url: "/favicon-32.png?v=6", type: "image/png", sizes: "32x32" },
+      { url: "/icon-192.png?v=6", type: "image/png", sizes: "192x192" },
+      { url: "/udara-mark.png?v=6", type: "image/png", sizes: "512x512" },
     ],
     apple: [
-      { url: "/apple-icon.png?v=5", sizes: "180x180", type: "image/png" },
+      { url: "/apple-icon.png?v=6", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/favicon.ico?v=5",
+    shortcut: "/favicon.ico?v=6",
   },
   other: {
     "mobile-web-app-capable": "yes",
