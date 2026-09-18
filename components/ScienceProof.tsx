@@ -55,7 +55,7 @@ function LogoMark({
           className="h-[22px] w-[22px] rounded-[3px] object-contain"
           draggable={false}
         />
-        <span className="text-[14px] font-semibold tracking-[-0.01em] text-[#111]">
+        <span className="text-[14px] font-semibold tracking-[-0.01em] text-ink">
           {visual.label}
         </span>
       </span>

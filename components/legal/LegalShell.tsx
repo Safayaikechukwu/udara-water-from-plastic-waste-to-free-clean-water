@@ -7,13 +7,11 @@ type LegalShellProps = {
 };
 
 /**
- * Same nav rules as the homepage (Nav + NavMobileMenu).
- * Join stays visible via `.legal-shell .nav-join` (no html class mutation,
- * which would cause SSR hydration mismatches).
+ * Same nav as the homepage (Nav + NavMobileMenu).
  */
 export function LegalShell({ children }: LegalShellProps) {
   return (
-    <div className="legal-shell flex min-h-full flex-col bg-white">
+    <div className="legal-shell flex min-h-full flex-col bg-bg">
       <Nav />
       <NavMobileMenu />
       <main className="flex-1">{children}</main>

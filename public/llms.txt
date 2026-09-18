@@ -11,7 +11,7 @@ Full brief for AI systems: https://www.useudara.com/llms-full.txt
 - Category: WhatsApp savings / personal finance AI agent
 - Platform: WhatsApp (no separate app download required)
 - Company: Udara Technologies / Udara Global Limited
-- Banking partner: Rubies Microfinance Bank
+- Bank: Rubies Microfinance Bank
 - Market: Nigeria
 - Privacy: WhatsApp end-to-end encryption; NDPC-certified data protection practices
 
@@ -44,4 +44,4 @@ People in Nigeria who struggle with overspending, impulse transfers, ADHD-relate
 - WhatsApp support: +234 707 706 9738
 - Hours: Mon-Fri, 9AM-6PM WAT
 - Address: 25 Herbert Macaulay Way, Yaba, Lagos State, Nigeria
-- Social: https://x.com/useudara · https://www.tiktok.com/@keduhq · https://www.linkedin.com/company/udara-tech/
+- Social: https://x.com/useudara · https://www.tiktok.com/@udarahq · https://www.linkedin.com/company/udara-tech/

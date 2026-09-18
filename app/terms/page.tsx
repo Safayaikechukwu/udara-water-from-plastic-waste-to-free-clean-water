@@ -7,9 +7,7 @@ import {
 } from "@/components/legal/LegalBlocks";
 import { LegalShell } from "@/components/legal/LegalShell";
 import { Button } from "@/components/ui/Button";
-import { siteConfig } from "@/lib/site";
-
-const supportWhatsAppUrl = `https://wa.me/${siteConfig.whatsappNumber}`;
+import { supportWhatsAppUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -35,10 +33,7 @@ export default function TermsPage() {
             services.
           </p>
           <div className="mx-auto mt-6 w-full max-w-[400px] sm:mt-8">
-            <Button
-              href={supportWhatsAppUrl}
-              className="h-12 min-h-12 w-full rounded-[8px] px-5 text-[15px] sm:h-11 sm:min-h-11 sm:rounded-[6px]"
-            >
+            <Button href={supportWhatsAppUrl} className="w-full">
               Contact support
             </Button>
           </div>
@@ -51,13 +46,13 @@ export default function TermsPage() {
       <section className="pb-8 sm:pb-12">
         <MidStage tone="oxblood">
           <div className="relative px-5 py-8 sm:px-12 sm:py-14 lg:px-16 lg:py-16">
-            <p className="text-[12px] font-medium uppercase tracking-[0.1em] text-white/50">
+            <p className="text-[12px] font-medium uppercase tracking-[0.1em] text-ink/50">
               Entity
             </p>
             <p className="mt-3 text-[clamp(1.5rem,6vw,2.75rem)] font-semibold leading-[1.1] tracking-[-0.03em]">
               Udara Global Limited
             </p>
-            <p className="mt-3 max-w-[560px] text-[15px] leading-[1.55] text-white/75 sm:mt-4 sm:text-[18px]">
+            <p className="mt-3 max-w-[560px] text-[15px] leading-[1.55] text-ink/70 sm:mt-4 sm:text-[18px]">
               (&quot;Udara&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;).
               Registered office: 25, Herbert Macaulay Way, Yaba, Lagos State,
               Nigeria.
@@ -70,12 +65,12 @@ export default function TermsPage() {
               ].map(([label, value]) => (
                 <div
                   key={label}
-                  className="rounded-[12px] border border-white/12 bg-white/[0.08] px-4 py-3 text-left backdrop-blur-sm"
+                  className="rounded-[12px] border border-black/10 bg-black/[0.05] px-4 py-3 text-left backdrop-blur-sm"
                 >
-                  <p className="text-[11px] uppercase tracking-[0.08em] text-white/45">
+                  <p className="text-[11px] uppercase tracking-[0.08em] text-ink/45">
                     {label}
                   </p>
-                  <p className="mt-1 text-[14px] font-medium text-white sm:text-[15px]">
+                  <p className="mt-1 text-[14px] font-medium text-ink sm:text-[15px]">
                     {value}
                   </p>
                 </div>
@@ -144,8 +139,8 @@ export default function TermsPage() {
 
       <FeatureSection
         id="funds"
-        title="3. Banking partner and funds."
-        subtitle="Udara is the discipline layer. Customer funds sit with a licensed bank partner."
+        title="3. Bank and funds."
+        subtitle="Udara is the discipline layer. Customer funds sit with a licensed bank."
       >
         <MidStage tone="soft">
           <div className="py-6 sm:py-8">
@@ -155,20 +150,20 @@ export default function TermsPage() {
                 Udara Global Limited is a technology provider. We are not a
                 deposit-taking bank by ourselves. Customer funds related to Udara
                 savings are held with Rubies Microfinance Bank (and other
-                regulated partners as required).
+                licensed banks as required).
               </p>
               <p>
-                <strong className="font-semibold text-ink">Partner terms:</strong>{" "}
+                <strong className="font-semibold text-ink">Bank terms:</strong>{" "}
                 Banking, settlement, and related financial operations are subject
                 to the terms, policies, and regulatory obligations of those
-                licensed partners. Where you use banking features, you may also
+                licensed banks. Where you use banking features, you may also
                 be bound by their terms.
               </p>
               <p>
-                <strong className="font-semibold text-ink">No liability for partner failures:</strong>{" "}
+                <strong className="font-semibold text-ink">No liability for bank failures:</strong>{" "}
                 To the extent permitted by law, Udara is not liable for payment
                 failures, settlement delays, or disputes that arise solely
-                between you and a banking or payment partner, except where caused
+                between you and a bank or payment provider, except where caused
                 by our own wilful misconduct or negligence as determined under
                 Nigerian law.
               </p>
@@ -194,7 +189,7 @@ export default function TermsPage() {
                 You agree to provide accurate information when requested for
                 identity verification, including government IDs and other details
                 required under applicable Anti-Money Laundering (AML) rules and
-                partner bank requirements.
+                bank requirements.
               </p>
               <p>
                 <strong className="font-semibold text-ink">Account security:</strong>{" "}
@@ -276,7 +271,7 @@ export default function TermsPage() {
                 Your use of the Service is also governed by our{" "}
                 <Link
                   href="/privacy"
-                  className="font-medium text-cta underline decoration-cta/30 underline-offset-[3px] hover:opacity-80"
+                  className="font-medium text-ink underline decoration-cta/40 underline-offset-[3px] hover:opacity-80"
                 >
                   Privacy Policy
                 </Link>
@@ -326,8 +321,8 @@ export default function TermsPage() {
               <p>
                 <strong className="font-semibold text-ink">By us:</strong> We may
                 suspend or terminate access if we suspect a violation of these
-                Terms, fraudulent activity, risk to users or partners, or at the
-                lawful request of banking partners or regulators.
+                Terms, fraudulent activity, risk to users or to us, or at the
+                lawful request of the bank we use or regulators.
               </p>
             </PolicyCard>
           </div>
@@ -362,20 +357,20 @@ export default function TermsPage() {
           <div className="px-5 py-8 sm:px-10 sm:py-12">
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <p className="text-[12px] uppercase tracking-[0.08em] text-white/45">
+                <p className="text-[12px] uppercase tracking-[0.08em] text-ink/45">
                   Attn
                 </p>
                 <p className="mt-2 text-[1.25rem] font-semibold tracking-[-0.02em] sm:text-[1.35rem]">
                   Legal Department, Udara Global Limited
                 </p>
-                <p className="mt-3 text-[15px] leading-relaxed text-white/75 sm:mt-4">
+                <p className="mt-3 text-[15px] leading-relaxed text-ink/70 sm:mt-4">
                   25, Herbert Macaulay Way, Yaba, Lagos State, Nigeria.
                 </p>
               </div>
               <div className="flex flex-col justify-end gap-3">
                 <a
                   href="mailto:safayasamuelsikechukwu@gmail.com"
-                  className="inline-flex h-12 min-h-12 items-center justify-center break-all rounded-[8px] bg-white px-4 text-center text-[13px] font-medium text-cta transition-opacity hover:opacity-90 sm:h-11 sm:min-h-11 sm:rounded-[6px] sm:text-[15px]"
+                  className="inline-flex h-12 min-h-12 items-center justify-center break-all rounded-[8px] bg-white px-4 text-center text-[13px] font-medium text-ink transition-opacity hover:opacity-90 sm:h-11 sm:min-h-11 sm:rounded-[6px] sm:text-[15px]"
                 >
                   safayasamuelsikechukwu@gmail.com
                 </a>
@@ -383,7 +378,7 @@ export default function TermsPage() {
                   href={supportWhatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 min-h-12 items-center justify-center rounded-[8px] border border-white/20 bg-white/10 px-4 text-[15px] font-medium text-white transition-colors hover:bg-white/15 sm:h-11 sm:min-h-11 sm:rounded-[6px]"
+                  className="inline-flex h-12 min-h-12 items-center justify-center rounded-[8px] border border-black/20 bg-black/5 px-4 text-[15px] font-medium text-ink transition-colors hover:bg-black/10 sm:h-11 sm:min-h-11 sm:rounded-[6px]"
                 >
                   +234 707 706 9738
                 </a>

@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { copy } from "@/lib/copy";
 import { SiteFacts } from "@/components/SiteFacts";
@@ -15,22 +16,44 @@ function FooterLink({
   label: string;
 }) {
   const isPlaceholder = href === "#";
+  const className =
+    "text-[13px] text-white/55 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-ink rounded-sm";
+
+  if (isPlaceholder) {
+    return (
+      <a
+        href={href}
+        className={className}
+        aria-disabled="true"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        {label}
+      </a>
+    );
+  }
+
+  if (/^https?:\/\//.test(href)) {
+    return (
+      <a href={href} className={className} target="_blank" rel="noopener noreferrer">
+        {label}
+      </a>
+    );
+  }
+
+  if (href.startsWith("mailto:")) {
+    return (
+      <a href={href} className={className}>
+        {label}
+      </a>
+    );
+  }
 
   return (
-    <a
-      href={href}
-      className="text-[13px] text-white/55 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0b0c] rounded-sm"
-      aria-disabled={isPlaceholder || undefined}
-      onClick={
-        isPlaceholder
-          ? (event) => {
-              event.preventDefault();
-            }
-          : undefined
-      }
-    >
+    <Link href={href} className={className}>
       {label}
-    </a>
+    </Link>
   );
 }
 
@@ -119,12 +142,15 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative z-10 isolate w-full bg-[#0b0b0c] px-4 py-14 text-white sm:px-5 lg:px-6">
+    <footer className="relative z-10 isolate w-full bg-ink px-4 py-14 text-white sm:px-5 lg:px-6">
       <div className="mx-auto grid w-full max-w-[1252px] gap-12 lg:grid-cols-[1fr_1.4fr_1fr]">
         <div>
           <Logo inverted />
           <p className="mt-4 max-w-xs text-[13px] leading-relaxed text-white/55">
             {copy.footer.brandLine}
+          </p>
+          <p className="mt-2 max-w-xs text-[13px] leading-relaxed text-white/55">
+            {copy.footer.brandCloser}
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-2">
             {copy.footer.social.map((item) => (
@@ -134,7 +160,7 @@ export function Footer() {
                 aria-label={item.label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-white/80 transition-colors hover:border-white/30 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0b0c]"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-white/80 transition-colors hover:border-white/30 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
               >
                 <SocialIcon type={item.icon} />
               </a>
@@ -142,11 +168,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
           <div>
-            <p className="text-[13px] font-semibold text-white">Product</p>
+            <p className="text-[13px] font-semibold text-white">Work with us</p>
             <ul className="mt-3 space-y-2.5">
-              {copy.footer.product.map((link) => (
+              {copy.footer.work.map((link) => (
                 <li key={link.label}>
                   <FooterLink href={link.href} label={link.label} />
                 </li>
@@ -154,9 +180,9 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="text-[13px] font-semibold text-white">Company</p>
+            <p className="text-[13px] font-semibold text-white">Support</p>
             <ul className="mt-3 space-y-2.5">
-              {copy.footer.company.map((link) => (
+              {copy.footer.support.map((link) => (
                 <li key={link.label}>
                   <FooterLink href={link.href} label={link.label} />
                 </li>
@@ -164,9 +190,19 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="text-[13px] font-semibold text-white">Legal</p>
+            <p className="text-[13px] font-semibold text-white">Explore</p>
             <ul className="mt-3 space-y-2.5">
-              {copy.footer.legal.map((link) => (
+              {copy.footer.explore.map((link) => (
+                <li key={link.label}>
+                  <FooterLink href={link.href} label={link.label} />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-[13px] font-semibold text-white">Contact</p>
+            <ul className="mt-3 space-y-2.5">
+              {copy.footer.contact.map((link) => (
                 <li key={link.label}>
                   <FooterLink href={link.href} label={link.label} />
                 </li>
@@ -190,7 +226,7 @@ export function Footer() {
                 role="status"
               >
                 <span
-                  className="subscribe-success__icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cta text-white"
+                  className="subscribe-success__icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cta text-ink"
                   aria-hidden="true"
                 >
                   <svg viewBox="0 0 16 16" className="h-4 w-4" fill="none">
@@ -231,12 +267,12 @@ export function Footer() {
                     }
                   }}
                   placeholder={copy.footer.newsletter.placeholder}
-                  className="h-11 w-full min-w-0 rounded-[6px] border border-white/15 bg-white/[0.06] px-3.5 text-[14px] text-white outline-none transition-[border-color,box-shadow,opacity] placeholder:text-white/35 focus:border-cta focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0b0c] disabled:opacity-60"
+                  className="h-11 w-full min-w-0 rounded-[6px] border border-white/15 bg-white/[0.06] px-3.5 text-[14px] text-white outline-none transition-[border-color,box-shadow,opacity] placeholder:text-white/35 focus:border-cta focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-ink disabled:opacity-60"
                   disabled={status === "loading" ? true : undefined}
                 />
                 <Button
                   type="submit"
-                  className="h-11 min-h-11 shrink-0 px-4 text-[14px] transition-transform active:scale-[0.98]"
+                  className="shrink-0"
                   disabled={status === "loading" ? true : undefined}
                 >
                   {status === "loading" ? "Sending…" : copy.footer.newsletter.cta}
@@ -259,9 +295,14 @@ export function Footer() {
         </div>
       ) : null}
 
-      <div className="mx-auto mt-8 flex max-w-[1252px] flex-col gap-2 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto mt-8 flex max-w-[1252px] flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-[13px] text-white/45">{copy.footer.poweredBy}</p>
-        <p className="text-[13px] text-white/45">{copy.footer.copyright}</p>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          {copy.footer.legal.map((link) => (
+            <FooterLink key={link.label} href={link.href} label={link.label} />
+          ))}
+          <p className="text-[13px] text-white/45">{copy.footer.copyright}</p>
+        </div>
       </div>
     </footer>
   );

@@ -10,7 +10,7 @@ export function MidStage({
   const tones = {
     warm: "bg-[#f1ebe3]",
     soft: "bg-[#f0efec]",
-    oxblood: "bg-[#4a0508] text-white",
+    oxblood: "bg-[#e4f222] text-ink",
   } as const;
 
   return (

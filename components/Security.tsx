@@ -1,99 +1,104 @@
+import Image from "next/image";
 import { copy } from "@/lib/copy";
-import { Reveal } from "@/components/ui/Reveal";
-import { SnapCarousel } from "@/components/ui/SnapCarousel";
+import { Button } from "@/components/ui/Button";
+import { Section } from "@/components/ui/Section";
 
-function SecurityIcon({ tone }: { tone: "coral" | "blue" | "gold" }) {
-  if (tone === "coral") {
-    return (
-      <svg viewBox="0 0 120 88" className="h-full w-full" aria-hidden="true">
-        <circle cx="28" cy="54" r="18" fill="#fdecec" />
-        <circle cx="92" cy="30" r="14" fill="#eadffb" />
-        <rect x="48" y="22" width="36" height="48" rx="10" fill="#0d0d0d" />
-        <circle cx="66" cy="42" r="6" fill="#4a0508" />
-        <path d="M58 56h16v8a8 8 0 0 1-16 0v-8Z" fill="#f7d070" />
-      </svg>
+function WaterIcon({ type }: { type: string }) {
+  const stroke = {
+    stroke: "#1c1b17",
+    strokeWidth: 1.6,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
+
+  let mark = (
+    <path d="M12 3.5c2.6 2.8 4 5 4 8a4 4 0 1 1-8 0c0-3 1.4-5.2 4-8Z" {...stroke} />
+  );
+
+  if (type === "registered") {
+    mark = (
+      <>
+        <path d="M6 20.5V8.5L12 4l6 4.5v12" {...stroke} />
+        <path d="M9.5 20.5v-5h5v5" {...stroke} />
+        <path d="M9.2 12.2 11 14l3.8-4" {...stroke} />
+      </>
     );
   }
 
-  if (tone === "blue") {
-    return (
-      <svg viewBox="0 0 120 88" className="h-full w-full" aria-hidden="true">
-        <circle cx="26" cy="28" r="16" fill="#f6eaea" />
-        <circle cx="96" cy="58" r="18" fill="#fbf3db" />
-        <path
-          d="M38 24h44a12 12 0 0 1 12 12v20a12 12 0 0 1-12 12H54l-14 10v-10H38a12 12 0 0 1-12-12V36a12 12 0 0 1 12-12Z"
-          fill="#0d0d0d"
-        />
-        <circle cx="60" cy="46" r="7" fill="#e03e3e" />
-      </svg>
+  if (type === "recycle") {
+    mark = (
+      <>
+        <path d="M5 12a7 7 0 0 1 12-4.6L19 5v6h-6" {...stroke} />
+        <path d="M19 12a7 7 0 0 1-12 4.6L5 19v-6h6" {...stroke} />
+      </>
     );
   }
 
   return (
-    <svg viewBox="0 0 120 88" className="h-full w-full" aria-hidden="true">
-      <circle cx="30" cy="58" r="16" fill="#e8f8f0" />
-      <circle cx="94" cy="26" r="14" fill="#fdecec" />
-      <circle cx="62" cy="44" r="22" stroke="#0d0d0d" strokeWidth="4" fill="none" />
-      <path
-        d="M62 30v14l10 6"
-        stroke="#4a0508"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80">
+      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
+        {mark}
+      </svg>
+    </span>
   );
+}
+
+function SponsorCta() {
+  return <Button href={copy.security.ctaHref}>{copy.security.cta}</Button>;
 }
 
 export function Security() {
   return (
-    <section
-      id="security"
-      aria-labelledby="security-heading"
-      className="w-full scroll-mt-24 bg-[#f7d070] px-4 py-14 sm:px-5 sm:py-24 lg:px-6 lg:py-28"
-    >
-      <div className="mx-auto w-full max-w-[1252px]">
-        <Reveal>
-          <div className="max-w-[40rem] text-left">
-            <h2
-              id="security-heading"
-              className="text-[2rem] font-bold tracking-[-0.03em] text-ink sm:text-4xl md:text-[2.75rem]"
-            >
-              {copy.security.headline}
-            </h2>
-            <p className="mt-3 text-[16px] leading-relaxed text-ink/70 sm:mt-4 sm:text-[18px]">
-              {copy.security.subhead}
-            </p>
-          </div>
-        </Reveal>
+    <Section id="water" aria-labelledby="water-heading">
+      <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-center lg:gap-16">
+        <div className="w-full max-w-[34rem] shrink-0">
+          <h2
+            id="water-heading"
+            className="text-[2.05rem] font-bold leading-[1.08] tracking-[-0.045em] text-ink sm:text-[2.75rem] md:text-[3.25rem]"
+          >
+            {copy.security.headline}
+            <br />
+            {copy.security.headlineLine2}
+          </h2>
+          <p className="mt-4 max-w-[28rem] text-[15px] leading-[1.55] text-muted sm:mt-5 sm:text-[16px]">
+            {copy.security.subhead}
+          </p>
 
-        {/* Mobile: horizontal snap scroll + dots. Desktop: 3-up grid. */}
-        <SnapCarousel
-          count={copy.security.cards.length}
-          label="Security features"
-          trackClassName="-mx-4 mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:-mx-5 sm:mt-12 sm:gap-4 sm:px-5 [&::-webkit-scrollbar]:hidden md:mx-0 md:mt-14 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0"
-        >
-          {copy.security.cards.map((card, index) => (
-            <Reveal
-              key={card.title}
-              delay={index * 70}
-              className="w-[min(82vw,320px)] shrink-0 snap-center sm:w-[min(70vw,340px)] md:w-auto md:snap-align-none"
-            >
-              <article className="h-full rounded-[18px] bg-white px-6 pb-7 pt-6 text-left sm:rounded-[20px] sm:px-7 sm:pb-8 sm:pt-7">
-                <div className="mb-6 h-[88px] w-[120px]">
-                  <SecurityIcon tone={card.tone} />
-                </div>
-                <h3 className="text-[1.2rem] font-bold leading-[1.2] tracking-[-0.025em] text-ink sm:text-[1.35rem]">
-                  {card.title}
-                </h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-muted sm:text-[16px]">
+          <ul className="mt-8 flex flex-col items-start gap-2.5 sm:mt-9">
+            {copy.security.cards.map((card) => (
+              <li
+                key={card.title}
+                className="inline-flex max-w-full items-center gap-2.5 rounded-full bg-[#ebebe8] py-2 pl-2 pr-4 sm:gap-3 sm:py-2.5 sm:pl-2.5 sm:pr-5"
+              >
+                <WaterIcon type={card.icon} />
+                <p className="text-[13px] font-normal leading-snug tracking-[-0.01em] text-ink/80 sm:text-[14px]">
                   {card.body}
                 </p>
-              </article>
-            </Reveal>
-          ))}
-        </SnapCarousel>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 hidden lg:block">
+            <SponsorCta />
+          </div>
+        </div>
+
+        <div className="flex justify-center lg:justify-start">
+          <Image
+            src="/water/bottle.png"
+            alt="Udara water bottle with space for a sponsor brand"
+            width={418}
+            height={1020}
+            priority
+            draggable={false}
+            className="h-auto w-[210px] object-contain drop-shadow-[0_28px_50px_rgba(28,27,23,0.12)] sm:w-[250px] lg:w-[320px]"
+          />
+        </div>
+
+        <div className="lg:hidden">
+          <SponsorCta />
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }

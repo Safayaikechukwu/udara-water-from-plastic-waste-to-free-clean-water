@@ -1,85 +1,83 @@
 import Image from "next/image";
-import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { SnapCarousel } from "@/components/ui/SnapCarousel";
 
 const cards = [
   {
-    tag: "ADHD",
-    tagBg: "#fdecec",
-    tagDot: "#e03e3e",
+    tag: "Drinker",
+    tagBg: "#e4f222",
+    tagDot: "#1c1b17",
     quote:
-      "As somebody with ADHD and dyslexia, Udara helps because I never remember to actually go into a savings app to lock funds or ever use a budgeting app. Udara is the real deal.",
-    name: "Safaya Ikechukwu",
-    role: "21 · Product manager, Lagos",
-    overlay: "bg-[#c23b3b]/75",
-    image: "/reviews/adhd.jpg",
+      "They handed me cold water at a campus event and I didn’t pay a kobo. I drank it, I saw the brand, and the bottle was still in my hand an hour later. That’s how you actually reach people.",
+    name: "Amaka Okonkwo",
+    role: "21 · Student, Lagos",
+    overlay: "bg-[#0b5c5c]/45",
+    image: "/reviews/host.jpg",
+    alt: "Amaka holding a bottle of drinking water at a campus gathering",
   },
   {
-    tag: "Emotional eating",
-    tagBg: "#fbf3db",
-    tagDot: "#cb912f",
+    tag: "Sponsor",
+    tagBg: "#d7eef0",
+    tagDot: "#0b5c5c",
     quote:
-      "I was eating my feelings away and gained 30 kg because of how depressed I was. Udara helped me not only lose weight but also save the money I've been spending on food.",
-    name: "Chioma Eze",
-    role: "Founder, Port Harcourt",
-    overlay: "bg-[#c46a1b]/75",
-    image:
-      "https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    tag: "Properties",
-    tagBg: "#f6eaea",
-    tagDot: "#4a0508",
-    quote:
-      "I'm 34, and I could not believe it when I went through my transaction history and saw that I've spent millions of naira but could not even account for shishi. Now Udara helps me with stuff like that, and I was able to get my first property this year.",
+      "Our brand sponsored a batch for an activation in Abuja. Udara put clean water in people’s hands all day with our name on it. Not a banner they walked past. A bottle they held.",
     name: "Tunde Balogun",
-    role: "Engineer, Abuja",
-    overlay: "bg-[#4a0508]/75",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80",
+    role: "Brand lead, Abuja",
+    overlay: "bg-[#123c4a]/48",
+    image: "/reviews/sponsor.jpg",
+    alt: "Tunde at a sponsored water activation",
+  },
+  {
+    tag: "Climate activist",
+    tagBg: "#e8f0d8",
+    tagDot: "#3d5a1f",
+    quote:
+      "I campaign against plastic in the gutter. Udara was the first setup that recovered the bottles after people drank, instead of leaving the waste for us to shout about. Clean water in, plastic out.",
+    name: "Chioma Eze",
+    role: "Climate activist, Port Harcourt",
+    overlay: "bg-[#3d5a1f]/48",
+    image: "/reviews/recycle.jpg",
+    alt: "Chioma holding collected PET bottles after a cleanup",
   },
 ] as const;
 
 export function Reviews() {
   return (
     <Section id="reviews" aria-labelledby="reviews-heading">
-      <Reveal>
-        <h2
-          id="reviews-heading"
-          className="text-left text-[2rem] font-bold tracking-[-0.03em] text-ink sm:text-4xl md:text-[2.75rem]"
-        >
-          What customers are saying
-        </h2>
-      </Reveal>
+      <h2
+        id="reviews-heading"
+        className="text-left text-[2rem] font-bold tracking-[-0.03em] text-ink sm:text-4xl md:text-[2.75rem]"
+      >
+        Testimonials
+      </h2>
 
       {/* Mobile: horizontal snap carousel + dots. Desktop: 3-up grid. */}
       <SnapCarousel
         count={cards.length}
-        label="Customer testimonials"
-        trackClassName="-mx-4 mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:-mx-5 sm:gap-4 sm:px-5 [&::-webkit-scrollbar]:hidden md:mx-0 md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0"
+        label="Testimonials"
+        trackClassName="mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [scrollbar-width:none] sm:gap-4 [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:pb-0"
       >
-        {cards.map((card, index) => (
-          <Reveal
+        {cards.map((card) => (
+          <figure
             key={card.name}
-            delay={index * 80}
-            variant="zoom"
-            className="w-[min(82vw,320px)] shrink-0 snap-center sm:w-[min(70vw,340px)] md:w-auto md:snap-align-none"
+            className="relative h-[560px] w-[min(calc(100vw-2.5rem),352px)] shrink-0 snap-start overflow-hidden rounded-[18px] sm:h-[620px] sm:w-[min(calc(100vw-2.75rem),374px)] md:w-auto md:snap-align-none lg:h-[680px]"
           >
-            <figure className="relative h-[560px] overflow-hidden rounded-[18px] sm:h-[620px] lg:h-[680px]">
               <Image
                 src={card.image}
-                alt=""
+                alt={card.alt}
                 fill
                 sizes="(max-width: 768px) 82vw, 33vw"
-                className="object-cover object-top"
+                className="pointer-events-none object-cover object-[center_20%] select-none"
+                priority
+                draggable={false}
               />
               <div
-                className={["absolute inset-0 mix-blend-multiply", card.overlay].join(
-                  " ",
-                )}
+                className={[
+                  "pointer-events-none absolute inset-0 mix-blend-multiply",
+                  card.overlay,
+                ].join(" ")}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/20" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/10" />
 
               <div className="absolute inset-0 flex flex-col justify-between p-6 sm:p-7 lg:p-8">
                 <span
@@ -93,7 +91,7 @@ export function Reviews() {
                   />
                   {card.tag}
                 </span>
-                <figcaption>
+                <figcaption className="select-text">
                   <blockquote className="text-[1.05rem] leading-[1.4] tracking-[-0.01em] text-white [font-family:var(--font-serif),ui-serif,Georgia,serif] sm:text-[1.15rem] lg:text-[1.2rem]">
                     “{card.quote}”
                   </blockquote>
@@ -104,7 +102,6 @@ export function Reviews() {
                 </figcaption>
               </div>
             </figure>
-          </Reveal>
         ))}
       </SnapCarousel>
     </Section>

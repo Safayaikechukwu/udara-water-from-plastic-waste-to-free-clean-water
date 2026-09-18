@@ -2,20 +2,20 @@
  * WhatsApp dark-mode chat mockups.
  *
  * Designed at real iPhone logical width (390px) with WhatsApp-like metrics,
- * then uniformly scaled for the feature cards so proportions stay locked —
+ * then uniformly scaled for the feature cards so proportions stay locked -
  * like a real screenshot resized, not hand-tweaked UI pieces.
  */
 
 import Image from "next/image";
 import { CHATS } from "@/components/ui/heroWhatsAppData";
 
-/** iPhone logical width — design canvas for true UI proportions */
+/** iPhone logical width - design canvas for true UI proportions */
 const DESIGN_W = 390;
 /** Default display scale for feature cards */
 const FEATURE_SCALE = 0.72;
 /** Feature-card phone height (slightly cropped for cards) */
 const DESIGN_H = 780;
-/** Hero phone — closer to iPhone 14/15 Pro logical height */
+/** Hero phone - closer to iPhone 14/15 Pro logical height */
 const HERO_DESIGN_W = 393;
 const HERO_DESIGN_H = 852;
 
@@ -388,7 +388,7 @@ export function PhoneShell({
 }
 
 /**
- * Chat header — sized like WhatsApp iOS at 390pt:
+ * Chat header - sized like WhatsApp iOS at 390pt:
  * ~56pt row, ~36pt avatar, ~17pt name, ~13pt status.
  * Sits on the same #1f2c34 as the status bar in real WA.
  */
@@ -399,13 +399,14 @@ export function WaHeader({ subtitle = "online" }: { subtitle?: string }) {
         <BackChevron />
       </span>
 
-      <div className="relative mr-[10px] h-[36px] w-[36px] shrink-0 overflow-hidden rounded-full bg-[#4a0508]">
+      <div className="relative mr-[10px] h-[36px] w-[36px] shrink-0 overflow-hidden rounded-full bg-[#e4f222]">
         <Image
           src="/udara-mark.png"
           alt=""
           width={36}
           height={36}
           className="h-full w-full scale-[1.08] object-cover"
+          loading="eager"
         />
       </div>
 
@@ -520,11 +521,11 @@ export function TruthScene() {
         <Bubble from="udara" time="9:38 PM">
           <span className="font-semibold">This week&apos;s truth</span>
           {"\n\n"}
-          Food — ₦48,200 (52%)
+          Food: ₦48,200 (52%)
           {"\n"}
-          Transfers — ₦31,000
+          Transfers: ₦31,000
           {"\n"}
-          Noise — ₦12,450
+          Noise: ₦12,450
           {"\n\n"}
           Food alone ate most of what you moved.
         </Bubble>
@@ -593,7 +594,7 @@ export function LockScene() {
   );
 }
 
-/** Live accountability feed — exact WhatsApp message style. */
+/** Live accountability feed - exact WhatsApp message style. */
 export function TrackScene() {
   return (
     <PhoneShell wallpaperId="track">
@@ -660,7 +661,7 @@ export function SaveScene() {
           {"\n\n"}
           Tucked into Land Fund while you spent.
           {"\n\n"}
-          Land Fund — ₦186,400
+          Land Fund: ₦186,400
           {"\n"}
           +₦200 just now
         </Bubble>
@@ -676,7 +677,7 @@ export function SaveScene() {
         <Bubble from="udara" time="3:41 PM">
           Saved another ₦600.
           {"\n"}
-          Land Fund — ₦187,000
+          Land Fund: ₦187,000
         </Bubble>
         <Bubble from="user" time="3:42 PM">
           We&apos;re actually moving
@@ -737,7 +738,7 @@ function SearchIcon() {
   );
 }
 
-/** WhatsApp Chats tab — same roster / pins / unreads as the hero mobile mock. */
+/** WhatsApp Chats tab - same roster / pins / unreads as the hero mobile mock. */
 export function ChatsListScene({ scale = 0.78 }: { scale?: number }) {
   const rows = CHATS.filter((c) => c.id !== "tunde" && c.id !== "funke").map(
     (chat) => ({
@@ -819,6 +820,7 @@ export function ChatsListScene({ scale = 0.78 }: { scale?: number }) {
                       "h-full w-full object-cover",
                       chat.brand ? "scale-[1.08]" : "",
                     ].join(" ")}
+                    loading="eager"
                   />
                 </span>
               ) : (
@@ -902,7 +904,7 @@ export function ChatsListScene({ scale = 0.78 }: { scale?: number }) {
   );
 }
 
-/** Hero conversation — sounds like a real late-night WhatsApp thread. */
+/** Hero conversation - sounds like a real late-night WhatsApp thread. */
 export function HeroScene({ scale = 0.88 }: { scale?: number }) {
   return (
     <PhoneShell wallpaperId="hero" scale={scale}>
@@ -938,7 +940,7 @@ export function HeroScene({ scale = 0.88 }: { scale?: number }) {
           lock snacks after 7 too
         </Bubble>
         <Bubble from="udara" time="7:44 PM">
-          Done. Strict mode is on. Sleep — the money will still be there.
+          Done. Strict mode is on. Sleep. The money will still be there.
         </Bubble>
       </ChatBody>
       <WaComposer />

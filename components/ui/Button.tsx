@@ -21,13 +21,13 @@ type ButtonAsLink = SharedProps &
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variants: Record<Variant, string> = {
-  primary: "bg-cta text-white hover:bg-cta-hover",
-  secondary: "bg-[#f6eaea] text-cta hover:bg-[#ecd4d6]",
-  ghost: "bg-transparent text-cta hover:underline",
+  primary: "bg-cta text-ink hover:bg-cta-hover",
+  secondary: "bg-cta text-ink hover:bg-cta-hover",
+  ghost: "bg-transparent text-ink hover:underline",
 };
 
 const baseClass =
-  "inline-flex min-h-11 items-center justify-center rounded-[6px] px-4 py-2.5 text-[15px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+  "inline-flex h-10 min-h-10 items-center justify-center rounded-[6px] px-3.5 text-[13px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-11 sm:min-h-11 sm:px-5 sm:text-[15px]";
 
 export function Button({
   variant = "primary",

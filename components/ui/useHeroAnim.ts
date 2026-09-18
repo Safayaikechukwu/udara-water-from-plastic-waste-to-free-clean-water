@@ -35,7 +35,7 @@ const DONE: HeroAnimState = {
   done: true,
 };
 
-/** List beat — short so family/Udara arrive while the user is looking */
+/** List beat - short so family/Udara arrive while the user is looking */
 const LIST_MS = 600;
 const FAMILY_STEP_MS = 300;
 const FAMILY_HOLD_MS = 550;
@@ -214,7 +214,7 @@ function startLoop() {
     }
   };
   rafId = window.requestAnimationFrame(rafLoop);
-  // Interval backup — rAF is throttled in background tabs / some WebViews
+  // Interval backup - rAF is throttled in background tabs / some WebViews
   intervalId = window.setInterval(advance, 80);
 }
 
@@ -227,7 +227,7 @@ export function resetHeroAnim() {
 }
 
 /**
- * Begin (or resume) the hero clock. Safe to call multiple times —
+ * Begin (or resume) the hero clock. Safe to call multiple times -
  * only the first call arms startTs.
  */
 export function startHeroAnim() {
@@ -275,7 +275,7 @@ function getServerSnapshot(): HeroAnimState {
 
 /**
  * Shared hero WhatsApp animation. Clock is started explicitly when the
- * mock enters the viewport (see HeroProduct) — not on subscribe.
+ * mock enters the viewport (see HeroProduct) - not on subscribe.
  */
 export function useHeroAnim(): HeroAnimState {
   return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);

@@ -78,7 +78,7 @@ export function AccountActionForm({ mode }: AccountActionFormProps) {
 
   async function confirmSubmit() {
     setStatus("loading");
-    // UI-only for now — wire to backend when ready
+    // UI-only for now - wire to backend when ready
     await new Promise((resolve) => window.setTimeout(resolve, 650));
     setStatus("success");
   }
@@ -93,7 +93,7 @@ export function AccountActionForm({ mode }: AccountActionFormProps) {
         <span className="text-ink">Account</span>
       </p>
 
-      {/* Segmented control — Block tab reads blue when active */}
+      {/* Segmented control - Block tab reads blue when active */}
       <div className="mt-6 rounded-[12px] bg-[#ebebea] p-1">
         <div className="grid grid-cols-2 gap-1">
           <Link
@@ -101,7 +101,7 @@ export function AccountActionForm({ mode }: AccountActionFormProps) {
             className={[
               "rounded-[10px] px-3 py-2.5 text-center text-[14px] font-semibold transition-colors",
               mode === "block"
-                ? "bg-cta text-white shadow-[0_1px_2px_rgba(0,0,0,0.08)]"
+                ? "bg-cta text-ink shadow-[0_1px_2px_rgba(0,0,0,0.08)]"
                 : "text-muted hover:text-ink",
             ].join(" ")}
             aria-current={mode === "block" ? "page" : undefined}
@@ -138,20 +138,20 @@ export function AccountActionForm({ mode }: AccountActionFormProps) {
 
         {status === "success" ? (
           <div
-            className="mt-8 rounded-[10px] border border-black/[0.06] bg-[#f7f6f3] px-4 py-4 text-center"
+            className="mt-8 rounded-[10px] border border-black/[0.06] bg-bg px-4 py-4 text-center"
             role="status"
           >
             <p className="text-[15px] font-medium text-ink">{meta.success}</p>
             <Link
               href="/"
-              className="mt-3 inline-block text-[14px] font-medium text-cta hover:underline"
+              className="mt-3 inline-block text-[14px] font-medium text-ink hover:underline"
             >
               Back to home
             </Link>
           </div>
         ) : status === "confirm" ? (
           <div
-            className="mt-8 rounded-[12px] border border-black/[0.08] bg-[#f7f6f3] px-4 py-5 text-center sm:px-5"
+            className="mt-8 rounded-[12px] border border-black/[0.08] bg-bg px-4 py-5 text-center sm:px-5"
             role="alertdialog"
             aria-labelledby="confirm-title"
             aria-describedby="confirm-body"
@@ -175,7 +175,7 @@ export function AccountActionForm({ mode }: AccountActionFormProps) {
               <button
                 type="button"
                 onClick={() => setStatus("idle")}
-                className="inline-flex h-11 items-center justify-center rounded-[8px] border border-black/10 bg-white px-4 text-[14px] font-medium text-ink transition-colors hover:bg-[#f3f3f1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2"
+                className="inline-flex h-11 items-center justify-center rounded-[8px] border border-black/10 bg-white px-4 text-[14px] font-medium text-ink transition-colors hover:bg-bg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2"
               >
                 Cancel
               </button>
@@ -183,10 +183,10 @@ export function AccountActionForm({ mode }: AccountActionFormProps) {
                 type="button"
                 onClick={confirmSubmit}
                 className={[
-                  "inline-flex h-11 items-center justify-center rounded-[8px] px-4 text-[14px] font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+                  "inline-flex h-11 items-center justify-center rounded-[8px] px-4 text-[14px] font-medium transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
                   isBlock
-                    ? "bg-[#e03e3e] focus-visible:ring-[#e03e3e]"
-                    : "bg-cta focus-visible:ring-cta",
+                    ? "bg-[#e03e3e] text-white focus-visible:ring-[#e03e3e]"
+                    : "bg-cta text-ink focus-visible:ring-cta",
                 ].join(" ")}
               >
                 {meta.confirmCta}
@@ -308,10 +308,10 @@ export function AccountActionForm({ mode }: AccountActionFormProps) {
               type="submit"
               disabled={status === "loading"}
               className={[
-                "flex h-12 w-full items-center justify-center rounded-[8px] text-[15px] font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60",
+                "flex h-12 w-full items-center justify-center rounded-[8px] text-[15px] font-medium transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60",
                 isBlock
-                  ? "bg-[#e03e3e] focus-visible:ring-[#e03e3e]"
-                  : "bg-cta focus-visible:ring-cta",
+                  ? "bg-[#e03e3e] text-white focus-visible:ring-[#e03e3e]"
+                  : "bg-cta text-ink focus-visible:ring-cta",
               ].join(" ")}
             >
               {status === "loading" ? "Submitting…" : meta.cta}

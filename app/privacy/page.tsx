@@ -6,9 +6,7 @@ import {
 } from "@/components/legal/LegalBlocks";
 import { LegalShell } from "@/components/legal/LegalShell";
 import { Button } from "@/components/ui/Button";
-import { siteConfig } from "@/lib/site";
-
-const supportWhatsAppUrl = `https://wa.me/${siteConfig.whatsappNumber}`;
+import { supportWhatsAppUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -35,10 +33,7 @@ export default function PrivacyPage() {
             anytime.
           </p>
           <div className="mx-auto mt-6 w-full max-w-[400px] sm:mt-8">
-            <Button
-              href={supportWhatsAppUrl}
-              className="h-12 min-h-12 w-full rounded-[8px] px-5 text-[15px] sm:h-11 sm:min-h-11 sm:rounded-[6px]"
-            >
+            <Button href={supportWhatsAppUrl} className="w-full">
               Contact support
             </Button>
           </div>
@@ -52,13 +47,13 @@ export default function PrivacyPage() {
       <section className="pb-8 sm:pb-12">
         <MidStage tone="oxblood">
           <div className="relative px-5 py-8 sm:px-12 sm:py-14 lg:px-16 lg:py-16">
-            <p className="text-[12px] font-medium uppercase tracking-[0.1em] text-white/50">
+            <p className="text-[12px] font-medium uppercase tracking-[0.1em] text-ink/50">
               Registration
             </p>
             <p className="mt-3 text-[clamp(1.5rem,6vw,2.75rem)] font-semibold leading-[1.1] tracking-[-0.03em]">
               NDPC/DCP/11710
             </p>
-            <p className="mt-3 max-w-[560px] text-[15px] leading-[1.55] text-white/75 sm:mt-4 sm:text-[18px]">
+            <p className="mt-3 max-w-[560px] text-[15px] leading-[1.55] text-ink/70 sm:mt-4 sm:text-[18px]">
               Udara Global Limited is a registered data controller/processor of
               major importance with the Nigeria Data Protection Commission.
             </p>
@@ -70,12 +65,12 @@ export default function PrivacyPage() {
               ].map(([label, value]) => (
                 <div
                   key={label}
-                  className="rounded-[12px] border border-white/12 bg-white/[0.08] px-4 py-3 text-left backdrop-blur-sm"
+                  className="rounded-[12px] border border-black/10 bg-black/[0.05] px-4 py-3 text-left backdrop-blur-sm"
                 >
-                  <p className="text-[11px] uppercase tracking-[0.08em] text-white/45">
+                  <p className="text-[11px] uppercase tracking-[0.08em] text-ink/45">
                     {label}
                   </p>
-                  <p className="mt-1 text-[14px] font-medium text-white sm:text-[15px]">
+                  <p className="mt-1 text-[14px] font-medium text-ink sm:text-[15px]">
                     {value}
                   </p>
                 </div>
@@ -113,7 +108,7 @@ export default function PrivacyPage() {
 
       <FeatureSection
         id="roles"
-        title="Roles & partners."
+        title="Roles. We handle your data."
         subtitle="We are the controller for Udara account data. Rubies holds customer funds. Meta powers WhatsApp delivery."
       >
         <MidStage tone="warm">
@@ -129,7 +124,7 @@ export default function PrivacyPage() {
               </p>
               <p>
                 <strong className="font-semibold text-ink">
-                  Banking partner:
+                  Bank:
                 </strong>{" "}
                 Customer funds related to Udara savings are held with Rubies
                 Microfinance Bank. Rubies remains responsible for banking,
@@ -188,7 +183,7 @@ export default function PrivacyPage() {
                 </strong>{" "}
                 where needed to open or operate a savings relationship,
                 identifiers such as BVN/NIN and settlement or wallet account
-                details may be processed with our banking partner.
+                details may be processed with the bank we use.
               </p>
             </PolicyCard>
             <PolicyCard>
@@ -244,8 +239,8 @@ export default function PrivacyPage() {
                   <strong className="font-semibold text-ink">
                     Legal obligation:
                   </strong>{" "}
-                  AML/CFT, NDPA, and obligations tied to regulated banking
-                  partners.
+                  AML/CFT, NDPA, and obligations tied to the licensed bank
+                  we use.
                 </li>
                 <li>
                   <strong className="font-semibold text-ink">
@@ -313,7 +308,7 @@ export default function PrivacyPage() {
                   <strong className="font-semibold text-ink">
                     Financial institutions:
                   </strong>{" "}
-                  Rubies Microfinance Bank (and other regulated partners as
+                  Rubies Microfinance Bank (and other licensed banks as
                   required).
                 </li>
                 <li>
@@ -395,20 +390,20 @@ export default function PrivacyPage() {
           <div className="px-5 py-8 sm:px-10 sm:py-12">
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <p className="text-[12px] uppercase tracking-[0.08em] text-white/45">
+                <p className="text-[12px] uppercase tracking-[0.08em] text-ink/45">
                   Data protection officer
                 </p>
                 <p className="mt-2 text-[1.25rem] font-semibold tracking-[-0.02em] sm:text-[1.35rem]">
                   Ndubueze Ikechukwu Samuel
                 </p>
-                <p className="mt-3 text-[15px] leading-relaxed text-white/75 sm:mt-4">
+                <p className="mt-3 text-[15px] leading-relaxed text-ink/70 sm:mt-4">
                   25, Herbert Macaulay Way, Yaba, Lagos State, Nigeria.
                 </p>
               </div>
               <div className="flex flex-col justify-end gap-3">
                 <a
                   href="mailto:safayasamuelsikechukwu@gmail.com"
-                  className="inline-flex h-12 min-h-12 items-center justify-center break-all rounded-[8px] bg-white px-4 text-center text-[13px] font-medium text-cta transition-opacity hover:opacity-90 sm:h-11 sm:min-h-11 sm:rounded-[6px] sm:text-[15px]"
+                  className="inline-flex h-12 min-h-12 items-center justify-center break-all rounded-[8px] bg-white px-4 text-center text-[13px] font-medium text-ink transition-opacity hover:opacity-90 sm:h-11 sm:min-h-11 sm:rounded-[6px] sm:text-[15px]"
                 >
                   safayasamuelsikechukwu@gmail.com
                 </a>
@@ -416,7 +411,7 @@ export default function PrivacyPage() {
                   href={supportWhatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 min-h-12 items-center justify-center rounded-[8px] border border-white/20 bg-white/10 px-4 text-[15px] font-medium text-white transition-colors hover:bg-white/15 sm:h-11 sm:min-h-11 sm:rounded-[6px]"
+                  className="inline-flex h-12 min-h-12 items-center justify-center rounded-[8px] border border-black/20 bg-black/5 px-4 text-[15px] font-medium text-ink transition-colors hover:bg-black/10 sm:h-11 sm:min-h-11 sm:rounded-[6px]"
                 >
                   +234 707 706 9738
                 </a>

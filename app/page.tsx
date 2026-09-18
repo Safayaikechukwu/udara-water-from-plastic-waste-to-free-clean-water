@@ -1,15 +1,14 @@
-import { ClosingCta } from "@/components/ClosingCta";
 import { Faq } from "@/components/Faq";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
+import { HowItWorks } from "@/components/HowItWorks";
 import { HowUdaraHelps } from "@/components/HowUdaraHelps";
+import { Impact } from "@/components/Impact";
 import { InstantBlock } from "@/components/InstantBlock";
-import { JoinPrompt } from "@/components/JoinPrompt";
 import { Nav } from "@/components/Nav";
 import { NavMobileMenu } from "@/components/NavMobileMenu";
 import { Reviews } from "@/components/Reviews";
 import { Security } from "@/components/Security";
-import { TrustBar } from "@/components/TrustBar";
 import { WhyItWorks } from "@/components/WhyItWorks";
 
 export default function Home() {
@@ -20,16 +19,15 @@ export default function Home() {
       <main>
         <Hero />
         <WhyItWorks />
+        <HowItWorks />
         <HowUdaraHelps />
+        <Impact />
         <Reviews />
-        <TrustBar />
         <Security />
-        <ClosingCta />
         <Faq />
         <InstantBlock />
       </main>
       <Footer />
-      <JoinPrompt />
     </>
   );
 }

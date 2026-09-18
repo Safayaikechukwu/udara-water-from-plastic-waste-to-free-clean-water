@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 
-/** Crawlable facts — compact black band for the home footer area. */
+/** Crawlable facts - compact black band for the home footer area. */
 export function SiteFacts() {
   return (
     <aside
@@ -41,8 +41,8 @@ export function SiteFacts() {
           <dd className="mt-0.5 text-white/40">{siteConfig.legalName}</dd>
         </div>
         <div>
-          <dt className="font-semibold text-white/70">Banking partner</dt>
-          <dd className="mt-0.5 text-white/40">{siteConfig.bankingPartner}</dd>
+          <dt className="font-semibold text-white/70">Bank</dt>
+          <dd className="mt-0.5 text-white/40">{siteConfig.bank}</dd>
         </div>
         <div>
           <dt className="font-semibold text-white/70">Market</dt>

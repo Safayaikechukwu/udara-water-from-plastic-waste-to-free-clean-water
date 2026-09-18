@@ -4,12 +4,15 @@ type BrowserFrameProps = {
   children: ReactNode;
   url?: string;
   className?: string;
+  /** Real UI (video player) instead of a decorative mock. */
+  live?: boolean;
 };
 
 export function BrowserFrame({
   children,
   url = "web.whatsapp.com",
   className = "",
+  live = false,
 }: BrowserFrameProps) {
   return (
     <div
@@ -18,7 +21,7 @@ export function BrowserFrame({
         "shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_28px_80px_-16px_rgba(0,0,0,0.35)]",
         className,
       ].join(" ")}
-      aria-hidden="true"
+      {...(live ? {} : { "aria-hidden": true as const })}
     >
       <div className="flex items-center gap-3 border-b border-black/[0.06] bg-[#ececec] px-4 py-2.5">
         <div className="flex shrink-0 items-center gap-2">

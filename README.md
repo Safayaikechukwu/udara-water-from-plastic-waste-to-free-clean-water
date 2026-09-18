@@ -1,6 +1,6 @@
 # Udara
 
-Marketing site for **Udara** — a WhatsApp-based strict savings agent by [Udara Technologies](https://www.useudara.com).
+Marketing site for **Udara** - a WhatsApp-based strict savings agent by [Udara Technologies](https://www.useudara.com).
 
 Udara helps people in Nigeria understand spending, hard-lock outbound transfers from 7PM until morning, and build savings discipline without installing another app.
 
@@ -78,4 +78,4 @@ Marketing copy lives in `lib/copy.ts`. Site metadata and canonical URL live in `
 
 ## License
 
-Private — All rights reserved.
+Private - All rights reserved.

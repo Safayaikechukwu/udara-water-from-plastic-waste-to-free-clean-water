@@ -22,15 +22,12 @@ const sourceSerif = Source_Serif_4({
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#4a0508" },
-    { media: "(prefers-color-scheme: dark)", color: "#4a0508" },
+    { media: "(prefers-color-scheme: light)", color: "#e4f222" },
+    { media: "(prefers-color-scheme: dark)", color: "#e4f222" },
   ],
   colorScheme: "light",
   width: "device-width",
   initialScale: 1,
-  minimumScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   viewportFit: "cover",
 };
 
@@ -104,15 +101,15 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico?v=6", sizes: "48x48" },
-      { url: "/favicon-32.png?v=6", type: "image/png", sizes: "32x32" },
-      { url: "/icon-192.png?v=6", type: "image/png", sizes: "192x192" },
-      { url: "/udara-mark.png?v=6", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=7", sizes: "48x48" },
+      { url: "/favicon-32.png?v=7", type: "image/png", sizes: "32x32" },
+      { url: "/icon-192.png?v=7", type: "image/png", sizes: "192x192" },
+      { url: "/udara-mark.png?v=7", type: "image/png", sizes: "512x512" },
     ],
     apple: [
-      { url: "/apple-icon.png?v=6", sizes: "180x180", type: "image/png" },
+      { url: "/apple-icon.png?v=7", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/favicon.ico?v=6",
+    shortcut: "/favicon.ico?v=7",
   },
   other: {
     "mobile-web-app-capable": "yes",
@@ -127,6 +124,31 @@ export const metadata: Metadata = {
  */
 const bootScript = `
 (function () {
+  try {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (regs) {
+        var had = regs && regs.length > 0;
+        Promise.all((regs || []).map(function (reg) { return reg.unregister(); })).then(function () {
+          var finish = function () {
+            if (!had) return;
+            try {
+              if (sessionStorage.getItem("udara-sw-cleared")) return;
+              sessionStorage.setItem("udara-sw-cleared", "1");
+              location.reload();
+            } catch (e2) {}
+          };
+          if ("caches" in window) {
+            caches.keys().then(function (keys) {
+              return Promise.all(keys.map(function (k) { return caches.delete(k); }));
+            }).then(finish, finish);
+          } else {
+            finish();
+          }
+        });
+      });
+    }
+  } catch (e0) {}
+
   try {
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   } catch (e) {}
@@ -157,8 +179,6 @@ const bootScript = `
     toTop();
     document.addEventListener("DOMContentLoaded", toTop);
     window.addEventListener("load", toTop);
-  } else if (!location.hash) {
-    toTop();
   }
 
   function updateCta() {
@@ -184,7 +204,7 @@ const bootScript = `
     var target = document.getElementById(id);
     if (!target) return false;
     var top = target.getBoundingClientRect().top + window.pageYOffset - 72;
-    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    window.scrollTo(0, Math.max(0, top));
     try {
       history.replaceState(null, "", location.pathname + location.search);
     } catch (e) {}
@@ -201,7 +221,7 @@ const bootScript = `
       return false;
     }
     if (scrollToId(id)) return true;
-    // Subpages (e.g. /privacy): section lives on home — navigate there.
+    // Subpages (e.g. /privacy): section lives on home - navigate there.
     if (location.pathname !== "/") {
       window.location.assign("/#" + id);
       return true;
@@ -255,45 +275,52 @@ const bootScript = `
     );
   }
 
-  function bindDesktopNav() {
-    if (window.__udaraHeaderBound) return;
-    var header = document.querySelector("header");
-    if (!header) return;
-    window.__udaraHeaderBound = true;
-
-    header.addEventListener("click", function (event) {
-      var link =
-        event.target && event.target.closest
-          ? event.target.closest("a[href]")
-          : null;
-      if (!link || !header.contains(link)) return;
-      var href = link.getAttribute("href") || "";
-      if (href.indexOf("#") === -1) return;
-      if (/^https?:\\/\\//i.test(href)) return;
-      event.preventDefault();
-      goToHash(href);
-      updateCta();
-    });
+  function bindPageHashes() {
+    if (window.__udaraHashBound) return;
+    window.__udaraHashBound = true;
+    document.addEventListener(
+      "click",
+      function (event) {
+        var link =
+          event.target && event.target.closest
+            ? event.target.closest("a[href]")
+            : null;
+        if (!link) return;
+        var href = link.getAttribute("href") || "";
+        if (href.indexOf("#") === -1) return;
+        if (/^https?:\\/\\//i.test(href) && href.indexOf(location.origin) !== 0) {
+          return;
+        }
+        if (!goToHash(href)) return;
+        event.preventDefault();
+        var details = document.querySelector("details.nav-mobile-menu");
+        if (details && details.contains(link)) closeMenu(details);
+        updateCta();
+      },
+      true
+    );
   }
 
   function bootNav() {
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      el.classList.add("is-visible");
+      el.classList.remove("reveal--armed");
+    });
+    document.querySelectorAll(".instant-block").forEach(function (el) {
+      el.classList.remove("instant-block--armed");
+    });
     updateCta();
     bindMenu();
-    bindDesktopNav();
+    bindPageHashes();
     window.addEventListener("scroll", updateCta, { passive: true });
     window.addEventListener("resize", updateCta);
   }
 
-  // Run after React hydration so class/attr mutations don't mismatch SSR HTML.
-  function afterHydration(fn) {
-    function run() {
-      window.setTimeout(fn, 0);
-    }
-    if (document.readyState === "complete") run();
-    else window.addEventListener("load", run);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootNav);
+  } else {
+    bootNav();
   }
-
-  afterHydration(bootNav);
 })();
 `;
 
@@ -308,7 +335,7 @@ export default function RootLayout({
       className={`${inter.variable} ${sourceSerif.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col bg-bg font-sans text-ink">
+      <body className="flex min-h-full flex-col bg-bg font-sans text-ink select-text">
         <Script id="udara-boot" strategy="beforeInteractive">
           {bootScript}
         </Script>

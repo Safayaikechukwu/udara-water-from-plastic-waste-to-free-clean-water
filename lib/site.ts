@@ -11,14 +11,14 @@ export const siteConfig = {
     "https://www.useudara.com",
   locale: "en_NG",
   twitterHandle: "@useudara",
-  /** E.164 without + — support line */
+  /** E.164 without + - support line */
   whatsappNumber: "2347077069738",
-  /** E.164 without + — Join Udara CTA opens this line */
+  /** E.164 without + - Join Udara CTA opens this line */
   whatsappJoinNumber: "2349066842645",
   whatsappJoinMessage: "HI UDARA",
   supportPhoneDisplay: "+234 707 706 9738",
   supportHours: "Mon-Fri, 9AM-6PM WAT",
-  bankingPartner: "Rubies Microfinance Bank",
+  bank: "Rubies Microfinance Bank",
   ndpcRegistration: "NDPC/DCP/11710",
   address: {
     streetAddress: "25 Herbert Macaulay Way",
@@ -28,12 +28,30 @@ export const siteConfig = {
   },
   sameAs: [
     "https://x.com/useudara",
-    "https://www.tiktok.com/@keduhq",
+    "https://www.tiktok.com/@udarahq",
     "https://www.linkedin.com/company/udara-tech/",
   ],
+  /**
+   * Hero browser video. Paste any YouTube watch / youtu.be / shorts / embed URL.
+   * Override with NEXT_PUBLIC_HERO_YOUTUBE_URL.
+   */
+  heroYoutubeUrl: process.env.NEXT_PUBLIC_HERO_YOUTUBE_URL ?? "",
+  brand: {
+    black: "#1C1B17",
+    yellow: "#E4F222",
+    white: "#F4F4F4",
+  },
 } as const;
 
-/** Opens WhatsApp with a pre-filled join message (Join Udara buttons). */
-export const whatsappJoinUrl = `https://wa.me/${siteConfig.whatsappJoinNumber}?text=${encodeURIComponent(siteConfig.whatsappJoinMessage)}`;
+/** Opens WhatsApp to 07077069738 with a pre-filled message. */
+export function whatsappIntentUrl(message: string) {
+  return `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
 
-export const supportWhatsAppUrl = `https://wa.me/${siteConfig.whatsappNumber}`;
+export const whatsappJoinUrl = whatsappIntentUrl(
+  "Hi, I pressed Join Udara. I want to get started with Udara.",
+);
+
+export const supportWhatsAppUrl = whatsappIntentUrl(
+  "Hi, I pressed WhatsApp. I want to contact Udara.",
+);

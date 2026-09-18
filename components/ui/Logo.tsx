@@ -22,7 +22,7 @@ export function Logo({
         markOnly ? "" : "gap-2.5 sm:gap-3",
         inverted ? "text-white" : "text-ink",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2",
-        inverted ? "focus-visible:ring-offset-[#0b0b0c]" : "",
+        inverted ? "focus-visible:ring-offset-ink" : "",
         className,
       ].join(" ")}
       aria-label="Udara home"

@@ -54,14 +54,10 @@ export default function AboutPage() {
             {siteConfig.description}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href={whatsappJoinUrl} className="h-11 min-h-11 rounded-[6px]">
+            <Button href={whatsappJoinUrl}>
               Join Udara
             </Button>
-            <Button
-              href={supportWhatsAppUrl}
-              variant="secondary"
-              className="h-11 min-h-11 rounded-[6px]"
-            >
+            <Button href={supportWhatsAppUrl}>
               Contact support
             </Button>
           </div>
@@ -91,8 +87,8 @@ export default function AboutPage() {
                 </dd>
               </div>
               <div>
-                <dt className="font-semibold text-ink">Banking partner</dt>
-                <dd className="mt-1 text-muted">{siteConfig.bankingPartner}</dd>
+                <dt className="font-semibold text-ink">Bank</dt>
+                <dd className="mt-1 text-muted">{siteConfig.bank}</dd>
               </div>
               <div>
                 <dt className="font-semibold text-ink">Market</dt>
@@ -140,20 +136,20 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="rounded-[12px] bg-[#f7f6f3] px-5 py-5 sm:px-6">
+          <div className="rounded-[12px] border border-ink/[0.06] bg-bg px-5 py-5 sm:px-6">
             <p className="text-[15px] leading-relaxed text-ink/80">
               For the research that shaped Udara&apos;s locks and accountability
               design, see{" "}
               <Link
                 href="/science"
-                className="font-medium text-[#4a0508] underline underline-offset-[3px]"
+                className="font-medium text-ink underline decoration-cta/40 underline-offset-[3px]"
               >
                 The science behind Udara
               </Link>
               . Privacy details:{" "}
               <Link
                 href="/privacy"
-                className="font-medium text-[#4a0508] underline underline-offset-[3px]"
+                className="font-medium text-ink underline decoration-cta/40 underline-offset-[3px]"
               >
                 Privacy Policy
               </Link>

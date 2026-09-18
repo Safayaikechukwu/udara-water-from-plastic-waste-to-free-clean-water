@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The science behind Udara",
     description:
-      "Real papers on ADHD money habits, precommitment, and body doubling — and how Udara maps them into a WhatsApp hard lock.",
+      "Real papers on ADHD money habits, precommitment, and body doubling, and how Udara maps them into a WhatsApp hard lock.",
     url: "/science",
   },
 };
@@ -49,7 +49,7 @@ function ResearchLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#4a0508] underline decoration-[#4a0508]/30 underline-offset-[3px] sm:text-[15px]"
+      className="inline-flex items-center gap-1.5 text-[14px] font-medium text-ink underline decoration-cta/40 underline-offset-[3px] sm:text-[15px]"
     >
       {children}
       <span aria-hidden="true" className="translate-y-px text-[12px]">
@@ -84,10 +84,7 @@ export default function SciencePage() {
           <div className="mt-10 divide-y divide-black/[0.08] border-y border-black/[0.08]">
             {pillars.map((pillar) => (
               <section key={pillar.title} className="py-8 sm:py-10">
-                <p className="text-[13px] font-medium tabular-nums text-[#6b6b6b]">
-                  {pillar.label}
-                </p>
-                <h2 className="mt-2 text-[1.35rem] font-bold leading-[1.2] tracking-[-0.03em] text-ink sm:text-[1.55rem]">
+                <h2 className="text-[1.35rem] font-bold leading-[1.2] tracking-[-0.03em] text-ink sm:text-[1.55rem]">
                   {pillar.title}
                 </h2>
                 <p className="mt-3 text-[15px] leading-relaxed text-muted sm:text-[16px]">
@@ -118,14 +115,14 @@ export default function SciencePage() {
             Learn more about the product on{" "}
             <Link
               href="/about"
-              className="font-medium text-[#4a0508] underline underline-offset-[3px]"
+              className="font-medium text-ink underline decoration-cta/40 underline-offset-[3px]"
             >
               About Udara
             </Link>{" "}
             or go back to the{" "}
             <Link
               href="/"
-              className="font-medium text-[#4a0508] underline underline-offset-[3px]"
+              className="font-medium text-ink underline decoration-cta/40 underline-offset-[3px]"
             >
               home page
             </Link>

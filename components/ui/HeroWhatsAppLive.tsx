@@ -195,7 +195,7 @@ function Avatar({
   if (chat.brand && chat.avatar) {
     return (
       <span
-        className="relative shrink-0 overflow-hidden rounded-[30%] bg-[#4a0508]"
+        className="relative shrink-0 overflow-hidden rounded-[30%] bg-[#e4f222]"
         style={{ width: size, height: size }}
       >
         <Image
@@ -473,7 +473,7 @@ function Thread({
   typing,
   dark,
   showBack,
-  /** Pin bubbles to top — required for hard-cropped hero phone */
+  /** Pin bubbles to top - required for hard-cropped hero phone */
   pinTop,
   hideComposer,
 }: {

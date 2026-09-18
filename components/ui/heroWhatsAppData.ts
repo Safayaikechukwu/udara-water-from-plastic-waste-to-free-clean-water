@@ -229,7 +229,7 @@ export const UDARA_THREAD: Bubble[] = [
   {
     id: "k9",
     from: "udara",
-    text: "Done. Strict mode is on. Sleep — the money will still be there.",
+    text: "Done. Strict mode is on. Sleep. The money will still be there.",
     time: "7:44 PM",
   },
 ];

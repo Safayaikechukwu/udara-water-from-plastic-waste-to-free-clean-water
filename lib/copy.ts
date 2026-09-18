@@ -1,56 +1,33 @@
-import { whatsappJoinUrl } from "@/lib/site";
+import { whatsappIntentUrl, supportWhatsAppUrl } from "@/lib/site";
 
 export const copy = {
   brand: "Udara",
-  tagline: "Your strict savings partner, on WhatsApp.",
+  tagline: "We turn plastic waste into free clean water.",
 
   hero: {
-    line1Prefix: "End",
-    line2: "with a strict partner.",
-    rotatingWords: [
-      { text: "overspending", bg: "#fdecec", dot: "#e03e3e" },
-      { text: "overeating", bg: "#fbf3db", dot: "#cb912f" },
-      { text: "overshopping", bg: "#eadffb", dot: "#6940a5" },
-      { text: "impulse buys", bg: "#f6eaea", dot: "#4a0508" },
-    ],
+    line1: "From plastic waste",
+    line2: "to free clean water.",
     subtext:
-      "Udara is an AI agent that makes sense of your finances, locks funds, and grows your money through smart savings, strict financial habits, and financial education.",
-    cta: "Join Udara",
+      "Udara converts plastic waste to free clean drinking water across Africa, powered by sponsors, with 10% of profits going to the construction of water hubs in communities.",
+    cta: "Sponsor a batch",
+    ctaHref: whatsappIntentUrl(
+      "Hi, I pressed Sponsor a batch. I want to sponsor a batch of Udara water.",
+    ),
   },
 
   nav: {
-    /** Desktop text links + mobile list links — hrefs match real section ids */
+    /** Desktop text links + mobile list links - hrefs match real section ids */
     links: [
-      { label: "Features", href: "#how-udara-helps" },
-      { label: "How it works", href: "#how-it-works" },
-      { label: "Reviews", href: "#reviews" },
-      { label: "Security", href: "#security" },
+      { label: "How Udara Works", href: "#how-it-works" },
+      { label: "Work with us", href: "#work-with-udara" },
+      { label: "Impact", href: "#impact" },
+      { label: "Testimonials", href: "#reviews" },
       { label: "FAQ", href: "#faq" },
     ],
-    /** Mobile featured cards — Notion Product mega-menu style (art on top) */
-    featured: [
-      {
-        label: "Testimonials",
-        blurb: "Hear how people stay disciplined with Udara.",
-        href: "#reviews",
-        tone: "blue" as const,
-      },
-      {
-        label: "Learn",
-        blurb: "Short money videos on TikTok.",
-        href: "https://www.tiktok.com/@keduhq",
-        tone: "coral" as const,
-        external: true,
-      },
-      {
-        label: "The science behind Udara",
-        blurb: "Research that shaped how Udara locks and saves.",
-        href: "/science",
-        tone: "gold" as const,
-      },
-    ],
-    /** Primary CTA — opens WhatsApp with a pre-filled join message */
-    joinHref: whatsappJoinUrl,
+    /** Primary CTA - opens WhatsApp with a pre-filled join message */
+    joinHref: whatsappIntentUrl(
+      "Hi, I pressed Sponsor a batch. I want to sponsor a batch of Udara water.",
+    ),
     menuOpen: "Open menu",
     menuClose: "Close menu",
   },
@@ -88,25 +65,27 @@ export const copy = {
 
   whyItWorks: {
     title: "Why It Works",
-    lead: "Financial discipline doesn't come from willpower. It comes from systems.",
-    body: "You've tried budgeting apps, Excel trackers, and savings apps. But after seven days, you forget to open the tracker. Before you know it, you've spent more than you can even remember.",
+    lead: "Two problems. One big opportunity.",
+    body: "Every day millions of Nigerians drink packaged water with questionable production hygiene.",
+    body2:
+      "At the same time, millions of plastic packagings are discarded in gutters, adding to Africa's growing waste problem.",
+    question: "What if we connected the two?",
     contrast:
-      "Udara is the opposite. It lives on WhatsApp, locks funds, and holds you accountable so you can reach your goals.",
-    closer:
-      "Saving isn't something you remember to do. It's something the system helps you do.",
+      "Udara creates a network where brands sponsor clean drinking water, plastic is recovered and recycled, and people get clean water for free.",
+    closer: "Less waste. More water. More opportunity.",
   },
 
-  /** Research-backed pillars — real authors, real papers */
+  /** Research-backed pillars - real authors, real papers */
   scienceBehind: {
     eyebrow: "The science behind Udara",
     headline: "ADHD brains don’t fail at money. They fail at remembering to protect it.",
     support:
-      "Udara is built around what research already shows: impulse, delay aversion, and weak follow-through beat willpower — so the system has to sit where your habits already live.",
+      "Udara is built around what research already shows: impulse, delay aversion, and weak follow-through beat willpower, so the system has to sit where your habits already live.",
     pillars: [
       {
         label: "01",
         title: "Impulse isn’t a character flaw",
-        body: "Adults with ADHD are more likely to buy on impulse, struggle to save, and make weaker “future-facing” money decisions — even when they care about money. That’s what standardized financial decision-making studies keep finding.",
+        body: "Adults with ADHD are more likely to buy on impulse, struggle to save, and make weaker “future-facing” money decisions, even when they care about money. That’s what standardized financial decision-making studies keep finding.",
         udara:
           "Udara surfaces spends in plain language on WhatsApp, so “I thought I had money” stops hiding in your balance.",
         linkLabel: "Bangma et al., Neuropsychology",
@@ -118,7 +97,7 @@ export const copy = {
       {
         label: "02",
         title: "Future-you needs a lock",
-        body: "Present bias makes “just this once” feel cheaper than tomorrow’s goal. Behavioral economists show people will voluntarily precommit — and that those constraints help when willpower fails.",
+        body: "Present bias makes “just this once” feel cheaper than tomorrow’s goal. Behavioral economists show people will voluntarily precommit, and that those constraints help when willpower fails.",
         udara:
           "The 7PM hard lock is that precommitment: you decide while calm; the system holds you when impulse is loudest.",
         linkLabel: "Ariely & Wertenbroch on self-imposed deadlines",
@@ -129,7 +108,7 @@ export const copy = {
       {
         label: "03",
         title: "Presence beats lonely willpower",
-        body: "Body doubling — doing hard tasks with another presence nearby — is widely used in ADHD communities. Early accessibility research is starting to study it for real: safe, promising for some ADHD adults, still early as hard science.",
+        body: "Body doubling (doing hard tasks with another presence nearby) is widely used in ADHD communities. Early accessibility research is starting to study it for real: safe, promising for some ADHD adults, still early as hard science.",
         udara:
           "Udara acts like a money body double on WhatsApp: always there for the night window, without a new app to remember.",
         linkLabel: "ACM ASSETS body-doubling EEG study",
@@ -140,7 +119,7 @@ export const copy = {
       {
         label: "04",
         title: "Savings collapse without systems",
-        body: "Long ADHD outcome work linked to Barkley and colleagues tracks weaker saving, more financial dependence, and the “ADHD tax” of late fees and forgotten bills — executive function gaps, not laziness.",
+        body: "Long ADHD outcome work linked to Barkley and colleagues tracks weaker saving, more financial dependence, and the “ADHD tax” of late fees and forgotten bills: executive function gaps, not laziness.",
         udara:
           "WhatsApp is the external scaffold: locks, clarity, and accountability happen where your habits already live.",
         linkLabel: "Altszuler et al. on financial dependence",
@@ -151,59 +130,168 @@ export const copy = {
       },
     ],
     disclaimer:
-      "Udara is not medical treatment. Research informs product design — we map mechanisms (impulse control, precommitment, external scaffolding, accountability), not cures.",
+      "Udara is not medical treatment. Research informs product design. We map mechanisms (impulse control, precommitment, external scaffolding, accountability), not cures.",
   },
 
-  howUdaraHelps: {
-    headline: "Money where your habits live.",
+  workWithUdara: {
+    headline: "How can you work with Udara?",
     cards: [
       {
-        label: "See the truth",
-        title: "Know where every naira actually goes.",
-        body: "Udara breaks down your spends in plain language, so food, transfers, and noise stop hiding in your balance.",
-        // Swap later: put a file in /public/mockups and set e.g. "/mockups/truth.png"
-        mockup: "",
-        mockupAlt: "Udara spend breakdown on WhatsApp",
+        label: "Host us",
+        title: "Bring Udara to",
+        titleLine2: "your people.",
+        cta: "Host",
+        photo: "/work-with/host.jpg",
+        photoAlt: "A professional venue ready to host people",
+        href: whatsappIntentUrl(
+          "Hi, I pressed Host. I want to host Udara at my venue or event.",
+        ),
       },
       {
-        label: "Hard time-lock",
-        title: "Block transfers from 7PM to morning.",
-        body: "When impulse is loudest, Udara closes the door. No override. No “just this once.” Funds reopen in the morning.",
-        mockup: "",
-        mockupAlt: "Udara 7PM transfer lock on WhatsApp",
+        label: "Sponsor us",
+        title: "Put your brand",
+        titleLine2: "in their hands.",
+        cta: "Sponsor",
+        photo: "/work-with/sponsor.png",
+        photoAlt: "Branded Udara water bottles with sponsor labels in people's hands",
+        href: whatsappIntentUrl(
+          "Hi, I pressed Sponsor. I want to sponsor a batch of Udara water.",
+        ),
+      },
+    ],
+  },
+
+  impact: {
+    headline: "ROI that actually",
+    headlineLine2: "makes sense.",
+    cta: "Sponsor a batch",
+    ctaHref: whatsappIntentUrl(
+      "Hi, I pressed Sponsor a batch. I want to sponsor a batch of Udara water.",
+    ),
+    inHand: {
+      title: "30+ min in hand",
+      body: "The bottle stays with them.",
+    },
+    recall: {
+      title: "90% ad recall",
+      body: "The brand stays in their head.",
+    },
+    vibe: {
+      title: "100% positive vibe",
+      body: "Water, not an interruption.",
+    },
+    photo: {
+      src: "/impact/bottle.png",
+      alt: "Sponsored Udara bottle with a Chowdeck label.",
+    },
+    openRate: {
+      title: "100% open rate",
+      body: "If they drink it, they see it.",
+    },
+    impressions: {
+      title: "10× more impressions",
+      body: "One bottle, many looks.",
+    },
+    roi: {
+      title: "29% ROI",
+      body: "Return on every batch.",
+    },
+    scan: {
+      title: "1-3% scan rate",
+      body: "QR codes people actually use.",
+    },
+    carbon: {
+      title: "79% less CO₂e",
+      body: "Recycled plastic, not virgin.",
+    },
+    children: {
+      title: "70k+ children/year",
+      body: "Water reaching kids, every year.",
+    },
+  },
+
+  water: {
+    eyebrow: "How clean is Udara water?",
+    headline: "Clean water starts",
+    headlineLine2: "with us.",
+    lead: "We bottle licensed, NAFDAC-approved drinking water that meets the required standards for safety.",
+    cards: [
+      {
+        icon: "water",
+        title: "We bottle licensed water.",
+        body: "The water we bottle is registered and licensed, with the required NAFDAC approvals and regulatory certifications for drinking water.",
+        cta: "Sponsor a batch",
+        href: whatsappIntentUrl(
+          "Hi, I pressed Sponsor a batch. I want to sponsor a batch of Udara water.",
+        ),
       },
       {
-        label: "Stay accountable",
-        title: "Track every spend as it happens.",
-        body: "Every transfer gets caught in the chat. You always know what you spent today, and what’s left before 7PM.",
-        mockup: "",
-        mockupAlt: "Udara live spend tracking on WhatsApp",
+        icon: "registered",
+        title: "Udara is registered.",
+        body: "Udara is a formally registered Nigerian company, operating with the appropriate business and regulatory requirements. Registered with the Corporate Affairs Commission (CAC).",
+        cta: "Learn More About Udara →",
+        href: "/about",
       },
       {
-        label: "Save while you spend",
-        title: "Grow your goal with every transfer out.",
-        body: "Each spend can tuck a little away automatically, so saving happens in the same moment as spending.",
-        mockup: "",
-        mockupAlt: "Udara save-while-you-spend on WhatsApp",
+        icon: "recycle",
+        title: "Responsible recycling.",
+        body: "The journey doesn’t end when the water is finished. We collect and recover plastic bottles so they can be processed and returned to the recycling chain instead of becoming waste.",
+        cta: "See Our Recycling Process →",
+        href: "#how-it-works",
+        steps: ["Drink", "Collect", "Recycle", "Reuse"],
+        closer: "Better water access. Better waste management.",
       },
     ],
   },
 
   howItWorks: {
-    headline: "How it works",
+    eyebrow: "How Udara Works",
+    headline: "The Udara Cycle",
+    headlineLine2: "from plastic to free water.",
     steps: [
-      { title: "Say hello on WhatsApp", icon: "chat" },
-      { title: "Set your savings goal", icon: "goal" },
-      { title: "Move your money in", icon: "fund" },
-      { title: "Live with the 7PM lock", icon: "lock" },
-      { title: "Watch the goal get closer", icon: "progress" },
+      {
+        n: "01",
+        title: "Recover.",
+        body: "We recover plastic that would otherwise become waste.",
+        icon: "recover",
+      },
+      {
+        n: "02",
+        title: "Bottle.",
+        body: "We bottle clean and safe drinking water.",
+        icon: "bottle",
+      },
+      {
+        n: "03",
+        title: "Sponsor.",
+        body: "Brands sponsor the water and put their message in people’s hands.",
+        icon: "sponsor",
+      },
+      {
+        n: "04",
+        title: "Distribute.",
+        body: "Free water at events, campuses, churches, workplaces and communities.",
+        icon: "distribute",
+      },
+      {
+        n: "05",
+        title: "Reward.",
+        body: "Each month one drinker gets a surprise: extra water, a frame, or rent.",
+        icon: "reward",
+      },
+      {
+        n: "06",
+        title: "Give back.",
+        body: "10% of profits funds water and wifi hubs across Africa.",
+        icon: "giveback",
+      },
     ],
   },
 
   faq: {
     headline: "FAQ",
     blurb:
-      "Clear answers about Udara, the WhatsApp savings agent from Udara Technologies, how the hard lock works, and how your money stays protected with Rubies Microfinance Bank.",
+      "Clear answers about Udara, how plastic becomes free clean water, how brands sponsor batches, and how you can host, donate, or join the network.",
     contactLabel: "Still have questions?",
     phone: "+234 707 706 9738",
     phoneNote: "WhatsApp support · Mon-Fri, 9AM-6PM WAT",
@@ -211,73 +299,80 @@ export const copy = {
       {
         question: "What is Udara?",
         answer:
-          "Udara is a strict savings AI agent built by Udara Technologies that runs entirely on WhatsApp in Nigeria. It helps you understand spending, hard-locks outbound transfers when you are most likely to overspend, and keeps you accountable to savings goals. You do not need a separate banking app to talk to Udara.",
+          "Udara turns plastic waste into free clean drinking water across Africa. Brands sponsor the water, people drink it for free, plastic is recovered and recycled, and 10% of profits supports water and wifi hubs in communities.",
       },
       {
-        question: "How does the 7PM lock work?",
+        question: "Is the water really free?",
         answer:
-          "Udara's hard lock blocks outbound transfers from 7PM until morning. You can still check balances and chat with Udara during that window. The goal is to stop late-night impulse transfers, food runs, and \"just this once\" spending when willpower is weakest.",
+          "Yes. People do not pay at the point of drinking. Brands sponsor each batch and put their message directly in people’s hands, so the water can be given away at events, campuses, churches, workplaces, gyms and public spaces.",
       },
       {
-        question: "Do I need to download another app?",
+        question: "How does the Udara Cycle work?",
         answer:
-          "No. Udara is a WhatsApp savings agent, so there is nothing new to install, remember, or abandon after a week. If you already use WhatsApp, you already have the surface Udara lives on.",
+          "We recover plastic, bottle clean water, let brands sponsor the batch, distribute it where people already gather, reward drinkers, and give 10% of profits back to water and wifi hubs.",
       },
       {
-        question: "Is my money safe with Udara?",
+        question: "How clean is Udara water?",
         answer:
-          "Yes. Customer funds are held with Rubies Microfinance Bank. Udara is the discipline and accountability layer on top of that banking relationship, not a place where money disappears into a black box. Udara also supports WhatsApp privacy features and NDPC-aligned data protection practices.",
+          "We bottle licensed, NAFDAC-approved drinking water that meets the required standards for safety.",
       },
       {
-        question: "Who is Udara for?",
+        question: "Is Udara a registered company?",
         answer:
-          "Udara is for people in Nigeria who know they should save but keep negotiating with themselves: ADHD spenders, emotional spenders, salary burners, and anyone tired of budgeting apps they forget to open. If WhatsApp is already where your habits live, Udara meets you there.",
+          "Yes. Udara is a formally registered Nigerian company with the Corporate Affairs Commission (CAC), operating with the appropriate business and regulatory requirements.",
       },
       {
-        question: "What if I lose my phone?",
+        question: "How can I work with Udara?",
         answer:
-          "You can freeze your Udara account instantly from the Block Account page on this site, using your WhatsApp phone number and PIN, from any WhatsApp-capable device. Udara pauses payment activity and guides you through recovery before you unblock.",
+          "You can host Udara at a venue, event, campus, workplace, church, gym or community; sponsor a batch of water; help us distribute; donate funds; or give large batches of plastic bottles for recycling. Message us on WhatsApp to start.",
       },
       {
-        question: "How do I join Udara?",
+        question: "What happens to the plastic bottles?",
         answer:
-          "Tap Join Udara on this site, start a WhatsApp chat with Udara, complete a short setup, set a savings goal, and move money in. After that, Udara handles the hard lock and accountability so you do not have to rely on willpower alone.",
+          "The journey does not end when the water is finished. We collect and recover bottles so they can be processed and returned to the recycling chain instead of becoming waste: drink, collect, recycle, reuse.",
       },
       {
-        question: "Is Udara an app or a bank?",
+        question: "Where does 10% of profits go?",
         answer:
-          "Udara is not a standalone mobile app store download. It is a WhatsApp-based savings agent. Banking services and fund holding are provided through Rubies Microfinance Bank, while Udara Technologies builds the product experience.",
+          "10% of Udara’s profits supports construction of water and wifi hubs in African communities, and the Udara Inclusive Livelihoods Fund helps Nigerians with disabilities build sustainable livelihoods.",
       },
     ],
   },
 
   instantBlock: {
-    eyebrow: "INSTANT BLOCK",
-    headline: "Lost Your Phone? Secure Your Accounts Instantly",
-    body: "If your device is stolen or compromised, don't worry you can freeze your Udara account right from any WhatsApp device. We'll pause all payment activity and guide you through recovery.",
-    secondary: "Unblock Account",
-    primary: "Block Account Now",
+    eyebrow: "For investors",
+    headline: "Invest in the future of free, clean water.",
+    body: "Udara turns plastic waste into sponsored drinking water across Africa. People drink for free, bottles come back to recycling, and 10% of profits builds water hubs in communities. Back the network that makes that future scale.",
+    cta: "Invest in Udara",
+    ctaHref: whatsappIntentUrl(
+      "Hi, I pressed Invest in Udara. I want to invest in the future of free, clean water.",
+    ),
   },
 
   security: {
-    headline: "Banking-grade security",
+    headline: "How clean is",
+    headlineLine2: "Udara water.",
     subhead:
-      "WhatsApp encryption, NDPC certification, and device-level locks so your money and chats stay yours.",
+      "We bottle licensed drinking water that meets the standard for safety.",
+    cta: "Sponsor a batch",
+    ctaHref: whatsappIntentUrl(
+      "Hi, I pressed Sponsor a batch. I want to sponsor a batch of Udara water.",
+    ),
     cards: [
       {
-        title: "Passcode for Every Payment",
-        body: "Every payment through Udara is protected by a PIN you create during setup. You're in control: set custom limits for when your passcode is required.",
-        tone: "coral" as const,
+        title: "We bottle licensed water",
+        body: "We bottle licensed water, with NAFDAC approvals for drinking water.",
+        icon: "drop" as const,
       },
       {
-        title: "NDPC-Certified & Private Chat Security",
-        body: "Udara is certified by the Nigeria Data Protection Commission (NDPC), ensuring world-class security standards. Secure your Udara chat by hiding it in a locked folder that only you can access using your phone's password or biometric ID.",
-        tone: "blue" as const,
+        title: "Udara is registered",
+        body: "Udara is CAC-registered, a formal Nigerian company.",
+        icon: "registered" as const,
       },
       {
-        title: "Biometric Login for Extra Safety",
-        body: "Your Udara activity is protected by your phone's unlock. Want even more privacy? Lock individual conversations with a single tap.",
-        tone: "gold" as const,
+        title: "Responsible recycling",
+        body: "We collect empty bottles and return them to recycling.",
+        icon: "recycle" as const,
       },
     ],
   },
@@ -290,11 +385,35 @@ export const copy = {
   },
 
   footer: {
-    brandLine: "Udara. Your strict savings partner, on WhatsApp.",
+    brandLine: "From plastic waste to free table water.",
+    brandCloser: "Free water. Less waste. More opportunity.",
+    work: [
+      { label: "Host Udara", href: whatsappIntentUrl("Hi, I pressed Host Udara. I want to host Udara at my venue or event.") },
+      { label: "Sponsor Udara", href: whatsappIntentUrl("Hi, I pressed Sponsor Udara. I want to sponsor a batch of Udara water.") },
+      { label: "Join the network", href: whatsappIntentUrl("Hi, I pressed Join the network. I want to work with Udara.") },
+    ],
+    support: [
+      { label: "Donate", href: whatsappIntentUrl("Hi, I pressed Donate. I want to donate funds or support Udara.") },
+      {
+        label: "Give Plastic",
+        href: whatsappIntentUrl("Hi, I pressed Give Plastic. I want to donate plastic bottles for recycling."),
+      },
+      { label: "Our Impact", href: "/#impact" },
+    ],
+    explore: [
+      { label: "How Udara Works", href: "/#how-it-works" },
+      { label: "Udara Impact", href: "/#impact" },
+      { label: "Testimonials", href: "/#reviews" },
+    ],
+    contact: [
+      { label: "WhatsApp", href: supportWhatsAppUrl },
+      { label: "Email", href: "mailto:safayasamuelsikechukwu@gmail.com" },
+      { label: "Instagram", href: "https://www.instagram.com/useudara" },
+    ],
     product: [
-      { label: "How It Works", href: "/#how-it-works" },
-      { label: "Reviews", href: "/#reviews" },
-      { label: "Security", href: "/#security" },
+      { label: "How Udara Works", href: "/#how-it-works" },
+      { label: "Testimonials", href: "/#reviews" },
+      { label: "Security", href: "/#water" },
       { label: "Science", href: "/science" },
       { label: "FAQ", href: "/#faq" },
       { label: "About", href: "/about" },
@@ -318,10 +437,10 @@ export const copy = {
     },
     social: [
       { label: "X", href: "https://x.com/useudara", icon: "x" },
-      { label: "TikTok", href: "https://www.tiktok.com/@keduhq", icon: "tiktok" },
+      { label: "TikTok", href: "https://www.tiktok.com/@udarahq", icon: "tiktok" },
       { label: "LinkedIn", href: "https://www.linkedin.com/company/udara-tech/", icon: "linkedin" },
     ],
-    poweredBy: "Powered by Rubies Microfinance Bank.",
+    poweredBy: "Registered with the Corporate Affairs Commission (CAC).",
     copyright: "© 2026 Udara. A Udara Technologies product.",
   },
 
