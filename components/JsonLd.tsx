@@ -8,7 +8,7 @@ export function JsonLd() {
     "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     legalName: siteConfig.legalEntity,
-    alternateName: [siteConfig.legalName, "Udara WhatsApp savings"],
+    alternateName: [siteConfig.legalName],
     url: siteConfig.url,
     logo: `${siteConfig.url}/udara-mark.png`,
     image: `${siteConfig.url}/og.png`,
@@ -30,8 +30,8 @@ export function JsonLd() {
       addressCountry: siteConfig.address.addressCountry,
     },
     areaServed: {
-      "@type": "Country",
-      name: "Nigeria",
+      "@type": "Continent",
+      name: "Africa",
     },
     sameAs: [...siteConfig.sameAs],
     contactPoint: [
@@ -66,36 +66,17 @@ export function JsonLd() {
     },
   };
 
-  const software = {
+  const website = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
     name: siteConfig.name,
-    applicationCategory: "FinanceApplication",
-    applicationSubCategory: "WhatsApp savings agent",
-    operatingSystem: "WhatsApp",
-    description: siteConfig.description,
     url: siteConfig.url,
-    image: `${siteConfig.url}/og.png`,
-    featureList: [
-      "Spend clarity on WhatsApp",
-      "Hard lock on outbound transfers from 7PM until morning",
-      "Goal-based savings accountability",
-      "Instant account block if phone is lost",
-      "No separate app download required",
-    ],
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "NGN",
-      description: "Join Udara on WhatsApp",
-      url: siteConfig.url,
-    },
-    provider: {
-      "@type": "Organization",
+    description: siteConfig.description,
+    inLanguage: "en-NG",
+    publisher: {
       "@id": `${siteConfig.url}/#organization`,
-      name: siteConfig.legalName,
     },
-    aggregateRating: undefined,
   };
 
   const faq = {
@@ -111,58 +92,19 @@ export function JsonLd() {
     })),
   };
 
-  const website = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${siteConfig.url}/#website`,
-    name: siteConfig.name,
-    url: siteConfig.url,
-    description: siteConfig.description,
-    inLanguage: "en-NG",
-    publisher: {
-      "@id": `${siteConfig.url}/#organization`,
-    },
-  };
-
   const howTo = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: "How to join Udara",
+    name: "How the Udara Cycle works",
     description:
-      "Join Udara’s WhatsApp strict savings agent, set a savings goal, and move money in.",
-    totalTime: "PT10M",
-    step: [
-      {
-        "@type": "HowToStep",
-        position: 1,
-        name: "Open Join Udara",
-        text: "Tap Join Udara on https://www.useudara.com to start a WhatsApp chat with Udara.",
-        url: siteConfig.url,
-      },
-      {
-        "@type": "HowToStep",
-        position: 2,
-        name: "Complete short setup",
-        text: "Finish the short WhatsApp setup and confirm your details.",
-      },
-      {
-        "@type": "HowToStep",
-        position: 3,
-        name: "Set a savings goal",
-        text: "Choose the savings goal Udara will help you stay accountable to.",
-      },
-      {
-        "@type": "HowToStep",
-        position: 4,
-        name: "Move money in",
-        text: "Move money in through the Rubies Microfinance Bank-backed flow. Udara then applies the 7PM hard lock and accountability.",
-      },
-    ],
+      "Recover plastic, bottle clean water, let brands sponsor the batch, distribute free water, reward drinkers, and give 10% of profits back to water hubs.",
+    step: copy.howItWorks.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.title,
+      text: step.body,
+    })),
   };
-
-  // Strip undefined keys from software (no fake ratings)
-  const { aggregateRating: _r, ...softwareClean } = software;
-  void _r;
 
   return (
     <>
@@ -172,15 +114,11 @@ export function JsonLd() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareClean) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
       />
       <script
         type="application/ld+json"

@@ -1,6 +1,6 @@
 # Udara
 
-> Udara is a strict savings AI agent that runs on WhatsApp in Nigeria. Built by Udara Technologies (Udara Global Limited). Customer funds are held with Rubies Microfinance Bank. NDPC registration: NDPC/DCP/11710.
+> Udara turns plastic waste into free clean drinking water across Africa. Brands sponsor batches, people drink for free, bottles return to recycling, and 10% of profits builds water hubs in communities. Built by Udara Technologies (Udara Global Limited).
 
 Website: https://www.useudara.com
 Full brief for AI systems: https://www.useudara.com/llms-full.txt
@@ -8,36 +8,27 @@ Full brief for AI systems: https://www.useudara.com/llms-full.txt
 ## Product
 
 - Name: Udara
-- Category: WhatsApp savings / personal finance AI agent
-- Platform: WhatsApp (no separate app download required)
+- Category: Sponsored free water / plastic recovery
 - Company: Udara Technologies / Udara Global Limited
-- Bank: Rubies Microfinance Bank
-- Market: Nigeria
-- Privacy: WhatsApp end-to-end encryption; NDPC-certified data protection practices
+- Market: Africa (starting in Nigeria)
+- Model: Brand-sponsored water batches with recycling loop
 
 ## What Udara does
 
-- Helps users see where money goes (spend clarity on WhatsApp)
-- Hard-locks outbound transfers from 7PM until morning
-- Supports goal-based saving and accountability
-- Instant account block/unblock if a phone is lost or stolen (useudara.com/account/block)
-
-## Who it is for
-
-People in Nigeria who struggle with overspending, impulse transfers, ADHD-related money habits, emotional spending, or salary burn, and who already live in WhatsApp.
+- Recovers plastic that would otherwise become waste
+- Bottles licensed, NAFDAC-approved drinking water
+- Lets brands sponsor batches and put their message in people’s hands
+- Distributes free water at events, campuses, churches, workplaces and communities
+- Returns empty bottles to the recycling chain
+- Gives 10% of profits to water and wifi hubs
 
 ## Key URLs
 
 - Home: https://www.useudara.com/
-- About (entity page): https://www.useudara.com/about
-- Science (research behind Udara): https://www.useudara.com/science
-- FAQ (on home): https://www.useudara.com/#faq
-- Security: https://www.useudara.com/#security
-- Block account: https://www.useudara.com/account/block
-- Unblock account: https://www.useudara.com/account/unblock
+- About: https://www.useudara.com/about
+- FAQ: https://www.useudara.com/#faq
 - Privacy: https://www.useudara.com/privacy
 - Terms: https://www.useudara.com/terms
-- Sitemap: https://www.useudara.com/sitemap.xml
 
 ## Contact
 

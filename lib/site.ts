@@ -3,9 +3,9 @@ export const siteConfig = {
   name: "Udara",
   legalName: "Udara Technologies",
   legalEntity: "Udara Global Limited",
-  tagline: "Strict savings on WhatsApp",
+  tagline: "From plastic waste to free clean water",
   description:
-    "Udara is a WhatsApp-based strict savings AI agent by Udara Technologies. It helps you understand spending, hard-locks transfers from 7PM, and grows money with Rubies Microfinance Bank in Nigeria. NDPC-certified privacy protections.",
+    "Udara turns plastic waste into free clean drinking water across Africa. Brands sponsor batches, people drink for free, bottles return to recycling, and 10% of profits builds water hubs in communities.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://www.useudara.com",

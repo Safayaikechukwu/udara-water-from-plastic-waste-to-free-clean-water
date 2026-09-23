@@ -34,7 +34,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Udara | Strict savings on WhatsApp",
+    default: "Udara | From plastic waste to free clean water",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -52,15 +52,14 @@ export const metadata: Metadata = {
   publisher: siteConfig.legalName,
   keywords: [
     "Udara",
-    "WhatsApp savings",
-    "strict savings",
-    "AI savings agent",
-    "Nigeria fintech",
-    "Rubies Microfinance Bank",
+    "free clean water",
+    "plastic waste",
+    "sponsored water",
+    "recycling Africa",
+    "water hubs",
     "Udara Technologies",
-    "money lock",
-    "NDPC",
-    "financial discipline",
+    "NAFDAC",
+    "sponsor a batch",
   ],
   alternates: {
     canonical: "/",
@@ -70,20 +69,20 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "Udara | Strict savings on WhatsApp",
+    title: "Udara | From plastic waste to free clean water",
     description: siteConfig.description,
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Udara | Strict savings on WhatsApp",
+        alt: "Udara | From plastic waste to free clean water",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Udara | Strict savings on WhatsApp",
+    title: "Udara | From plastic waste to free clean water",
     description: siteConfig.description,
     images: ["/og.png"],
     creator: siteConfig.twitterHandle,
@@ -114,7 +113,7 @@ export const metadata: Metadata = {
   other: {
     "mobile-web-app-capable": "yes",
   },
-  category: "finance",
+  category: "environment",
 };
 
 /**

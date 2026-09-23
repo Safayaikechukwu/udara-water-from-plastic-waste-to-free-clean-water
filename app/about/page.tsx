@@ -3,19 +3,19 @@ import Link from "next/link";
 import { LegalShell } from "@/components/legal/LegalShell";
 import { Button } from "@/components/ui/Button";
 import { copy } from "@/lib/copy";
-import { siteConfig, supportWhatsAppUrl, whatsappJoinUrl } from "@/lib/site";
+import { siteConfig, supportWhatsAppUrl, whatsappIntentUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Udara",
   description:
-    "Udara is a WhatsApp-based strict savings AI agent by Udara Technologies in Nigeria. Funds are held with Rubies Microfinance Bank. Hard-locks transfers from 7PM. NDPC/DCP/11710.",
+    "Udara turns plastic waste into free clean drinking water across Africa. Brands sponsor batches, people drink for free, and 10% of profits builds water hubs.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "About Udara | Strict savings on WhatsApp",
+    title: "About Udara | From plastic waste to free clean water",
     description:
-      "What Udara is, who built it, how funds are held, and how to join on WhatsApp.",
+      "What Udara is, who built it, and how plastic becomes free clean water.",
     url: "/about",
   },
 };
@@ -48,14 +48,14 @@ export default function AboutPage() {
             About Udara
           </p>
           <h1 className="mt-2 text-balance text-[2.25rem] font-semibold leading-[1.1] tracking-[-0.04em] text-ink sm:text-[3rem]">
-            Udara is strict savings on WhatsApp.
+            Udara turns plastic waste into free clean water.
           </h1>
           <p className="mt-5 text-pretty text-[17px] leading-relaxed text-muted sm:text-[19px]">
             {siteConfig.description}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href={whatsappJoinUrl}>
-              Join Udara
+            <Button href={whatsappIntentUrl("Hi, I pressed Sponsor a batch. I want to sponsor a batch of Udara water.")}>
+              Sponsor a batch
             </Button>
             <Button href={supportWhatsAppUrl}>
               Contact support
@@ -77,7 +77,7 @@ export default function AboutPage() {
 
           <div>
             <h2 className="text-[1.35rem] font-bold tracking-[-0.03em] text-ink sm:text-[1.5rem]">
-              Company and banking
+              Company
             </h2>
             <dl className="mt-4 grid gap-4 text-[15px] sm:grid-cols-2">
               <div>
@@ -87,16 +87,8 @@ export default function AboutPage() {
                 </dd>
               </div>
               <div>
-                <dt className="font-semibold text-ink">Bank</dt>
-                <dd className="mt-1 text-muted">{siteConfig.bank}</dd>
-              </div>
-              <div>
                 <dt className="font-semibold text-ink">Market</dt>
-                <dd className="mt-1 text-muted">Nigeria</dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-ink">NDPC</dt>
-                <dd className="mt-1 text-muted">{siteConfig.ndpcRegistration}</dd>
+                <dd className="mt-1 text-muted">Africa</dd>
               </div>
               <div className="sm:col-span-2">
                 <dt className="font-semibold text-ink">Registered office</dt>
@@ -111,25 +103,25 @@ export default function AboutPage() {
 
           <div>
             <h2 className="text-[1.35rem] font-bold tracking-[-0.03em] text-ink sm:text-[1.5rem]">
-              How the 7PM lock works
+              How clean is Udara water?
             </h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
-              {copy.faq.items[1].answer}
+              {copy.faq.items[3].answer}
             </p>
           </div>
 
           <div>
             <h2 className="text-[1.35rem] font-bold tracking-[-0.03em] text-ink sm:text-[1.5rem]">
-              Who it is for
+              How can I work with Udara?
             </h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
-              {copy.faq.items[4].answer}
+              {copy.faq.items[5].answer}
             </p>
           </div>
 
           <div>
             <h2 className="text-[1.35rem] font-bold tracking-[-0.03em] text-ink sm:text-[1.5rem]">
-              How to join
+              What happens to the plastic?
             </h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
               {copy.faq.items[6].answer}
@@ -138,15 +130,7 @@ export default function AboutPage() {
 
           <div className="rounded-[12px] border border-ink/[0.06] bg-bg px-5 py-5 sm:px-6">
             <p className="text-[15px] leading-relaxed text-ink/80">
-              For the research that shaped Udara&apos;s locks and accountability
-              design, see{" "}
-              <Link
-                href="/science"
-                className="font-medium text-ink underline decoration-cta/40 underline-offset-[3px]"
-              >
-                The science behind Udara
-              </Link>
-              . Privacy details:{" "}
+              Privacy details:{" "}
               <Link
                 href="/privacy"
                 className="font-medium text-ink underline decoration-cta/40 underline-offset-[3px]"
