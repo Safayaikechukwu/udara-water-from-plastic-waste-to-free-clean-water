@@ -6,16 +6,18 @@ import { copy } from "@/lib/copy";
 import { siteConfig, supportWhatsAppUrl, whatsappIntentUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Udara",
+  title: {
+    absolute: "About Udara | From plastic waste to free clean water",
+  },
   description:
-    "Udara turns plastic waste into free clean drinking water across Africa. Brands sponsor batches, people drink for free, and 10% of profits builds water hubs.",
+    "Udara turns plastic waste into free clean drinking water across Africa. Brands sponsor batches, people drink for free, bottles return to recycling, and 10% of profits builds water hubs.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: "About Udara | From plastic waste to free clean water",
     description:
-      "What Udara is, who built it, and how plastic becomes free clean water.",
+      "Udara turns plastic waste into free clean drinking water across Africa.",
     url: "/about",
   },
 };
