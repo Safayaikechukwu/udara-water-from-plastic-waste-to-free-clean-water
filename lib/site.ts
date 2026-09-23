@@ -35,7 +35,9 @@ export const siteConfig = {
    * Hero browser video. Paste any YouTube watch / youtu.be / shorts / embed URL.
    * Override with NEXT_PUBLIC_HERO_YOUTUBE_URL.
    */
-  heroYoutubeUrl: process.env.NEXT_PUBLIC_HERO_YOUTUBE_URL ?? "",
+  heroYoutubeUrl:
+    process.env.NEXT_PUBLIC_HERO_YOUTUBE_URL ??
+    "https://youtu.be/uc3Fx9VqaZM",
   brand: {
     black: "#1C1B17",
     yellow: "#E4F222",

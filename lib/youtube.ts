@@ -32,7 +32,7 @@ export function youtubeVideoId(input: string): string | null {
 export function youtubeEmbedSrc(input: string): string | null {
   const id = youtubeVideoId(input);
   if (!id) return null;
-  return `https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1`;
+  return `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&cc_load_policy=1&rel=0&modestbranding=1&playsinline=1`;
 }
 
 export function youtubeAddressBar(input: string): string {

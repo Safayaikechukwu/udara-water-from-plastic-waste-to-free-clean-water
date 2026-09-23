@@ -245,7 +245,7 @@ export function Footer() {
               </div>
             ) : (
               <form
-                className="flex flex-col gap-2 sm:flex-row"
+                className="flex flex-col gap-2 sm:flex-row sm:items-center"
                 onSubmit={handleSubscribe}
                 noValidate
               >
@@ -267,12 +267,12 @@ export function Footer() {
                     }
                   }}
                   placeholder={copy.footer.newsletter.placeholder}
-                  className="h-11 w-full min-w-0 rounded-[6px] border border-white/15 bg-white/[0.06] px-3.5 text-[14px] text-white outline-none transition-[border-color,box-shadow,opacity] placeholder:text-white/35 focus:border-cta focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-ink disabled:opacity-60"
+                  className="h-11 w-full min-w-0 rounded-[8px] border-[3px] border-double border-cta bg-transparent px-3.5 text-[14px] text-white outline-none placeholder:text-white/40 focus:border-cta focus-visible:ring-0 disabled:opacity-60 sm:flex-1"
                   disabled={status === "loading" ? true : undefined}
                 />
                 <Button
                   type="submit"
-                  className="shrink-0"
+                  className="h-11 shrink-0 rounded-[8px] px-5"
                   disabled={status === "loading" ? true : undefined}
                 >
                   {status === "loading" ? "Sending…" : copy.footer.newsletter.cta}
