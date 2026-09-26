@@ -28,7 +28,7 @@ export const siteConfig = {
   },
   sameAs: [
     "https://x.com/useudara",
-    "https://www.tiktok.com/@udarahq",
+    "https://vt.tiktok.com/ZSbdo29QB/",
     "https://www.linkedin.com/company/udara-tech/",
   ],
   /**

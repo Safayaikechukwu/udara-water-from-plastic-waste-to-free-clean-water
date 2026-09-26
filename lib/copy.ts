@@ -437,7 +437,7 @@ export const copy = {
     },
     social: [
       { label: "X", href: "https://x.com/useudara", icon: "x" },
-      { label: "TikTok", href: "https://www.tiktok.com/@udarahq", icon: "tiktok" },
+      { label: "TikTok", href: "https://vt.tiktok.com/ZSbdo29QB/", icon: "tiktok" },
       { label: "LinkedIn", href: "https://www.linkedin.com/company/udara-tech/", icon: "linkedin" },
     ],
     poweredBy: "Registered with the Corporate Affairs Commission (CAC).",
